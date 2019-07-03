@@ -73,7 +73,7 @@
 /* end HEADER */
 
 /* Slide menu */
-#openMenu {
+#btn-open-menu {
     position: relative;
     float: left;
     background-color: #fff;
@@ -83,28 +83,37 @@
     background-color: #fff;
     width: 300px;
     height: 100%;
-    left: -30%;
+    left: 0;
     text-align: center;
-    transition: left 0.3s ease-in-out;
+    transition: transform 200ms linear;
+    transform: translateX(-100%); /* Faz a DIV sumir */
 }
-.active {
-    left: 0px;
+.menuDiv-open {                 /* faz a DIV aparecer */
+    position: fixed;
+    background-color: #fff;
+    width: 300px;
+    height: 100%;
+    left: 0;
+    text-align: center;
+    transition: transform 200ms linear;
+    transform: translateX(0);
 }
-#menuNav ul li a {
+
+.menuDiv p {
+    position: fixed;
+    top: 90%;
+}
+.menu-slide ul li a {
     color: #000;
     margin-right: 80px;
     text-decoration: none;
     font-size: 14pt;
 }
-#menuNav ul li {
+.menu-slide ul li {
     padding: 10px;
 }
-#menuNav ul li:hover {
+.menu-slide ul li:hover {
     background-color: rgba(190,190,190, .3);
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
-}
-.menuDiv p {
-    position: fixed;
-    top: 95%;
 }

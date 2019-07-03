@@ -1,11 +1,7 @@
 //Abertura e fechamento do menu slide
-var menuSlide = document.querySelector('.menuDiv');
-menuSlide.style.left = "-350px";
-var btn = document.getElementById('openMenu');
-btn.onclick = function () {    
-    if (menuSlide.style.left = "-350px"){
-        menuSlide.style.left = "0px";
-    }else if (menuSlide.style.left == "0px"){
-        alert('OI')
-    }
-}
+const $menu = document.querySelector('.menuDiv');  //constante da div do menu slide
+const $btnMenuOpenAndClose = document.getElementById('btn-open-menu');  //cosntante do botão que abre e fecha a div
+$btnMenuOpenAndClose.addEventListener('click',function() {      //quando $btnMenuOpenAndClose for clicado a função sera executada
+     $menu.classList.toggle("menuDiv-open");        //a div $menu vai trocar de classe a cada clique;
+})
+
