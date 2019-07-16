@@ -9,6 +9,9 @@
     border: 0;
     outline: 0;
 }
+p {
+    text-align: justify;
+}
 .conteiner {
     font-size: 14pt;
     width: 95%;
@@ -122,19 +125,42 @@
 }
 /* end HEADER */
 
-/* start NOTAS */
-.note {
-    width: 340px;
-    height: 400px;
-    border: 1px solid rgba(0,0,0,.19)
-}
 
 /* Estilo para Menus de html,css,js,linux */ 
 p.descrition{
-    text-align: justify;
+    text-align: center;
 }
 .title {
     padding: 5px;
     border-bottom: 1px solid rgba(0,0,0, .4);
     margin-bottom: 25px;
+}
+
+/* Notebox div style */
+div.note-box {
+    width: 300px;
+    height: 400px;
+    border-radius: 40px;
+    text-align: right;
+    border: 1px black;
+    box-shadow: #000;
+}
+textarea.note-text {
+    font-size: 14pt;
+    overflow-y: hidden;
+    background-color: rgba(190,190,190, .3);
+    width: 300px;
+    height: 350px;
+    margin: 0;
+    text-align: left;
+    border-radius: 10px;
+}
+
+/* botões de salvar-apagar etc */
+.submitButton {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12pt;
+    cursor: pointer;
+    left: 0px;
 }

@@ -17,7 +17,8 @@
                 <input type="text" id="txtSearch" placeholder="Pesquisar"> <!-- barra de texto para Search -->
             </form>
             <!-- end SEARCH BAR -->
-             <!-- start MENU SLIDE -->
+            
+            <!-- start MENU SLIDE -->
              <div id="menuDiv" class="menuDiv">
                 <nav class="menu-slide">
                     <ul>
@@ -29,17 +30,19 @@
                     </ul>
                 </nav>
 
-
-                <p>&copy; Ebert Mota<br/>
+                <p class="descrition">&copy; Ebert Mota<br/>
                 Todos direitos reservados</p>
             </div>
             <!-- end MENU SLIDE -->
-
         </header>
         <div class="conteiner">
-            <!-- start Notas -->
-          
-            <!-- end Notas-->
+            <div class="note-box">
+                <textarea id="textarea" class="note-text"></textarea>
+                <input type="button" id="saveBtn" class="submitButton" onclick="salvar()"value="Salvar">
+                <input type="button" id="resetBtn" class="submitButton" onclick="reset()" value="Apagar">
+                <input type="button" id="deleteBtn" class="submitButton" value="Excluir";
+            </div>
+            
         </div>
         <!--end HEADER --> 
         
