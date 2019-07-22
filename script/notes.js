@@ -98,7 +98,7 @@ function salvarNota6() {
     const textarea6 = document.getElementById('textarea6').value;
     localStorage.setItem('nota6', textarea6);
 }
-
+ 
 //excluir nota
 function excluirNota6() {
     localStorage.removeItem('nota6');
