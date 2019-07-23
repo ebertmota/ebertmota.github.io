@@ -1,0 +1,10 @@
+h1 {
+    transition: ease-in-out .5s;
+}
+h1:hover {
+    color: #f7e018;
+}
+p:hover{
+    color: #e7a42b;
+    font-weight: bold;
+}
