@@ -11,6 +11,7 @@
 }
 
 p {
+    margin-top: 10px;
     text-align: justify;
 }
 .conteiner {
@@ -45,14 +46,14 @@ p {
     position: absolute; 
 }
 /* style do input */
-#txtSearch{
+.txtSearch{
     background-color: rgba(190,190,190, .2);
     border-radius: 6px;
     width: 600px;
     height: 48px;
     transition: linear 0.3s;
 }
-#txtSearch:focus {
+.txtSearch:focus {
     background-color: #fff;
     box-shadow: 1px 1px 4px rgba(0,0,0, .5);
    

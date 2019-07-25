@@ -13,9 +13,18 @@
             <!-- start SEARCH BAR -->
             <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
             <form class="search-form"> 
-                <button class="submitBtn" type="submit"><i id="btnlupa"class="fas fa-search search-icon"></i></button> <!-- botão submit (icone da lupa)-->
-                <button class="submitBtn" id="reset" type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button> <!-- botão reset para apagar o que é digitado (X)-->
-                <input type="text" id="txtSearch" placeholder="Pesquisar"> <!-- barra de texto para Search -->
+                <!-- <button class="submitBtn" type="submit"><i id="btnlupa"class="fas fa-search search-icon"></i></button> <!-- botão submit (icone da lupa)-->
+                <!--<button class="submitBtn" id="reset" type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button> <!-- botão reset para apagar o que é digitado (X)-->
+                  <!-- <input type="text" id="txtSearch" class="txtSearch" placeholder="Pesquisar"> <!-- barra de texto para Search -->
+                <iframe 
+                id="iframeTest" 
+                src="javascript:'
+                    <form action=\'javascript:void();\' onSubmit=if(this.t1.value!=\'\')parent.findString(this.t1.value);return(false);>
+                    <input type=text id=t1 name=t1 placeholder=Pesquisar size=64>
+                    <input type=submit name=b1 value=Enviar>
+                    </form>'"
+                width=650px height=48px border=0 frameborder=0 scrolling=no>
+                </iframe>
             </form>
             <!-- end SEARCH BAR -->
              <!-- start MENU SLIDE -->
@@ -43,6 +52,14 @@
                 * Um documento <i>HTML</i> <strong>Válido</strong> precisa seguir obrigatoriamente a estrutura composta
                 pelas tags &lthtml&gt, &lthead&gt, &ltbody&gt e a instrução &lt!DOCTYPE&gt.</p>
             <p>* Para escrever em seu texto as tags html use <strong>&+lt</strong> para "&lt" e <strong>&+gt</strong> para "&gt" (+ apenas representativo).</p>
+            <br/>
+            <h2 class="sub-title">iFrame</h2>
+            <p>É um componente de um elemento HTML que permite incorporar documentos, vídeos e mídia interativa em uma página, basicamente <strong>permite incorporar elementos de outros sites no seu Html</strong>. Um exemplo de iframe é o video abaixo:</p>
+            <iframe src="https://www.youtube.com/embed/GcPve6IwkMg" width="680" height="480" allowfullscreen></iframe>
+            <p>A tag &ltiframe&gt...&lt/iframe&gt é usada para que seja inserido o vídeo dentro do iFrame.</p>
+            <p>O iFrame source (<strong>src</strong>) é a origem do conteúdo, seja do servidor interno ou externo.</p>
+            <p>Width e Height são aspectos visuais do iFrame. Você pode inserir uma medida fixa em Pixels ou em porcentagem.</p>
+            <p>Para colocar qualquer video do Youtube por exemplo em seu site, abra o video no proprio youtube e em compartilhar selecione <strong>Incorporar</strong> e receberá o codigo para adiciona lo em seu Html.</p>
             <!-- end Notas-->
             
         </div>
