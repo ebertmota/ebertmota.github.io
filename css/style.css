@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* RESETS */
 * {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Arial', sans-serif;
     padding: 0;
     margin: 0;
     vertical-align: baseline;
@@ -74,8 +74,8 @@ p {
 .submitBtn {
     position: absolute;
 }
-#reset {
-    left: 600px;
+#btnlupa {
+    left: -50px;
 }
 #btnlupa,
 #xbtn {
@@ -174,11 +174,4 @@ textarea.note-text {
     font-size: 12pt;
     cursor: pointer;
     left: 0px;
-}
-#darklogo {
-    position: absolute;
-    top: 27px;
-    left: 7%;
-    font-size: 14pt;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

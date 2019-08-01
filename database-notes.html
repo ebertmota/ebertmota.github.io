@@ -3,7 +3,6 @@
     <head>
         <title>simpleNote</title>
         <meta charset="UTF-8">
-        <link href="https://font.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/database-notes.css">
     </head>
@@ -12,11 +11,12 @@
         <header id="header">
             <!-- start SEARCH BAR -->
             <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
-            <form class="search-form">
-                <button class="submitBtn" type="submit"><i id="btnlupa" class="fas fa-search search-icon"></i></button>
-                <button class="submitBtn" id="reset" type="reset"><i id="xbtn" class="fas fa-times search-icon"></i></button> 
-                <input type="text" id="txtSearch" placeholder="Pesquisar">
+            <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
+                <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
+                <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
+                <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
             </form>
+          
             <!-- end SEARCH BAR -->
 
             <!-- start MENU SLIDE -->
@@ -39,11 +39,33 @@
         <div class="conteiner">
             <!-- start NOTAS -->
             <h1 class="title">
-                My<label id="sql">SQL</label>
+                My<label class="sql">SQL</label>
             </h1>
-            <p>Teste 2</p>
+            <h2 class="sub-title">4 Princípios</h2>
+            <p id="durability" class="pointer"><strong><label class="sql">D</label></strong>urabilidade</p>
+            <p id="durabilityDefinition"class="tab hide">
+                Todo dado que é colocado,alterado ou manipulado tem que permanecer 
+                durável enquanto você quiser que ele esteja lá.
+            </p>
+
+            <p id="isolation" class="pointer"><strong><label class="sql">I</label></strong>solamento</p>
+            <p id="isolationDefinition" class="tab hide">
+                Se você tiver duas transações feitas ao mesmo tempo elas tem que ser executadas 
+                sem interferir uma a outra.
+            </p>
+            
+            <p id="consistency" class="pointer"><strong><label class="sql">C</label></strong>onsistência</p>
+            <p id="consistencyDefinition" class="tab hide">
+                Toda transação tem que levar o banco de dados de um estado consistente a outro consistente
+            </p>
+
+            <p id="atomity" class="pointer"><strong><label class="sql">A</label></strong>tomidade</p>
+            <p id="atomityDefinition" class="tab hide">
+                Toda transação tem que ser atômica, ou toda ela acontece ou nada acontece.
+            </p>
             <!-- end NOTAS -->
         </div>
+        <script src="script/database-notes.js"></script>
         <script src="script/script.js"></script>
         <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
     </body>

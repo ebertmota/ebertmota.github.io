@@ -4,9 +4,26 @@ h1 {
 h1:hover {
     color: #00758f;
 }
-#sql:hover {
+.sql:hover {
     color: #f29111;
 }
 p:hover {
     color: #00758f;
+}
+.show-more {
+    padding: 0px;
+    border-radius: 10px;
+    width: 25px;
+    height: 10px;
+    cursor: pointer;
+    float: left;
+}
+.pointer{
+    cursor: pointer;
+}
+.tab {
+    margin-left: 20px;
+}
+.hide {
+    display: none;
 }

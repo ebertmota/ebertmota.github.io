@@ -3,7 +3,6 @@
     <head>
         <title>Html notes</title>
         <meta charset="UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
         <link rel="stylesheet" type="text/css" href="css/html-notes.css">
     </head>
@@ -12,19 +11,10 @@
         <header id="header">
             <!-- start SEARCH BAR -->
             <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
-            <form class="search-form"> 
-                <!-- <button class="submitBtn" type="submit"><i id="btnlupa"class="fas fa-search search-icon"></i></button> <!-- botão submit (icone da lupa)-->
-                <!--<button class="submitBtn" id="reset" type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button> <!-- botão reset para apagar o que é digitado (X)-->
-                  <!-- <input type="text" id="txtSearch" class="txtSearch" placeholder="Pesquisar"> <!-- barra de texto para Search -->
-                <iframe 
-                id="iframeTest" 
-                src="javascript:'
-                    <form action=\'javascript:void();\' onSubmit=if(this.t1.value!=\'\')parent.findString(this.t1.value);return(false);>
-                    <input type=text id=t1 name=t1 placeholder=Pesquisar size=64>
-                    <input type=submit name=b1 value=Enviar>
-                    </form>'"
-                width=650px height=48px border=0 frameborder=0 scrolling=no>
-                </iframe>
+            <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
+                    <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
+                    <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
+                    <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
             </form>
             <!-- end SEARCH BAR -->
              <!-- start MENU SLIDE -->
