@@ -181,13 +181,6 @@ textarea.note-text {
 
 /* -----------------MEDIA QUERYS------------------------ */
 
-@media (max-width:533px){
-    .conteiner {
-        font-size: 14pt;
-        width: 400px;
-        text-align: justify;
-    }
-}
 
 @media (max-width: 959px){
     .search-form {
@@ -215,29 +208,16 @@ textarea.note-text {
     }
     
 }
-@media (min-width: 580px) {
-    .conteiner {
-        width: 50%;
-        margin-left: 10px;
-    }
-}
+
 @media (max-width: 513px) {
     .txtSearch {
         width: 300px;
-    }
-    .conteiner {
-        width: 50%;
-        margin-left: 15px;
     }
 }
 
 @media (max-width: 410px) {
     .txtSearch {
         width: 200px;
-    }
-    .conteiner {
-        width: 60%;
-        margin-left: 20px;
     }
 }
 
@@ -248,8 +228,5 @@ textarea.note-text {
     }
     .txtSearch {
         width: 170px;
-    }
-    .conteiner {
-        width: 80%;
     }
 }
