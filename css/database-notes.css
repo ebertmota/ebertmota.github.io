@@ -27,3 +27,20 @@ p:hover {
 .hide {
     display: none;
 }
+.center {
+    text-align: center;
+}
+.spotlight {
+    color: #f29111;
+}
+.block {
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 20px;
+    background-color:  rgba(190,190,190, .1);
+    transition: ease-in-out .5s;
+    cursor: pointer;
+}
+.block:hover {
+    background-color: rgba(190,190,190, .3);
+}
