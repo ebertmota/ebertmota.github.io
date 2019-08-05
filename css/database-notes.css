@@ -40,6 +40,7 @@ p:hover {
     background-color:  rgba(190,190,190, .1);
     transition: ease-in-out .5s;
     cursor: pointer;
+    height: 70%;
 }
 .block:hover {
     background-color: rgba(190,190,190, .3);
