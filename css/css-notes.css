@@ -13,6 +13,8 @@ p:hover {
     border-left: 10px rgba(37, 75, 222,.7) solid;
     padding-left: 10px;
     margin: 20px;
+    width: 80%;
+    height: 50px;
 }
 .spotlight {
     background-color:rgba(190, 190, 190, 0.3);
@@ -31,4 +33,10 @@ label.blue {
 }
 .notHover:hover {
     color: #000;
+}
+@media (max-width: 583px) {
+    .codeDiv{
+        text-align: justify;
+        white-space: nowrap;
+    }
 }

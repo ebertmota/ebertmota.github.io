@@ -220,7 +220,6 @@ textarea.note-text {
         width: 80%;
     }
     .conteiner {
-        width: 75%;
         margin-left: 10px;
     }
 }
@@ -229,10 +228,9 @@ textarea.note-text {
         margin-left: 10%;
     }
     #supercomboIframe {
-        width: 70%;
+        width: 80%;
     }
     .conteiner {
-        width: 75%;
         margin-left: 10px;
     }
     
@@ -243,7 +241,6 @@ textarea.note-text {
         width: 300px;
     }
     .conteiner {
-        width: 75%;
         margin-left: 10px;
     }
 }
