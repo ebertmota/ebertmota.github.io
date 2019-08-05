@@ -219,9 +219,6 @@ textarea.note-text {
     #supercomboIframe {
         width: 80%;
     }
-    .conteiner {
-        margin-left: 10px;
-    }
 }
 @media (max-width: 581px){
     .search-form {
@@ -230,28 +227,17 @@ textarea.note-text {
     #supercomboIframe {
         width: 80%;
     }
-    .conteiner {
-        margin-left: 10px;
-    }
-    
 }
 
 @media (max-width: 513px) {
     .txtSearch {
         width: 300px;
     }
-    .conteiner {
-        margin-left: 10px;
-    }
 }
 
 @media (max-width: 410px) {
     .txtSearch {
         width: 200px;
-    }
-    .conteiner {
-        width: 70%;
-        margin-left: 10px;
     }
 }
 
@@ -262,9 +248,5 @@ textarea.note-text {
     }
     .txtSearch {
         width: 170px;
-    }
-    .conteiner {
-        width: 80%;
-        margin-left: 10px;
     }
 }
