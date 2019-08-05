@@ -1,3 +1,4 @@
+
 h1 {
     transition: ease-in-out .5s;
 }
@@ -33,10 +34,4 @@ label.blue {
 }
 .notHover:hover {
     color: #000;
-}
-@media (max-width: 583px) {
-    .codeDiv{
-        text-align: justify;
-        white-space: nowrap;
-    }
 }
