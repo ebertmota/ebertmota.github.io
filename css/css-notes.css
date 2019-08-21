@@ -5,9 +5,7 @@ h1 {
 h1:hover {
     color: #2862ea;
 }
-p:hover {
-    color: #254bde;
-}
+
 .codeDiv {
     background-color:rgba(190, 190, 190, 0.2);
     height: 50px;

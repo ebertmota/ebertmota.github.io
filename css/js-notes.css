@@ -4,7 +4,15 @@ h1 {
 h1:hover {
     color: #f7e018;
 }
-p:hover{
-    color: #e7a42b;
-    font-weight: bold;
+.codeDiv {
+background-color: rgba(0,0,0,.2);
+}
+
+
+.jskeywordcolor {
+    color: mediumblue;
+}
+
+.jsstringcolor {
+    color: brown;
 }

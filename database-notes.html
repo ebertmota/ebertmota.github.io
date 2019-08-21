@@ -38,55 +38,65 @@
         <!-- end HEADER -->
 
         <div class="conteiner">
-            <!-- start NOTAS -->
-            
-            <h1 class="title">
-                My<label class="sql">SQL</label>
-            </h1>
-            
-                <h2 >4 Princípios de Bancos de dados</h2>
-                <p id="durability" class="pointer"><strong><label class="sql">D</label></strong>urabilidade</p>
-                <p id="durabilityDefinition"class="tab hide">
-                    Todo dado que é colocado,alterado ou manipulado tem que permanecer 
-                    durável enquanto você quiser que ele esteja lá.
-                </p>
-
-                <p id="isolation" class="pointer"><strong><label class="sql">I</label></strong>solamento</p>
-                <p id="isolationDefinition" class="tab hide">
-                    Se você tiver duas transações feitas ao mesmo tempo elas tem que ser executadas 
-                    sem interferir uma a outra.
-                </p>
-            
-                <p id="consistency" class="pointer"><strong><label class="sql">C</label></strong>onsistência</p>
-                <p id="consistencyDefinition" class="tab hide">
-                    Toda transação tem que levar o banco de dados de um estado consistente a outro consistente
-                </p>
-
-                <p id="atomity" class="pointer"><strong><label class="sql">A</label></strong>tomidade</p>
-                <p id="atomityDefinition" class="tab hide">
-                    Toda transação tem que ser atômica, ou toda ela acontece ou nada acontece.
-                </p>
+            <main>
                 
-            <!-- start COMANDOS DDL -->
-                <div class="block">
-                    <h2>D<label class="spotlight">D</label>L</h2><p class="center">Data <strong>Definition</strong> Language</p>
-                    <p>create databse</p>
-                    <p>create table</p>
-                    <p>alter table</p>
-                    <p>drop table</p>
-                </div>
-            <!-- end COMANDOS DDL-->
+                <h1 class="title">
+                    My<label class="sql">SQL</label>
+                </h1>
+                
+                    <h2 >4 Princípios de Bancos de dados</h2>
+                    <p id="durability" class="pointer"><strong><label class="sql">D</label></strong>urabilidade</p>
+                    <p id="durabilityDefinition"class="tab hide">
+                        Todo dado que é colocado,alterado ou manipulado tem que permanecer 
+                        durável enquanto você quiser que ele esteja lá.
+                    </p>
 
-            <!-- start COMANDOS DML -->
-                <div class="block">
-                    <h2>D<label class="spotlight">M</label>L</h2><p class="center">Data <strong>Manipulation</strong> Language</p>
-                    <p>insert into</p>
-                    <p>Update</p>
-                    <p>Delete</p>
-                    <p>Truncate</p>
-                </div>
-            <!-- end COMANDOS DML -->
-            <!-- end NOTAS -->
+                    <p id="isolation" class="pointer"><strong><label class="sql">I</label></strong>solamento</p>
+                    <p id="isolationDefinition" class="tab hide">
+                        Se você tiver duas transações feitas ao mesmo tempo elas tem que ser executadas 
+                        sem interferir uma a outra.
+                    </p>
+                
+                    <p id="consistency" class="pointer"><strong><label class="sql">C</label></strong>onsistência</p>
+                    <p id="consistencyDefinition" class="tab hide">
+                        Toda transação tem que levar o banco de dados de um estado consistente a outro consistente
+                    </p>
+
+                    <p id="atomity" class="pointer"><strong><label class="sql">A</label></strong>tomidade</p>
+                    <p id="atomityDefinition" class="tab hide">
+                        Toda transação tem que ser atômica, ou toda ela acontece ou nada acontece.
+                    </p>
+                    
+                <!-- start COMANDOS DDL -->
+                    <div class="block">
+                        <h2>D<label class="spotlight">D</label>L</h2><p class="center">Data <strong>Definition</strong> Language</p>
+                        <p>create databse</p>
+                        <p>create table</p>
+                        <p>alter table</p>
+                        <p>drop table</p>
+                    </div>
+                <!-- end COMANDOS DDL-->
+
+                <!-- start COMANDOS DML -->
+                    <div class="block">
+                        <h2>D<label class="spotlight">M</label>L</h2><p class="center">Data <strong>Manipulation</strong> Language</p>
+                        <p>insert into</p>
+                        <p>Update</p>
+                        <p>Delete</p>
+                        <p>Truncate</p>
+                    </div>
+                <!-- end COMANDOS DML -->
+
+                <h2>Comandos MySql server em linux debian/ubuntu</h2>
+                <p>Iniciar servidor:    <strong>/etc/init.d/mysql <label class="spotlight">start</label></strong></p>
+                <p>Parar:   <strong>/etc/init.d/mysql <label class="spotlight">stop</label></strong></p>
+                <p>Reiniciar:   <strong>/etc/init.d/mysql <label class="spotlight">restart</label></strong></p>
+                <!-- end NOTAS -->
+
+            </main>
+            <footer>
+                <p>&copy Ebert Mota</p>
+            </footer>
         </div>
         <script src="script/database-notes.js"></script>
         <script src="script/script.js"></script>
