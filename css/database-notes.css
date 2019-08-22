@@ -4,7 +4,7 @@ h1 {
 h1:hover,p:hover {
     color: #00758f;
 }
-.sql:hover {
+.sql {
     color: #f29111;
 }
 .show-more {
@@ -29,15 +29,6 @@ h1:hover,p:hover {
 }
 .spotlight {
     color: #f29111;
-}
-.block {
-    margin-top: 30px;
-    padding: 15px;
-    border-radius: 20px;
-    background-color:  rgba(190,190,190, .1);
-    transition: ease-in-out .5s;
-    cursor: pointer;
-    height: 70%;
 }
 .block:hover {
     background-color: rgba(190,190,190, .3);

@@ -9,21 +9,21 @@
     border: 0;
     outline: 0;
 }
+h2 {
+    font-size: 18pt;
+}
 a.link {
     text-decoration: none;
     color: rgba(0, 0, 205, .6);
 }
-h2 {
-    margin-top: 50px;
-}
-
 p {
     margin-top: 10px;
     text-align: justify;
 }
-li {
+li a {
+    display: block;
     cursor: pointer;
-}
+ } 
 body {
     background: #fff;
     padding-bottom: 20px;
@@ -174,41 +174,82 @@ h3,h4,h5,h6 {
     margin: 30px 0px;
     text-align: left;
 }
-
+.marginLeft {
+    margin-left: 2000px;
+}
 /* Notebox div style */
-div.note-box {
+div.note-box{
+    position: relative;
     float: left;
-    margin: 40px;
+    margin: 20px;
     width: 300px;
     height: 400px;
-    border-radius: 40px; 
-    text-align: right;
-    border: 1px black;
-    box-shadow: #000;
+    text-align: center;
+    border: 1px rgba(0,0,0, .2) solid;
+    transition: all ease-in-out .2s;
+    border-radius: 10px;
 }
+div.note-box:hover {
+    box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+}
+
 textarea.note-text {
+    border-radius: 10px;
+    padding: 10px;
     font-size: 14pt;
     overflow-y: hidden;
-    background-color: rgba(190,190,190, .3);
-    width: 300px;
-    height: 350px;
+    width: 280px;
+    height: 330px;
     text-align: left;
-    border-radius: 10px;
     text-align: justify;
-    padding: 10px;
-   
+    resize: none;
 }
+
 
 /* botões de salvar-apagar etc */
+div.note-buttons {
+    margin-left: -160px;
+    position: relative;
+}
 .submitButton {
-    padding: 10px;
-    border-radius: 8px;
+    height: 30px;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
     font-size: 12pt;
     cursor: pointer;
-    left: 0px;
+    background: rgba(0,0,0,.1);
 }
 
+.codeDiv {
+    background-color:rgba(190, 190, 190, 0.2);
+    height: 100%;
+    border-left: 5px rgba(2, 75, 231, 0.7) solid;
+    padding-left: 10px;
+    margin: 20px;
+    width: 90%;
+    padding-bottom: 10px;
+}
+.margintab {
+    margin-left: 40px;
+}
 
+.contentDiv {
+    padding: 10px 10px;
+    border: 1px rgba(0,0,0,.1) solid;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.1);
+    border-radius: 5px;
+    transition: all .5s;
+    margin-bottom: 50px;
+}
+.contentDiv:hover {
+    box-shadow: 1px 1px 10px rgba(0,0,0,.2);
+}
+.example {
+    background-color: rgba(0,0,0,.1);
+    color: #000;
+
+}
 /* -----------------MEDIA QUERYS------------------------ */
 
 
@@ -224,7 +265,7 @@ textarea.note-text {
     }
 }
 
-@media (max-width: 739px){
+@media (max-width: 753px){
     .search-form {
         margin-left: 20%;
     }

@@ -39,12 +39,36 @@
         <div class="conteiner">
             <main>
                 <h1 class="title">JavaScript</h1>
-                <h2>Arrow Function</h2>
-                <p>As <i>Arrow Functions</i> foram introduzidas no ES6;</p>
-                <p>e nos permite escrever uma função com uma sintax mais curta;</p>
-                <div class="codeDiv">
-                    <p>hello = </p>
+                <div class="contentDiv">
+                    <h2>Arrow Function</h2>
+                    <p>As <i>Arrow Functions</i> foram introduzidas no ES6.</p>
+                    <p>e nos permite escrever uma função com uma sintax mais curta.</p>
+                    <p>Exemplo de função sem sintex Arrow:</p>
+                    <div class="codeDiv">
+                        <p>hello = <span class="jskeywordcolor">function</span>() {</p>
+                        <p class="margintab"><span class="jskeywordcolor">return</span> <span class="jsstringcolor">"Hello World"</span>;</p>
+                        <p>};</p>
+                    </div>
+                    <p>Exemplo com Arrow Function:</p>
+                    <div class="codeDiv">
+                        <p>hello = () => {</p>
+                        <p class="margintab"><span class="jskeywordcolor">return</span> <span class="jsstringcolor">"Hello World"</span>;</p>
+                        <p>};</p>
+                    </div>
+                    <p>Se a função tiver e receber somente uma instrução ela pode ficar ainda mais curta:</p>
+                    <div class="codeDiv">
+                        <p>hello = () => <span class="jsstringcolor">"Hello World"</span>;</p>
+                    </div>
+                    <h3>Arrow Function com parâmetros</h3>
+                    <div class="codeDiv">
+                        <p>hello = (val) => <span class="jsstringcolor">"Hello World"</span> + val ;</p>
+                    </div>
+                    <p>Se voce tiver somente um parâmetro pode tirar os parênteses:</p>
+                    <div class="codeDiv">
+                        <p>hello = val => <span class="jsstringcolor">"Hello World"</span> + val ;</p>
+                    </div>
                 </div>
+                
             </main>
             <footer>
                 <p>&copy Ebert Mota</p>

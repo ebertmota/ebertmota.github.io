@@ -12,11 +12,3 @@ h1:hover {
     font-weight: bolder;
     color: rgba(0, 0, 205, .6);
 }
-.margintab {
-    margin-left: 40px;
-}
-.example {
-    background-color: rgba(0,0,0,.2);
-    border-radius: 8px;
-    padding: 10px;
-}

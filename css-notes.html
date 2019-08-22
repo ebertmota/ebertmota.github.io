@@ -40,49 +40,57 @@
             <main>
                 
                 <h1 class="title">CSS</h1>
+                <div class="contentDiv">
+                    <h2>Meta tag viewport</h2>
+                    <p>Um site tipicamente otimizado para dispositivos móveis, contém algo como o que segue:</p>
+                    <p class="codeDiv">&lt<label class="pink">meta</label><label class="green"> name</label>=<label class="blue">"viewport"</label>
+                        <label class="green">content</label>=<label class="blue">"width=device-width, user-scalable=no"</label>&gt
+                    </p>
+                    <p class="notHover">A propriedade <label class="spotlight">width</label> controla o tamanho da viewport. O valor desta propriedade pode 
+                        ser definido com um número específico de píxels como por exemplo <label class="spotlight">width=600</label> ou com um valor especial chamado <label class="spotlight">device-width</label> 
+                        que representa a largura da onde o conteúdo está sendo apresentado em pixels de CSS considerando uma escala de 100%. 
+                        (Ainda há as propriedades <label class="spotlight">height</label> e <label class="spotlight">device-height</label>, as quais podem ser úteis para páginas com elementos que mudam de posição 
+                        baseado na altura da viewport.)</p>
 
-                <h2>Meta tag viewport</h2>
-                <p>Um site tipicamente otimizado para dispositivos móveis, contém algo como o que segue:</p>
-                <p class="codeDiv">&lt<label class="pink">meta</label><label class="green"> name</label>=<label class="blue">"viewport"</label>
-                    <label class="green">content</label>=<label class="blue">"width=device-width, user-scalable=no"</label>&gt
-                </p>
-                <p class="notHover">A propriedade <label class="spotlight">width</label> controla o tamanho da viewport. O valor desta propriedade pode 
-                    ser definido com um número específico de píxels como por exemplo <label class="spotlight">width=600</label> ou com um valor especial chamado <label class="spotlight">device-width</label> 
-                    que representa a largura da onde o conteúdo está sendo apresentado em pixels de CSS considerando uma escala de 100%. 
-                    (Ainda há as propriedades <label class="spotlight">height</label> e <label class="spotlight">device-height</label>, as quais podem ser úteis para páginas com elementos que mudam de posição 
-                    baseado na altura da viewport.)</p>
+                    <p class="notHover">
+                        A propriedade <label class="spotlight">initial-scale</label> controla o nível de amplificação quando a página é carregada pela primeira vez.
+                        As propriedades <label class="spotlight">maximum-scale</label>, <label class="spotlight">minimum-scale</label>, 
+                        e <label class="spotlight">user-scalable</label> controlam a permissão para o usuário efetuar aumento ou diminuição da página.
+                    </p>
+                    <p>Alem disso a meta viewport auxilia para o funcionamento de media query nos browsers.</p>
+                </div>
 
-                <p class="notHover">
-                    A propriedade <label class="spotlight">initial-scale</label> controla o nível de amplificação quando a página é carregada pela primeira vez.
-                    As propriedades <label class="spotlight">maximum-scale</label>, <label class="spotlight">minimum-scale</label>, 
-                    e <label class="spotlight">user-scalable</label> controlam a permissão para o usuário efetuar aumento ou diminuição da página.
-                </p>
-                <p>Alem disso a meta viewport auxilia para o funcionamento de media query nos browsers.</p>
+                <div class="contentDiv">
+                    <h2>Centralizando conteúdo com FlexBox</h2>
+                    
+                    <p>display: flex;</p>
+                    <p>justify-content: center;</p>
+                    <p>align-items: center;</p>
+                    <p>flex-direction: row;</p>
+                </div>
+
+                <div class="contentDiv">
+                    <h2>Mudando cor da seleção em sua página</h2>
+                    <p class="codeDiv" ><span class="pink">*::selection</span> {
+                        <span class="green">background:</span> <sapn class="blue">#f7e018</span>;
+                        <span class="green">color:</span> <span class="blue">#000</span>;  
+                    }</p>
+                </div>
+
+                <div class="contentDiv">
+                    <h2>Gradiente ou degradê</h2>
+                    <p>Gradiente Simples</p>
+                    <p class="codeDiv"><span class="pink">background:</span> 
+                    <span class="green">linear-gradient(<span class="blue">to right,#f000,#ff0</span>);
+                    </span></p>
+
+                    <p>Sintax: </p>
+                    <p>background: <strong>tipo_do</strong>-gradient(<strong>direção</strong>,
+                    <strong>cor1</strong>,<strong>cor2</strong>);</p>
+                </div>
                 
-                <h2>Centralizando conteúdo com FlexBox</h2>
-                
-                <p>display: flex;</p>
-                <p>justify-content: center;</p>
-                <p>align-items: center;</p>
-                <p>flex-direction: row;</p>
-                
-                <h2>Mudando cor da seleção em sua página</h2>
-                <p class="codeDiv" ><label class="pink">*::selection</label> {
-                    <label class="green">background:</label> <label class="blue">#f7e018</label>;
-                    <label class="green">color:</label> <label class="blue">#000</label>;  
-                }</p>
-
-                <h2>Gradiente ou degradê</h2>
-                <p>Gradiente Simples</p>
-                <p class="codeDiv"><label class="pink">background:</label> 
-                <label class="green">linear-gradient(<label class="blue">to right,#f000,#ff0</label>);
-                </label></p>
-
-                <p>Sintax: </p>
-                <p>background: <strong>tipo_do</strong>-gradient(<strong>direção</strong>,
-                <strong>cor1</strong>,<strong>cor2</strong>);</p>
-
             </main>
+
             <footer>
                 <p>&copy Ebert Mota</p>
             </footer>
