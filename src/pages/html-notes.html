@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Html notes</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/html-notes.css">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+    <body>
+         <!-- start HEADER -->
+        <header id="header">
+            <!-- start SEARCH BAR -->
+            <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
+            <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
+                    <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
+                    <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
+                    <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
+            </form>
+            <!-- end SEARCH BAR -->
+             <!-- start MENU SLIDE -->
+             <div id="menuDiv" class="menuDiv">
+                <nav class="menu-slide">
+                    <ul>
+                        <li><a href="../index.html">Notas</a></li>
+                        <li><a href="html-notes.html">Html</a></li>
+                        <li><a href="css-notes.html">Css</a></li>
+                        <li><a href="js-notes.html">JavaScript</a></li>
+                        <li><a href="linux-notes.html">Linux</a></li>
+                        <li><a href="database-notes.html">Banco de Dados</a></li>
+                    </ul>
+                </nav>
+
+                
+            </div>
+            <!-- end MENU SLIDE -->
+        </header>
+        <!--end HEADER --> 
+        <div class="conteiner">
+            <main>
+                <h1 class="title">HTML</h1>
+                <p>
+                    * Um documento <i>HTML</i> <strong>Válido</strong> precisa seguir obrigatoriamente a estrutura composta
+                    pelas tags &lthtml&gt, &lthead&gt, &ltbody&gt e a instrução &lt!DOCTYPE&gt.</p>
+                <p>* Para escrever em seu texto as tags html use <strong>&+lt</strong> para "&lt" e <strong>&+gt</strong> para "&gt" (+ apenas representativo).</p>
+                <br/>
+
+                <div class="contentDiv">
+                <h2 >iFrame</h2>
+                <p>É um componente de um elemento HTML que permite incorporar documentos, vídeos e mídia interativa em uma página, basicamente <strong>permite incorporar elementos de outros sites no seu Html</strong>. Um exemplo de iframe é o video abaixo:</p>
+                <iframe id="supercomboIframe" src="https://www.youtube.com/embed/GcPve6IwkMg" width="680" height="480" allowfullscreen></iframe>
+                <p>A tag &ltiframe&gt...&lt/iframe&gt é usada para que seja inserido o vídeo dentro do iFrame.</p>
+                <p>O iFrame source (<strong>src</strong>) é a origem do conteúdo, seja do servidor interno ou externo.</p>
+                <p>Width e Height são aspectos visuais do iFrame. Você pode inserir uma medida fixa em Pixels ou em porcentagem.</p>
+                <p>Para colocar qualquer video do Youtube por exemplo em seu site, abra o video no proprio youtube e em compartilhar selecione <strong>Incorporar</strong> e receberá o codigo para adiciona lo em seu Html.</p>
+                </div>
+
+                <div class="contentDiv">
+                <h2 id="label">Label</h2>
+                <p>Label = Rótulo,Legenda ou Etiqueta</p>
+                <p>A tag &ltlabel&gt define um <strong>Rótulo</strong> para um elemento
+                    <a class="link" href="#button">&ltbutton&gt</a>,
+                    <a class="link" href="#input">&ltinput&gt</a>,
+                    <a class="link" href="#meter">&ltmeter&gt</a>,
+                    <a class="link" href="#output">&ltprogress&gt</a>,
+                    <a class="link" href="#select">&ltselect&gt</a> ou   
+                    <a class="link" href="#textarea">&lttextarea&gt</a>
+                </p>
+                <p>O Elemento Label nao é renderizado como algo especial para o user. Contudo fornece uma melhoria de usabilidade para user com mouse,
+                    porque se o user clicar no texto dentro do elemento &ltlabel&gt,ele alterna o controle.
+                </p>
+                <p><strong>O atributo <i>for</i> da tag &ltlabel&gt deve ser igual ao <i>id</i> do elemento relacionado para eles serem vinculados.</strong></p>
+                <p>Para vincular a Label ao elemento desejado use o atributo <i>for</i> ou insira a &ltlabel&gt dentro do elemento.</p>
+
+                <h3>Atributos</h3>
+                <p><span class="atribute">acesskey</span></p>
+                <p class="margintab">A tecla de atalho para acessar este elemento a partir do teclado.</p>
+                
+                <p><span class="atribute">for</span></p>
+                <p class="margintab">O ID de um elemento de formulário relacionado, ou seja o primeiro elemento no html com ID de mesmo
+                    valor a esta propriedade.
+                </p>
+
+                <p><span class="atribute">form</span></p>
+                <p class="margintab">Este atributo permite que você coloque elementos de label em qualquer lugar dentro de um documento,
+                    e não apenas como descendentes de seus elementos de formulário.
+                </p>
+
+                <h3>Exemplos</h3>
+                <p class="margintab">Com label inserida dentro do input:</p>
+                <p class="example"><label>Click me <input type="text" id="user" name="Name" /></label></p>
+                
+                <p class="margintab">Usando o <i>for</i>:</p>
+                <p class="example">
+                    <label for="User">Click me</label>
+                    <input type="text" id="User" name="Name" />
+                </p>
+                </div>
+
+                <div class="contentDiv">
+                <h2>Span</h2>
+                <p>Um elemento &ltspan&gt pode ser usado para colorir uma parte de um texto.</p>
+                <p>A tag é usada para agrupar elementos inline em um documento.</p>
+                <p>Fornece a maneira de adicionar um vinculo a uma parte de texto ou elementoo.</p>
+                <p>Quando um texto é vinculado a um elemento %ltspan&gt, você pode estilizá-lo com CSS ou manipulá-lo com JavaScript.</p>
+                <p class="example">
+                    My mother has <span style="color:blue">blue</span> eyes.
+                 </p>
+                </div>
+                
+            </main>
+            <footer>
+                <p>&copy Ebert Mota</p>           
+            </footer>
+        </div>
+       
+        <script src="../script/script.js"></script>
+        <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
+    </body>
+</html>

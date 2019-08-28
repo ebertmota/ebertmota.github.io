@@ -1,0 +1,10 @@
+h1:hover {
+    color: rgb(255, 87, 51);
+}
+
+.atribute {
+    padding: 2px;
+    background-color: rgba(148, 148, 148, 0.2);
+    font-weight: bolder;
+    color: rgba(0, 0, 205, .6);
+}

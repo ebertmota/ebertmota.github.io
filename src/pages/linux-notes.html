@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Linux notes</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/linux-notes.css"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+    <body>
+         <!-- start HEADER -->
+        <header id="header">
+            <!-- start SEARCH BAR -->
+            <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
+            <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
+                    <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
+                    <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
+                    <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
+            </form>
+            <!-- end SEARCH BAR -->
+             <!-- start MENU SLIDE -->
+             <div id="menuDiv" class="menuDiv">
+                <nav class="menu-slide">
+                    <ul>
+                        <li><a href="../index.html">Notas</a></li>
+                        <li><a href="html-notes.html">Html</a></li>
+                        <li><a href="css-notes.html">Css</a></li>
+                        <li><a href="js-notes.html">JavaScript</a></li>
+                        <li><a href="linux-notes.html">Linux</a></li>
+                        <li><a href="database-notes.html">Banco de dados</a></li>
+                    </ul>
+                </nav>
+
+
+            </div>
+            <!-- end MENU SLIDE -->
+        </header>
+        <!--end HEADER --> 
+        <div class="conteiner">
+            <main>
+                <h1 class="title">Linux</h1>
+                <div class="contentDiv">
+                    <h2>Desinstalação de Progamas</h2>
+                    <p >Para verificar os progamas que você tem instalado em um linux baseado em debian basta digitar "<strong>sudo dpkg -l</strong>".</p>
+                    <p>Para salvar a sua lista de progamas instalados em um arquivo de texto use os comandos: cd ~ e <strong>sudo dpkg - l > lista.txt</strong></p>
+                    <p>* Para desinstalar o progama e manter suas configurações salvas use: <strong>sudo apt-get autoremove nome_do_progama</strong></p>
+                    <p>* Para desisntalar completamente <strong>sudo apt-get purge nome_do_progama</strong></p>
+                </div>
+
+                <div class="contentDiv">
+                    <h2>Instalação de Progamas</h2>
+                    <h3>Deb</h3>
+                    <p>Primeiramente entre como root (sudo su) na pasta em que seu arquivo está localizado, usando o <strong>cd</strong>, e verificando se o arquivo está dentro dela com o <strong>ls</strong></p>
+                    <p>Agora para instalar use o comando <strong>dpkg -i</strong> nome-do-pacote<strong>.deb</strong></p>
+                </div>
+            </main>
+            <footer>
+                <p>&copy Ebert Mota</p>
+            </footer>
+            
+        </div>
+        <script src="../script/script.js"></script>
+        <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
+    </body>
+</html> 

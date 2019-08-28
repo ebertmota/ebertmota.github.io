@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>JS notes</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/js-notes.css"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+    <body>
+         <!-- start HEADER -->
+        <header id="header">
+            <!-- start SEARCH BAR -->
+            <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
+            <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
+                    <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
+                    <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
+                    <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
+            </form>
+            <!-- end SEARCH BAR -->
+             <!-- start MENU SLIDE -->
+             <div id="menuDiv" class="menuDiv">
+                <nav class="menu-slide">
+                    <ul>
+                        <li><a href="../index.html">Notas</a></li>
+                        <li><a href="html-notes.html">Html</a></li>
+                        <li><a href="css-notes.html">Css</a></li>
+                        <li><a href="js-notes.html">JavaScript</a></li>
+                        <li><a href="linux-notes.html">Linux</a></li>
+                        <li><a href="database-notes.html">Banco de dados</a></li>
+                    </ul> 
+                </nav>
+
+ 
+            </div>
+            <!-- end MENU SLIDE -->
+        </header>
+        <!--end HEADER --> 
+        <div class="conteiner">
+            <main>
+                <h1 class="title">JavaScript</h1>
+                <div class="contentDiv">
+                    <h2>Arrow Function</h2>
+                    <p>As <i>Arrow Functions</i> foram introduzidas no ES6.</p>
+                    <p>e nos permite escrever uma função com uma sintax mais curta.</p>
+                    <p>Exemplo de função sem sintex Arrow:</p>
+                    <div class="codeDiv">
+                        <p><span class="jsvarcolor">hello</span> = <span class="jskeywordcolor">function</span>() {</p>
+                        <p class="margintab"><span class="jskeywordcolor">return</span> <span class="jsstringcolor">"Hello World"</span>;</p>
+                        <p>};</p>
+                    </div>
+                    <p>Exemplo com Arrow Function:</p>
+                    <div class="codeDiv">
+                        <p><span class="jsvarcolor">hello</span> = () => {</p>
+                        <p class="margintab"><span class="jskeywordcolor">return</span> <span class="jsstringcolor">"Hello World"</span>;</p>
+                        <p>};</p>
+                    </div>
+                    <p>Se a função tiver e receber somente uma instrução ela pode ficar ainda mais curta:</p>
+                    <div class="codeDiv">
+                        <p><span class="jsvarcolor">hello</span> = () => <span class="jsstringcolor">"Hello World"</span>;</p>
+                    </div>
+                    <h3>Arrow Function com parâmetros</h3>
+                    <div class="codeDiv">
+                        <p><span class="jsvarcolor">hello</span> = (val) => <span class="jsstringcolor">"Hello World"</span> + val ;</p>
+                    </div>
+                    <p>Se voce tiver somente um parâmetro pode tirar os parênteses:</p>
+                    <div class="codeDiv">
+                        <p><span class="jsvarcolor">hello</span> = val => <span class="jsstringcolor">"Hello World"</span> + val ;</p>
+                    </div>
+                </div>
+                
+                <div class="contentDiv">
+                    <h2>Tratamento de Dados</h2>
+                    <p>o + pode servir tanto para adição ou concatenação.</p>
+                    <p class="codeDiv"><span class="jscyancolor">number</span> <span class="jskeywordcolor">+</span> <span class="jscyancolor">number</span> => adição</p>
+                    <p class="codeDiv"><sapn class="jsstringcolor">string</sapn> <span class="jskeywordcolor">+</span> <span class="jsstringcolor">string</span> => concatenação</p>
+                
+                    <p>Para converter uma string em número:</p>
+                    <div class="codeDiv">
+                        <p><span class="jscyancolor">Number</span>.<span class="jsvarcolor">parseInt</span>(n) <span class="jscommentcolor">
+                            // conversão para inteiro</span>
+                        </p>
+                        <p><span class="jscyancolor">Number</span>.<span class="jsvarcolor">parseFloat</span>(n)<span class="jscommentcolor">
+                            // conversão para float(flutuante)</span>
+                        </p>
+                        <p><span class="jscyancolor">Number</span>(n) <span class="jscommentcolor">
+                            // converte para numero mas deixa o js decidir se vai ser int ou float</span>
+                        </p>
+                    </div>
+
+                    <p>Para converter de número para string:</p>
+                    <p class="codeDiv"><span class="jscyancolor">String</span>(n)</p>
+
+                    <h3>Formatando Strings</h3>
+                    <p>Template String</p>
+                    <p>são envolvidas por acentos graves(crases) ` `</p>
+                    <div class="codeDiv">
+                        <p><span class="jskeywordcolor">var</span> a <span class="jskeywordcolor">=</span> <span class="jsnumbercolor">5</span></p>
+                        <p><span class="jskeywordcolor">var</span> b <span class="jskeywordcolor">=</span> <span class="jsnumbercolor">10</span></p>
+                        <p>
+                            <span class="jscyancolor">console.log</span>(<span class="jsstringcolor">`Quinze é <span class="jskeywordcolor">
+                                ${<span class="jsdefaultcolor">a <span class="jskeywordcolor">+</span> b</span>}</span>e não 
+                                <span class="jskeywordcolor">${<span class="jsnumbercolor">2</span><span class="jskeywordcolor">+</span> 
+                                <span class="jsdefaultcolor">a <span class="jskeywordcolor">+</span> b</span>}</span>`
+                            </span>)
+                        </p>
+                    </div>
+                
+                </div>
+
+            </main>
+            <footer>
+                <p>&copy Ebert Mota</p>
+            </footer>
+            
+            
+        </div>
+        <script src="../script/script.js"></script>
+        <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
+    </body>
+</html>
