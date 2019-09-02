@@ -5,6 +5,7 @@ $btnMenuOpenAndClose.addEventListener('click',function() {      //quando $btnMen
     $menu.classList.toggle("menuDiv-open");     //a div $menu vai trocar de classe a cada clique;              
   });
 
+
     //AQUI ACONTECE A MAGICA 
     function findString (str)
     {
