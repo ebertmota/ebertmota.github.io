@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../css/style.css"/>
         <link rel="stylesheet" type="text/css" href="../css/html-notes.css">
+        <link rel="stylesheet" type="text/css" href="../css/css-notes.css">
         <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
     <body>
@@ -106,6 +107,103 @@
                 <p class="example">
                     My mother has <span style="color:blue">blue</span> eyes.
                  </p>
+                </div>
+
+                <div class="contentDiv">
+                <h2>Tabelas</h2>
+                <p>&lt<span class="pink">table</span>&gt &lt/<span class="pink">table</span>&gt</p>
+                <p>table rows, ou seja cada linha da tabela é definido com  &lt <span class="pink">tr</span> &gt  </p>
+                <p>O Header de uma tabela é definido por &lt<span class="pink"> th </span>&gt e por padrão
+                é em negrito e alinhado ao centro.
+                </p>
+                <p>table data/cell é definido com &lt<span class="pink"> td </span>&gt </p>
+                <p>Exemplo:</p>
+                <div class="codeDiv">
+                    <table class="codeTable">
+                        <td>
+                            <p class="textCenter">Codigo Html</p>
+                            <p>
+                                &lt<span class="pink">table</span> <span class="green">id</span>="<span class="blue">simpleTable</span>"&gt
+                            </p>
+                            <p>&lt<span class="pink">tr</span>&gt </p>
+                                <p class="tab">
+                                    &lt<span class="pink">th</span>&gt <span class="blue">Nome</span> 
+                                    &lt/<span class="pink">th</span>&gt
+                                </p>
+                                <p class="tab">
+                                    &lt<span class="pink">th</span>&gt <span class="blue">Sobrenome</span> 
+                                    &lt/<span class="pink">th</span>&gt
+                                </p>
+                                <p class="tab">
+                                    &lt<span class="pink">th</span>&gt <span class="blue">Idade</span>
+                                    &lt/<span class="pink">th</span>&gt
+                                </p>
+                            <p>&lt/<span class="pink">tr</span>&gt</p>
+                            <p>&lt<span class="pink">tr</span>&gt</p>
+                                <p class="tab">
+                                    &lt<span class="pink">td</span>&gt <span class="blue">Ebert</span>
+                                    &lt/<span class="pink">td</span>&gt
+                                </p>
+                                <p class="tab">
+                                    &lt<span class="pink">td</span>&gt <span class="blue">Mota</span>
+                                    &lt/<span class="pink">td</span>&gt
+                                </p>
+                                <p class="tab">
+                                    &lt<span class="pink">td</span>&gt <span class="blue">17</span>
+                                    &lt/<span class="pink">td</span>&gt
+                                </p>
+                            <p>&lt/<span class="pink">tr</span>&gt</p>
+                            <p>&lt<span class="pink">tr</span>&gt</p>
+                                <p class="tab">
+                                    &lt<span class="pink">td</span>&gt <span class="blue">Steve</span>
+                                    &lt/<span class="pink">td</span>&gt
+                                </p>
+                                <p class="tab">&lt<span class="pink">td</span>&gt <span class="blue">Wozniak</span>
+                                    &lt/<span class="pink">td</span>&gt
+                                </p>
+                                <p class="tab">
+                                    &lt<span class="pink">td</span>&gt <span class="blue">69</span>
+                                    &lt/<span class="pink">td</span>&gt
+                                </p>
+                            <p>&lt<span class="pink">/tr</span>&gt</p>
+                        </td>   
+                        <td>
+                            <p class="textCenter">Código CSS</p>
+                            <p><span class="pink">table</span><span class="green">#simpleTable</span> {</p>
+                                <p><span class="blue">border-collapse: </span> collapse;</p>
+                            <p>}</p>
+                            <p><span class="pink">td</span>, <span class="pink">th</span> {</p>
+                                <p><span class="blue">padding</span>: 10px;</p>
+                                <p><span class="blue">border</span>: 1px #000 solid;</p>
+                                <p><span class="blue">text-align</span>: left;</p>
+                            <p>}</p>
+                        </td> 
+                        <td>
+                            <p class="textCenter">Display</p>
+                            <table id="simpleTable">
+                                <tr>                              
+                                    <th>Nome</th>               
+                                    <th>Sobrenome</th>          
+                                    <th>Idade</th>
+                                </tr>
+                                <tr>
+                                    <td>Ebert</td>
+                                    <td>Mota</td>
+                                    <td>17</td>
+                                </tr>
+                                <tr>
+                                    <td>Steve</td>
+                                    <td>Wozniak</td>
+                                    <td>69</td>
+                                </tr>
+                            </table>
+
+                        </td>
+                </table>
+                </div>
+
+                
+                    
                 </div>
                 
             </main>

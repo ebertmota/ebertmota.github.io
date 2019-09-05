@@ -9,13 +9,16 @@
     border: 0;
     outline: 0;
 }
+.title {
+    border-bottom: 1px solid #000000;
+}
 h1 {
     transition: ease-in-out .5s;
 }
 h2 {
     font-size: 18pt;
 }
-a.link {
+.link {
     text-decoration: none;
     color: rgba(0, 0, 205, .6);
 }

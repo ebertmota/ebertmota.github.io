@@ -21,3 +21,16 @@ h1:hover {
 .notHover:hover {
     color: #000;
 }
+
+table.property-values {
+    border-collapse: collapse;
+    border: 1px solid rgba(0,0,0,.5);
+}
+table.property-values td,th {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid rgba(0,0,0,.5);
+}
+table.property-values tr:nth-child(even) {
+    background-color:rgba(235, 235, 235, 0.5);
+}
