@@ -41,7 +41,7 @@
                 <h1 class="title">JavaScript</h1>
                 <div class="contentDiv">
                     <h2>Arrow Function</h2>
-                    <p>As <i>Arrow Functions</i> foram s.toUppe introduzidas no ES6.</p>
+                    <p>As <i>Arrow Functions</i> foram introduzidas no ES6.</p>
                     <p>e nos permite escrever uma função com uma sintax mais curta.</p>
                     <p>Exemplo de função sem sintex Arrow:</p>
                     <div class="codeDiv">
@@ -114,6 +114,83 @@
                     </div>
                 </div>
 
+                <div class="contentDiv">
+                    <h2>For of</h2>
+                    <p>O loop <strong>for...of</strong> percorre Objetos interativos incluindo Array,Map,Set,
+                    Arguments etc.
+                    </p>
+                    <p>Exemplo de iteração com Array:</p>
+                    <div class="codeDiv">
+                            <p><sapn class="jskeywordcolor">var</sapn> usuarios <span class="jskeywordcolor">=</span> [</p>
+                            <p class="margintab">{</p>
+                                <p class="margintabX2">nome<span class="jskeywordcolor">:</span>
+                                     <span class="jsstringcolor">'Diego'</span>,</p>
+                                <p class="margintabX2">habilidades<span class="jskeywordcolor">:</span> 
+                                    [ <span class="jsstringcolor">"Javascript"</span>, <span class="jsstringcolor">"ReactJS"</span>, 
+                                    <span class="jsstringcolor">"Redux"</span> ]</p>
+                            <p class="margintab">},</p>
+                            <p class="margintab">{</p>
+                                <p class="margintabX2">nome<span class="jskeywordcolor">:</span>
+                                     <span class="jsstringcolor">'Gabriel'</span>,</p>
+                                <p class="margintabX2">habilidades<span class="jskeywordcolor">:</span>
+                                     [ <span class="jsstringcolor">"VueJS"</span>, <span class="jsstringcolor">"Ruby on Rails"</span>, 
+                                     <span class="jsstringcolor">"Elixir"</span> ]</p>
+                            <p class="margintab">}</p>
+
+                            <p class="jscommentcolor">// Objetivo: Escrever uma função que poduza o seguinte resultado:</p>
+                            <p class="jscommentcolor margintab">//  O Diego possui as habilidades: Javascript, ReactJS, Redux</p>
+                            <p class="jscommentcolor margintab">/// O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir</p>
+
+                            <p><span class="jskeywordcolor">function</span> <span class="jsvarcolor">mostarDadosDoUsurario</span>() {</p>
+                            <p class="margintab jscommentcolor">// sem utilizar for of</p>
+                            <p class="margintab"><span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>
+                                (<span class="jsstringcolor">`O <span class="jskeywordcolor">${
+                                    <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 0 </span>].nome</span>
+                                    }</span> possui as habilidades: 
+                                    <span class="jskeywordcolor">${
+                                    <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 0 </span>].habilidades</span>
+                                    }</span>`</span>);</p>
+
+                            <p class="margintab"><span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>
+                                (<span class="jsstringcolor">`O <span class="jskeywordcolor">${
+                                    <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 1 </span>].nome</span>
+                                    }</span> possui as habilidades: 
+                                    <span class="jskeywordcolor">${
+                                    <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 1 </span>].habilidades</span>
+                                    }</span>`</span>);</p>
+
+                            <p class="margintab jscommentcolor">// utilizando for of</p>
+                                <p class="margintab"><span class="jskeywordcolor">for</span> (<span class="jskeywordcolor">const</span>
+                                     value <span class="jskeywordcolor">of</span> usuarios){</p>
+                                
+                                   <p class="margintabX2"> <span class="jscyancolor">console<span class="jsdefaultcolor">.</span>log</span>
+                                       (<span class="jsstringcolor">`O <span class="jskeywordcolor">${
+                                           <span class="jsdefaultcolor">value.nome </span>}</span>
+                                            possui as habilidades: 
+                                            <span class="jskeywordcolor">${
+                                                <span class="jsdefaultcolor">value.habilidades.
+                                                <span class="jsvarcolor">join</span>(<span class="jsstringcolor"> '-' </span>)
+                                            </span>}</span><span class="jsdefaultcolor">)</span>`</span>;
+                                    </p>
+                                <p class="margintab">}</p>
+                            <p>];</p>
+
+                           
+                    </div>
+                    <p>Sintaxe:</p>
+                    <div class="codeDiv">
+                        <p><span class="jskeywordcolor">for</span> (variavel 
+                            <span class="jskeywordcolor">of</span> iteravel) {
+                        </p>
+                        <p class="margintab">declaração</p>
+                        <p>}</p>
+
+                        <p class="jscommentcolor">// varaiavel: A cada iteração, um valor de uma propriedade diferente é
+                                                    atribuido a variavel</p>
+                        <p class="jscommentcolor">// iteravel: Objeto cujos atributos serão iterados
+                                                    (nome de um array por exemplo)</p>
+                    </div>
+                </div>
             </main>
             <footer>
                 <p>&copy Ebert Mota</p>

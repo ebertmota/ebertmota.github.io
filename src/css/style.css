@@ -252,7 +252,9 @@ div.note-buttons {
 .margintab {
     margin-left: 40px;
 }
-
+.margintabX2 {
+    margin-left: 80px;
+}
 .contentDiv {
     padding: 10px 10px;
     border: 1px rgba(0,0,0,.1) solid;
