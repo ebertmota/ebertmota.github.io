@@ -4,7 +4,7 @@
         <title>JS notes</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="../css/js-notes.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/notes.css"/>
         <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
     <body>
@@ -44,27 +44,27 @@
                     <p>As <i>Arrow Functions</i> foram introduzidas no ES6.</p>
                     <p>e nos permite escrever uma função com uma sintax mais curta.</p>
                     <p>Exemplo de função sem sintex Arrow:</p>
-                    <div class="codeDiv">
+                    <div class="dark-codeDiv">
                         <p><span class="jsvarcolor">hello</span> = <span class="jskeywordcolor">function</span>() {</p>
                         <p class="margintab"><span class="jskeywordcolor">return</span> <span class="jsstringcolor">"Hello World"</span>;</p>
                         <p>};</p>
                     </div>
                     <p>Exemplo com Arrow Function:</p>
-                    <div class="codeDiv">
+                    <div class="dark-codeDiv">
                         <p><span class="jsvarcolor">hello</span> = () => {</p>
                         <p class="margintab"><span class="jskeywordcolor">return</span> <span class="jsstringcolor">"Hello World"</span>;</p>
                         <p>};</p>
                     </div>
                     <p>Se a função tiver e receber somente uma instrução ela pode ficar ainda mais curta:</p>
-                    <div class="codeDiv">
+                    <div class="dark-codeDiv">
                         <p><span class="jsvarcolor">hello</span> = () => <span class="jsstringcolor">"Hello World"</span>;</p>
                     </div>
                     <h3>Arrow Function com parâmetros</h3>
-                    <div class="codeDiv">
+                    <div class="dark-codeDiv">
                         <p><span class="jsvarcolor">hello</span> = (val) => <span class="jsstringcolor">"Hello World"</span> + val ;</p>
                     </div>
                     <p>Se voce tiver somente um parâmetro pode tirar os parênteses:</p>
-                    <div class="codeDiv">
+                    <div class="dark-codeDiv">
                         <p><span class="jsvarcolor">hello</span> = val => <span class="jsstringcolor">"Hello World"</span> + val ;</p>
                     </div>
                 </div>
@@ -72,11 +72,11 @@
                 <div class="contentDiv">
                     <h2>Tratamento de Dados</h2>
                     <p>o + pode servir tanto para adição ou concatenação.</p>
-                    <p class="codeDiv"><span class="jscyancolor">number</span> <span class="jskeywordcolor">+</span> <span class="jscyancolor">number</span> => adição</p>
-                    <p class="codeDiv"><sapn class="jsstringcolor">string</sapn> <span class="jskeywordcolor">+</span> <span class="jsstringcolor">string</span> => concatenação</p>
+                    <p class="dark-codeDiv"><span class="jscyancolor">number</span> <span class="jskeywordcolor">+</span> <span class="jscyancolor">number</span> => adição</p>
+                    <p class="dark-codeDiv"><sapn class="jsstringcolor">string</sapn> <span class="jskeywordcolor">+</span> <span class="jsstringcolor">string</span> => concatenação</p>
                 
                     <p>Para converter uma string em número:</p>
-                    <div class="codeDiv">
+                    <div class="dark-codeDiv">
                         <p><span class="jscyancolor">Number</span>.<span class="jsvarcolor">parseInt</span>(n) <span class="jscommentcolor">
                             // conversão para inteiro</span>
                         </p>
@@ -89,12 +89,12 @@
                     </div>
 
                     <p>Para converter de número para string:</p>
-                    <p class="codeDiv"><span class="jscyancolor">String</span>(n)</p>
+                    <p class="dark-codeDiv"><span class="jscyancolor">String</span>(n)</p>
 
                     <h3>Formatando Strings</h3>
                     <p>Template String</p>
                     <p>são envolvidas por acentos graves(crases) ` `</p>
-                    <div class="codeDiv">
+                    <div class="dark-codeDiv">
                         <p><span class="jskeywordcolor">var</span> a <span class="jskeywordcolor">=</span> <span class="jsnumbercolor">5</span></p>
                         <p><span class="jskeywordcolor">var</span> b <span class="jskeywordcolor">=</span> <span class="jsnumbercolor">10</span></p>
                         <p>
@@ -106,7 +106,7 @@
                         </p>
                     </div>
                     <p>Algumas formatações com strings:</p>
-                    <div class="codeDiv">
+                    <div class="dark-codeDiv">
                         <p><span class="jskeywordcolor">var</span> s = <span class="jsstringcolor">"string"</span></p>
                         <p>s.<span class="jsvarcolor">length</span> <span class="jscommentcolor">// retorna quantos caracteres a string tem</span></p>
                         <p>s.<span class="jsvarcolor">toUpperCase</span>() <span class="jscommentcolor">// tudo para MAIÚSCULA</span></p>
@@ -120,7 +120,7 @@
                     Arguments etc.
                     </p>
                     <p>Exemplo de iteração com Array:</p>
-                    <div class="codeDiv">
+                    <div class="dark-codeDiv">
                             <p><sapn class="jskeywordcolor">var</sapn> usuarios <span class="jskeywordcolor">=</span> [</p>
                             <p class="margintab">{</p>
                                 <p class="margintabX2">nome<span class="jskeywordcolor">:</span>
@@ -178,7 +178,7 @@
                            
                     </div>
                     <p>Sintaxe:</p>
-                    <div class="codeDiv">
+                    <div class="dark-codeDiv">
                         <p><span class="jskeywordcolor">for</span> (variavel 
                             <span class="jskeywordcolor">of</span> iteravel) {
                         </p>

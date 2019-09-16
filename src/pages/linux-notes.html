@@ -4,7 +4,7 @@
         <title>Linux notes</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="../css/linux-notes.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/notes.css"/>
         <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
     <body>
@@ -49,9 +49,22 @@
 
                 <div class="contentDiv">
                     <h2>Instalação de Progamas</h2>
-                    <h3>Deb</h3>
+                    <h3>dpkg-i</h3>
                     <p>Primeiramente entre como root (sudo su) na pasta em que seu arquivo está localizado, usando o <strong>cd</strong>, e verificando se o arquivo está dentro dela com o <strong>ls</strong></p>
                     <p>Agora para instalar use o comando <strong>dpkg -i</strong> nome-do-pacote<strong>.deb</strong></p>
+                </div>
+
+                <div class="contentDiv">
+                    <h2>Definindo Terminal Padrão no Linux</h2>
+                    <p>Primeiramente abra o terminal e digite o seguinte comando:</p>
+                    <p class="codeDiv">sudo update-alternatives --config x-terminal-emulator</p>
+                    <p>O comando acima mostrará uma lista dos aplicativos de terminal que existem em nosso sistema. O terminal que estamos usando no momento será marcado com um asterisco.</p>
+                    <p>Agora, para alterar o terminal, precisamos inserir o número do terminal e pressionar a tecla enter.</p>
+                    <br>
+                    <p>Mas em algumas distros, só isso pode nao resolver e o atalho CTRL-ALT-T
+                        ainda ficar definido para o terminal antigo.</p>
+                    <p>Nesse caso voce precisa encontrar o arquivo de definir atalhos da sua distro.</p>
+                    <p>Para definir atalhos no Lubuntu, edite o arquivo /home/user/.config/openbox/lubuntu-rc.xml</p>
                 </div>
             </main>
             <footer>
