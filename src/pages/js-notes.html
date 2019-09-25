@@ -8,8 +8,10 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
     </head>
     <body>
+        <h1 class="font0">Pagina de Javascript</h1>
          <!-- start HEADER -->
         <header id="header">
+            <div class="absolute">
             <!-- start SEARCH BAR -->
             <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
             <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
@@ -21,6 +23,7 @@
              <!-- start MENU SLIDE -->
              <div id="menuDiv" class="menuDiv">
                 <nav class="menu-slide">
+                    <h1 class="font0">Menu de navegação</h1>
                     <ul>
                         <li><a href="../index.html">Notas</a></li>
                         <li><a href="html-notes.html">Html</a></li>
@@ -30,8 +33,7 @@
                         <li><a href="database-notes.html">Banco de dados</a></li>
                     </ul> 
                 </nav>
-
- 
+            </div>
             </div>
             <!-- end MENU SLIDE -->
         </header>
@@ -191,6 +193,116 @@
                                                     (nome de um array por exemplo)</p>
                     </div>
                 </div>
+
+                <div class="contentDiv">
+                    <h1 class="ES6">ES6</h1>
+                    <h2>Configurando projeto com <strong>Babel</strong> e <em>Yarn</em></h2>
+
+                    
+                    <p>Apos ter instalado Node Js e o Yarn....</p>
+                    <p>Dentro da pasta de seu projeto rode <span class="jskeywordcolor">yarn init</span></p>
+                    <p>Neste momento o comando cria um arquivo <em>package.json</em> dentro de seu projeto,
+                    este arquivo vai armazenar as informações de depencias da nossa aplicação como o documento
+                    abaixo:
+                    </p>
+
+                    <div class="dark-codeDiv">
+                        <p>{</p>
+                            <p class="margintab"><span class="jscyancolor">"name"</span>
+                                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"es6"</span>,</p>
+                            <p class="margintab"><span class="jscyancolor">"version"</span>
+                                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"1.0.0"</span>,</p>
+                            <p class="margintab"><span class="jscyancolor">"main"</span>
+                                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"index.js"</span>,</p>
+                            <p class="margintab"><span class="jscyancolor">"license"</span>
+                                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"MIT"</span>,</p>
+                        <p>}</p>
+                    </div>
+                    <h4>Instalando Dependencias do <em>Babel</em></h4>
+                    <div class="dark-codeDiv">
+                        <p class="jscyancolor">@babel/cli</p>
+                        <p class="jscommentcolor"> // Permite trabalhar com a interface gráfica do babel em linha de comando</p>
+                    </div>
+
+                    <div class="dark-codeDiv">
+                        <p class="jscyancolor">@babel/preset-env</p>
+                        <p class="jscommentcolor">// Vai entender qual é o ambiente que você está trabalhando
+                            (Ex: browser,Node,React etc)
+                        </p>
+                    </div>
+
+                    <div class="dark-codeDiv">
+                        <p class="jscyancolor">@babel/core</p>
+                        <p class="jscommentcolor">// Esse modulo core é o centro nervoso do babel</p>
+                    </div>
+
+                    <p>As dependencias irão criar um arquivo <span class="atribute">yarn.lock</span> onde será armazenado o cache do Yarn,
+                            e uma pasta <span class="atribute">node_modules</span> que irá armazenar todas as dependencias do projeto(as dependencias das dependencias etc)
+                            OBS: adicionar a pasta node_modules/ no seu <span class="atribute">.gitignore</span>
+                    </p>
+                    <h4>Configurando Babel</h4>
+                    <p>Para fazer a configuração crie um arquivo na raiz de seu projeto com o nome de 
+                        <span class="jskeywordcolor"><strong>.babelrc</strong></span>, e dentro desse
+                        arquivo adicione as seguintes linhas:
+                    </p>
+                    <div class="dark-codeDiv">
+                            <p>{</p>
+                                <p class="margintab"><span class="jscyancolor">"presets"</span>
+                                    <span class="jskeywordcolor">:</span> 
+                                    [<span class="jsstringcolor">"@babel/preset-env"</span>]</p>
+                            <p>}</p>
+                    </div>
+                    <p>Agora dentro do seu packge.json você criará uma nova propriedade:</p>
+                    <div class="dark-codeDiv">
+                        <p><span class="jscyancolor">"scripts"</span>
+                        <span class="jskeywordcolor">:</span> {</p>
+                            <p class="margintab"><span class="jscyancolor">"dev"</span> <span class="jskeywordcolor">:</span>
+                            <span class="jsstringcolor">"babel ./main.js -o ./bundle.js"</span>
+                            </p>
+                        <p>}</p>
+                    </div>
+                    
+                    <p>o <strong class="atribute">"scripts"</strong> é onde você pode adicionar funcionalidades para usar no terminal com o yarn</p>
+                    <p>o <strong class="atribute">"dev"</strong> é o nome do seu script que executa o babel</p>
+                    <p><strong class="atribute">"babel ./main.js -o bundle.js -w"</strong> => basicamente executa o babel passando os parametros
+                        -o e -w.</p>
+                    <p>O <strong class="atribute">-o</strong> envia o conteudo do main.js para o bundle.js tornando ele compativel</p>
+                    <p>E o <strong class="atribute">-w</strong> ativa a monitoração para ele atualizar as alterações no main.js automaticamente
+                        sem ser necessario você rodar o comando toda hora.</p>
+
+                    <p>Assim então toda funcionalidade nova do Javascript que você inserir no <em>main.js</em>
+                        sera convertida para ser compativel em diversos browsers que não suportam ainda estas
+                        funcionalidades, e toda essa conversão vai pro arquivo <em>bundle.js</em>
+                    </p>
+                    <p>Por isso chame o <strong>bundle.js</strong> em vez do <em>main.js</em> na sua pagina
+                    html.</p>
+
+                    <p>Depois de todo o procedimento nosso <em>package.json</em> ficará assim:</p>
+                    <div class="dark-codeDiv">
+                        <p>{</p>
+                            <p class="margintab"><span class="jscyancolor">"name"</span>
+                                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"es6"</span>,</p>
+                            <p class="margintab"><span class="jscyancolor">"version"</span>
+                                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"1.0.0"</span>,</p>
+                            <p class="margintab"><span class="jscyancolor">"main"</span>
+                                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"index.js"</span>,</p>
+                            <p class="margintab"><span class="jscyancolor">"license"</span>
+                                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"MIT"</span>,</p>
+                            <p class="margintab"><span class="jscyancolor">"dependencies"</span>
+                                <span class="jskeywordcolor">:</span> {</p>
+                            <p class="margintabX2"><span class="jscyancolor">"@babel/cli"</span>
+                                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"^7.6.2"</span>,</p>
+                            <p class="margintabX2"><span class="jscyancolor">"@babel/core"</span>
+                                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"^7.6.2"</span>,</p>
+                            <p class="margintabX2"><span class="jscyancolor">"@babel/preset-env"</span>
+                                <span class="jskeywordcolor">:</span>   <span class="jsstringcolor">"^7.6.2"</span></p>
+                            <p class="margintab">}</p>
+                        <p>}</p>
+                    </div>  
+                    
+
+                </div>
+                
             </main>
             <footer>
                 <p>&copy Ebert Mota</p>
