@@ -54,6 +54,7 @@ footer {
 
 /* end RESETS */
 main {
+    z-index: -1;
     margin-top: 100px;
 }
 .conteiner {
@@ -64,16 +65,20 @@ main {
     margin: 20px auto 20px auto;
     text-align: center;
 }
-
+.font0 {
+    font-size: 0;
+}
 /* start HEADER */
 #header {
+    z-index: 10;
     position: fixed;
-    background-color: #fff;
+    background-color: #ffffff;
     width: 100%;
     height: 60px;
     top: 0; 
     border-bottom: 1px solid rgba(0,0,0,.1);
 }
+
 /* SEARCH */
 .search-form {
     position: relative;
@@ -105,11 +110,13 @@ main {
 }
 /* Estilização dos icones */
 .search-icon {
+    position: absolute;
+    top: 50%;
+    padding: 15px;
     font-size: 14pt;
     margin-top: 0px;
     width: 20px;
     border-radius: 25px;
-    padding: 15px;
     transition: linear .3s;
     cursor: pointer;
 }
@@ -128,8 +135,9 @@ main {
 }
 /* Slide menu */
 #btn-open-menu {
-    position: relative;
-    float: left;
+    position: absolute;
+    left: 0;
+    top: 5px;
     margin: 5px 4px;
     background-color: #fff;
 }
@@ -144,10 +152,11 @@ main {
     transition: transform 200ms linear;
     margin-top: 5px;
 }
+
 .menuDiv {
     transform: translateX(-100%);
 }
-.menuDiv-open {                
+.menuDiv-open {             
     transform: translateX(0);
 }
 
@@ -252,10 +261,11 @@ div.note-buttons {
 .margintab {
     margin-left: 40px;
 }
-.margintabX2 {
+.margintabX2 {Durabilidade
     margin-left: 80px;
 }
 .contentDiv {
+    position: relative;
     padding: 10px 10px;
     border: 1px rgba(0,0,0,.1) solid;
     box-shadow: 1px 1px 5px rgba(0,0,0,.1);
@@ -269,7 +279,17 @@ div.note-buttons {
 .example {
     background-color: rgba(0,0,0,.1);
     color: #000;
+}
 
+h1.ES6 {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-size: 25pt;
+    background-color: #e16f3c;
+    padding: 15px;
+    color: #fff;
+    position: absolute;
+    right: 0;
 }
 /* -----------------MEDIA QUERYS------------------------ */
 

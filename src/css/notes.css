@@ -1,0 +1,128 @@
+/* DRACULA COLORS */ 
+.dark-codeDiv {
+    margin: 10px;
+    padding: 10px 0px 15px 15px;
+    background-color:rgba(40,42,54);
+    color: #fff;
+    border-left: 5px #576eb6 solid;
+}
+
+.jskeywordcolor {
+    color: rgb(255,121,198);
+}
+
+.jsstringcolor {
+    color: #f1fa8c;
+}
+.jscommentcolor {
+    color: #6272a4;
+}
+.jsvarcolor {
+    color: #50fa7b;
+}
+.jsparametercolor {
+    color: #ffb86c;
+}
+
+.jscyancolor {
+    color: #8be9fd
+}
+.jsnumbercolor {
+    color: #bd93f9;
+}
+.jsdefaultcolor {
+    color: #fff;
+}
+
+/* html */
+.atribute {
+    padding: 2px;
+    background-color: rgba(148, 148, 148, 0.2);
+    font-weight: bolder;
+    color: rgba(0, 0, 205, .6);
+}
+
+
+table#simpleTable {
+    
+    border-collapse: collapse;
+}
+td,th {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    text-align: left;
+}
+
+.tab {
+    margin-left: 40px;
+}
+
+.codeTable {
+    color: rgba(0, 0, 0, 0.8);
+    background: rgb(255, 255, 255);
+}
+.textCenter {
+    padding-bottom: 15px;
+    color: #000000;
+    text-align: center;
+}
+
+/* mysql */
+
+.sql {
+    color: #f29111;
+}
+.show-more {
+    padding: 0px;
+    border-radius: 10px;
+    width: 25px;
+    height: 10px;
+    cursor: pointer;
+    float: left;
+}
+.pointer{
+    cursor: pointer;
+}
+.tab {
+    margin-left: 20px;
+}
+.hide {
+    display: none;
+}
+.center {
+    text-align: center;
+}
+.spotlight {
+    color: #f29111;
+}
+.block:hover {
+    background-color: rgba(190,190,190, .3);
+}
+
+/* css */
+
+
+.pink {
+    color: #990055;
+}
+.green {
+    color: #669900;
+}
+.blue {
+    color: #0077AA;
+}
+
+
+table.property-values {
+    border-collapse: collapse;
+    border: 1px solid rgba(0,0,0,.5);
+}
+table.property-values td,th {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid rgba(0,0,0,.5);
+}
+table.property-values tr:nth-child(even) {
+    background-color:rgba(235, 235, 235, 0.5);
+}

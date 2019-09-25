@@ -111,6 +111,53 @@
                     <p><span class="spotlight">-p</span> => informamos que o proximo dado é a senha</p>
                 </div>
 
+                <div class="contentDiv">
+                    <h2>Criando Banco de Dados</h2>
+                    <p>Para criar um banco de dados Basta usar o seguinte comando:</p>
+                    <div class="codeDiv">
+                        <p class="margintab"><span class="blue">CREATE DATABASE</span> nome_do_banco_de_dados</p>
+                    </div>
+                    <p>lembrando sempre de dar o <span class="blue">USE</span> nome_do_banco_de_dados</p>
+                    <p></p>
+                </div>
+
+                <div class="contentDiv">
+                    <h2>Criando Tabelas</h2>
+                    <div class="codeDiv">
+                        <p><span class="blue">CREATE TABLE</span> nome_da_tabela (</p>
+                        <p class="margintab">id <span class="blue">INT AUTO_INCREMENT NOT NULL</span>,</p>
+                        <p class="margintab">campo1 <span class="blue">INT</span>,</p>
+                        <p class="margintab">campo2 <span class="blue">VARCHAR</span>
+                            (<span class="spotlight">255</span>)</p>
+                        <p class="margintab"><span class="blue">PRIMARY KEY</span> (id)</p>
+                        <p>)</p>
+                    </div>
+
+                    <p><span class="atribute">Primary Key</span> é uma constraint que identifica
+                    <strong>exclusivamente</strong> cada registro em uma tabela.
+                    deve conter valores UNIQUE e não pode conter valores NULL.
+                    Uma tabela só pode ter UMA Primary key, e na tabela,essa chave primária
+                        pode consistir em uma ou varias colunas/campos.
+                    </p>
+                    <p><span class="atribute">INT</span> declara que o campo1 só recebera valores inteiros.</p>
+                    <p><span class="atribute">VARCHAR</span> é um conjunto de dados de caracteres de comprimento 
+                        indeterminado, que pode conter letras e números. Diferente de 
+                        <span class="atribute">CHAR</span> que é um comprimento fixo, o varchar só cria posições
+                        que serão preenchidas, reduzindo assim o espaço.
+                    </p>
+                    <p>Exemplo:</p>
+                    <p>Se você tiver um <strong>CHAR</strong>(10) que armazene um valor de apenas 3 posições,
+                    as outras 7 posições serão criadas e não serão preenchidas.</p>
+                    <p><em>However</em> se você criar um <strong>VARCHAR</strong>(10) que armazene também um
+                    valor de 3 posições só serão criada essas 3 posições.</p>
+                    <p>OBS: CHAR é mais usado para valores com comprimento fixo como sigla de estado,CEP etc...</p>
+                    <p><span class="atribute">AUTO INCREMENT</span> permite que um número único seja
+                    gerado quando um novo registro é inserido em uma tabela, em mysql a Primary Key,
+                    cujo valor inicial é 1 e se incrementa de 1 em 1.</p>
+                    <p><span class="atribute">NOT NULL</span> essa constraint garante que uma coluna
+                    nao admita valores NULL.</p>
+                </div>
+
             </main>
             <footer>
                 <p>&copy Ebert Mota</p>
