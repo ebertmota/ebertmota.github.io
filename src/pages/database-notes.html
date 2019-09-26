@@ -156,7 +156,48 @@
                     cujo valor inicial é 1 e se incrementa de 1 em 1.</p>
                     <p><span class="atribute">NOT NULL</span> essa constraint garante que uma coluna
                     nao admita valores NULL.</p>
+
+                    <h3>Estrutura da Tabela</h3>
+                    <p>Para ver que comando você usou para criar determinada tabela use:</p>
+                    <p class="codeDiv"><span class="blue">show create table</span> sua_tabela</p>
+                    <p>Para ver os tipos de dados e mais informações da tabela use:</p>
+                    <p class="codeDiv"><span class="blue">describe</span> nome_da_tabela</p>
                 </div>
+
+                <h2>Alterando Tabelas</h2>
+                <h3>Inserindo dados...</h3>
+                <div class="codeDiv">
+                    <p>SINTAX:</p>
+                    <p><span class="blue">insert into</span> nome_tabela</p>
+                    <p>(coluna1,coluna2,coluna3)</p>
+                    <p><span class="blue">values</span></p>
+                    <p>(valor1,valor2,valor3)</p>;    
+                </div>
+                <p>Exemplo:</p>
+                <div class="codeDiv">
+                    <p><span class="blue">insert into</span> contatos</p>
+                    <p>(nome,ddd,telefone)</p>
+                    <p><span class="blue">values</span></p>
+                    <p>('Ebert', '75', '99243-4896');</p>
+                </div>
+                <h3>Alterando Estrutura...</h3>
+                <p>Adicionando coluna com <strong>add column</strong>:</p>
+                <div class="codeDiv">
+                    <p><span class="blue">alter table</span> contatos</p>
+                    <p><span class="blue">add column</span> profissao <span class="blue">varchar</span>
+                    (10);</p>
+                </div>
+                <p>Removendo coluna com <strong>drop column</strong></p>
+                <div class="codeDiv">
+                    <p><span class="blue">alter table</span> contatos</p>
+                    <p><span class="blue">drop column</span> profissao</p>
+                </div>
+
+                <p class="alertDiv">Se você quiser colocar uma coluna como primeira use o 
+                    <strong>first</strong> no fim do comando para criar ela.
+                    Se você quiser posicionar depois de alguma coluna use o <strong>after</strong>
+                    nome_da_coluna, caso queira a coluna como ultima basta não usar nenhum dos dois.
+                </p>
 
             </main>
             <footer>
