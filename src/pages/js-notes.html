@@ -303,6 +303,167 @@
 
                 </div>
                 
+                <div class="contentDiv">
+                    <h2>Class</h2>
+                    <p>Uma classe é um tipo de função, mas em vez de usar a keyword <span class="redAtribute">function</span>
+                    para inciá-la, usamos a keyword <span class="redAtribute">class</span>, e as propriedades são atribuídas
+                    dentro de um método <span class="redAtribute">constructor()</span>.</p>
+
+                    <h3>constructor</h3>
+                    <p>O Constructor é um método especial para criar e inicializar um objeto criado a partir de uma classe.</p>
+                    <p><strong>Apenas um</strong> método especial com o nome constructor pode existir em uma classe, se a classe
+                    conter mais de um constructor() será mostrado o erro  <span class="atribute">SyntaxError</span>.</p>
+                    <p>É o primeiro método instanciado todo vez que executarmos uma classe.</p>
+                    <p>No constructor podemos fazer ações que disparam assim que o objeto é criado ou iniciar variaveis.</p>
+
+                    <h3>Definição</h3>
+                    <p>Use a keyword <span class="redAtribute">class</span> para criar uma classe e <strong>sempre</strong>
+                    adicione um metodo constructor.</p>
+                    <p>O método constructor vai ser chamado cada vez que o objeto for iniciado.</p>
+                    <p>Exemplo:</p>
+                    
+                    <div class="dark-codeDiv">
+                            <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
+                                <p class="margintab"><span class="jskeywordcolor">constructor</span>
+                                    (<span class="jsparametercolor">marca</span>, <span class="jsparametercolor">ano</span>,
+                                    <span class="jsparametercolor">situacao</span>){</p>
+
+                                    <p class="margintabX2"><span class="jsnumbercolor">this</span>.nome_do_carro <span class="jskeywordcolor">=</span> 
+                                        marca;</p>
+                                    <p class="margintabX2"><span class="jsnumbercolor">this</span>.ano_do_carro <span class="jskeywordcolor">=</span> 
+                                        ano;</p> 
+                                    <p class="margintabX2"><span class="jsnumbercolor">this</span>.situacao_do_carro <span class="jskeywordcolor">=</span>
+                                        situacao;</p>
+                                <p class="margintab">};</p>
+                            <p>};</p>
+
+                            <p><span class="jskeywordcolor">let</span> meuGolQuadrado <span class="jskeywordcolor">=</span> 
+                                <span class="jskeywordcolor bold">new</span> <span class="jscyancolor">Carro</span> 
+                            (<span class="jsstringcolor">'Gol Quadrado'</span>,
+                            <span class="jsstringcolor">'2010'</span>, <span class="jsstringcolor">'Usado'</span>);</p>
+
+                            <p><span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>(meuGolQuadrado.nome_do_carro
+                                +meuGolQuadrado.ano_do_carro+meuGolQuadrado.situacao_do_carro)</p>
+
+                            <p>Console > Gol Quadrado 2010 usado</p>
+                      
+                    </div>
+
+                    <h3>Metodos</h3>
+                    <p>O método contructor é especial, é onde você inicializa propriedade, é chamado automaticamente quando 
+                        uma classe é iniciada.</p>
+                    <p>E ele precisa ter o nome exato "constructor", de fato se você não tiver um método constructor, o 
+                        Javascript adicionará um método constructor invisível e vazio.
+                    </p>
+                    <p>Você também é livre para criar seus próprios métodos, a sintaxe deve ser familiar:</p>
+
+                    <div class="dark-codeDiv">
+                            <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
+                                <p class="margintab"><span class="jskeywordcolor">constructor</span>
+                                    (<span class="jsparametercolor">marca</span>){</p>
+                                    <p class="margintabX2"><span class="jsnumbercolor">this</span>.nome_do_carro 
+                                        <span class="jskeywordcolor">=</span> marca;</p>
+                                <p class="margintab">}</p>
+                                <p class="margintab"><span class="jsvarcolor">present</span>() {</p>
+                                    <p class="margintabX2"><span class="jskeywordcolor">return</span> 
+                                        <span class="jsstringcolor">"Eu tenho um "</span> <span class="jskeywordcolor">+</span>
+                                         <span class="jsnumbercolor">this</span>.nome_do_carro;</p>
+                                <p class="margintab">}</p>
+                            <p>}</p>
+                    
+                            <p><span class="jskeywordcolor">var</span> meuCarro 
+                                <span class="jskeywordcolor">=</span> <span class="jskeywordcolor bold">new</span>
+                                 <span class="jscyancolor">Carro</span>(<span class="jsstringcolor">'Gol Quadrado'</span>);</p>
+                            
+                            <p><span class="jscyancolor">console</span>.<span class="jscyancolor">log(</span>
+                                meuCarro.<span class="jsvarcolor">present</span>());</p>
+        
+                    </div>
+
+                    <p>Como você viu no exemplo acima, você chama o método present() que consulta o método contructor, você pode
+                        passar qualquer parâmetro entre parênteses para o método present('qualquerParametro')
+                    </p>
+
+                    <h3>Métodos Static</h3>
+                    <p>Os métodos Static são definidos na própria classe e não no <em>prototype</em>.</p>
+                    <p>Isso significa que você não pode chamar um método Static no objeto (meuCarro), mas
+                        na classe (Carro)</p>
+
+                        <div class="dark-codeDiv">
+                                <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
+                                    <p class="margintab"><span class="jskeywordcolor">constructor</span>
+                                        (<span class="jsparametercolor">marca</span>){</p>
+                                        <p class="margintabX2"><span class="jsnumbercolor">this</span>.nome_do_carro 
+                                            <span class="jskeywordcolor">=</span> marca;</p>
+                                    <p class="margintab">}</p>
+                                    <p class="margintab"><span class="jskeywordcolor">static</span>
+                                        <span class="jsvarcolor">Hello</span>(<span class="jsparametercolor">parametro</span>){</p>
+                                        <p class="margintabX2"><span class="jskeywordcolor">return</span> 
+                                            <span class="jsstringcolor">"Hello "</span> <span class="jskeywordcolor">+</span>
+                                            parametro.nome_do_carro;</p>
+                                    <p class="margintab">}</p>
+                                <p>}</p>
+                        
+                                <p><span class="jskeywordcolor">var</span> meuCarro <span class="jskeywordcolor">=</span> 
+                                    <span class="jskeywordcolor bold">new</span>
+                                     <span class="jscyancolor">Carro</span>(<span class="jsstringcolor">'Gol Quadrado'</span>);</p>
+                                
+                                <p><span class="jscyancolor">console</span>.<span class="jscyancolor">log(</span>
+                                    Carro.<span class="jsvarcolor">Hello</span>(meuCarro));</p>
+            
+                        </div>
+                        <h3>Sub Classes ou Herança/Inheritance</h3>
+                        <p>Para criar uma classe com herança, use a keyword <span class="redAtribute">extends</span>.</p>
+                        <p>A classe criada com extends herda todos os métodos da outra classe.</p>
+                        <div class="dark-codeDiv">
+                            <p>Exemplo:</p>
+                            <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
+                                <p class="margintab"><span class="jskeywordcolor">constructor</span>
+                                    (<span class="jsparametercolor">marca</span>){</p>
+                                    <p class="margintabX2"><span class="jsnumbercolor">this</span>.nome_do_carro 
+                                        <span class="jskeywordcolor">=</span> marca;</p>
+                                <p class="margintab">}</p>
+                                <p class="margintab"><span class="jsvarcolor">present</span>() {</p>
+                                    <p class="margintabX2"><span class="jskeywordcolor">return</span> 
+                                        <span class="jsstringcolor">"Eu tenho um "</span> <span class="jskeywordcolor">+</span>
+                                         <span class="jsnumbercolor">this</span>.nome_do_carro;</p>
+                                <p class="margintab">}</p>
+                            <p>}</p>
+
+                            <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Modelo</span> 
+                            <span class="jskeywordcolor">extends</span> <span class="jscyancolor">Carro</span> {</p>
+                                <p class="margintab"><span class="jskeywordcolor">constructor</span>
+                                    (<span class="jsparametercolor">marca</span>,<span class="jsparametercolor">modelo)</span> 
+                                    {</p>
+                                    <p class="margintabX2"><span class="jsnumbercolor">super</span>(marca);</p>
+                                    <p class="margintabX2"><span class="jsnumbercolor">this</span>.modelo 
+                                    <span class="jskeywordcolor">=</span> modelo;</p>
+                                <p class="margintab">}</p>
+                                <p class="margintab"><span class="jsvarcolor">show</span>() {</p>
+                                    <p class="margintabX2">
+                                        <span class="jskeywordcolor">return</span>
+                                         <span class="jsnumbercolor">this</span>.<span class="jsvarcolor">present</span>() 
+                                         <span class="jskeywordcolor">+</span> <span class="jsstringcolor">
+                                         ', que é um '</span> <span class="jskeywordcolor">+</span> 
+                                         <span class="jsnumbercolor">this</span>.modelo;
+                                    </p>
+                                <p class="margintab">}</p>
+                            <p>}</p>
+
+                            <p><span class="jskeywordcolor">var</span> meuCarro <span class="jskeywordcolor">=</span>
+                                 <span class="jskeywordcolor bold">new</span> <span class="jscyancolor">Modelo</span>
+                                 (<span class="jsstringcolor">'Ford', 'Mustang'</span>);</p>
+
+                            <p><span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>
+                            ( meuCarro.<span class="jsvarcolor">show</span>() );</p>
+
+                        </div>
+
+                        <p>O método <span class="redAtribute">super()</span> se refere a classe do pai.</p>
+                        <p>Ao chamar o método <span class="redAtribute">super()</span> no método constructor,
+                        chamamos o método constructor do Pai e obtemos acesso às propriedades e métodos do pai.</p>
+                
+                </div>
             </main>
             <footer>
                 <p>&copy Ebert Mota</p>

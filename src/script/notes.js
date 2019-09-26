@@ -15,7 +15,7 @@ function excluirNota1() {
     document.getElementById('textarea1').value = "";
 }
 
-                    //NOTA 2
+                    //NOTA 2ex
 //verificar se a nota foi salva
 if (localStorage.nota2) {
     document.getElementById('textarea2').value = localStorage.nota2;
