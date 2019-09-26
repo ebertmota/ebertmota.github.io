@@ -1,12 +1,26 @@
+.alertDiv {
+    cursor: pointer;
+    border-left: 10px solid #ffb86c;
+    background-color: #fff3d4;
+    padding: 30px 10px;
+    transition: all .4s ease;
+}
+.alertDiv:hover {
+    border-left: 10px solid #ffeb3b;
+    background-color: #ffffcc;
+}
+
 /* DRACULA COLORS */ 
 .dark-codeDiv {
     margin: 10px;
-    padding: 10px 0px 15px 15px;
+    padding: 25px;
     background-color:rgba(40,42,54);
     color: #fff;
     border-left: 5px #576eb6 solid;
 }
-
+.bold {
+    font-weight:  bold;
+}
 .jskeywordcolor {
     color: rgb(255,121,198);
 }
@@ -40,6 +54,12 @@
     background-color: rgba(148, 148, 148, 0.2);
     font-weight: bolder;
     color: rgba(0, 0, 205, .6);
+}
+
+.redAtribute {
+    padding: 2px;
+    background-color: rgba(148, 148, 148, 0.1);
+    color: rgba(231, 43, 59, 0.9);
 }
 
 

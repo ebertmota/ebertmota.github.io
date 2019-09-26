@@ -54,7 +54,6 @@ footer {
 
 /* end RESETS */
 main {
-    z-index: -1;
     margin-top: 100px;
 }
 .conteiner {
@@ -250,23 +249,27 @@ div.note-buttons {
     height: 100%;
     border-radius: 5px;
     padding-top: 2px;
-    padding-right: 5px;
+    padding-right: 15px;
     border-left: 5px rgba(2, 75, 231, 0.7) solid;
     padding-left: 10px;
     margin: 20px 10px;
     width: 90%;
-    max-width: 1100px;
+    max-width: 900px;
     padding-bottom: 10px;
 }
 .margintab {
     margin-left: 40px;
 }
-.margintabX2 {Durabilidade
+.margintabX2 {
     margin-left: 80px;
 }
 .contentDiv {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
     position: relative;
-    padding: 10px 10px;
+    padding: 15px 15px;
     border: 1px rgba(0,0,0,.1) solid;
     box-shadow: 1px 1px 5px rgba(0,0,0,.1);
     border-radius: 5px;
@@ -286,7 +289,7 @@ h1.ES6 {
     border-bottom-left-radius: 15px;
     font-size: 25pt;
     background-color: #e16f3c;
-    padding: 15px;
+    padding: 10px;
     color: #fff;
     position: absolute;
     right: 0;
@@ -297,6 +300,16 @@ h1.ES6 {
 @media (max-width: 959px){
     .search-form {
         margin-left: 20%;
+    }
+    h1.ES6 {
+        opacity: 0.8;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        border-radius: 15px;
+        text-align: center;
+        position: relative;
+        margin-bottom: 15px;
     }
 }
 
@@ -324,25 +337,20 @@ h1.ES6 {
     #supercomboIframe {
         width: 80%;
     }
-    .codeDiv {
-        width: 200px;
-        font-size: 12pt;
-    }
 }
 
 @media (max-width: 523px) {
     .txtSearch {
         width: 300px;
     }
+    .search-form {
+        margin-left: 20%;
+    }
 }
 
 @media (max-width: 423px) {
     .txtSearch {
         width: 200px;
-    }
-    .codeDiv {
-        width: 200px;
-        font-size: 10pt;
     }
 }
 
