@@ -34,6 +34,7 @@ li a {
     cursor: pointer;
  } 
 body {
+    padding-top: 60px;
     background: #fff;
     padding-bottom: 20px;
 }
@@ -199,19 +200,44 @@ h3,h4,h5,h6 {
 }
 
 /* Notebox div style */
-.note-conteiner {
-    position: static;
+button#add-note {
+  position: relative;
+  top: 12px;
+  text-align: center;
+  width: 100%;
+  font-size: 18pt;
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
 }
+
+.note-conteiner {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+.note-conteiner > div {
+flex: 1 1 200px;
+margin: 10px;
+}
+
+
 div.note-box{
-    position: static;
-    float: left;
-    margin: 20px;
-    width: 300px;
-    height: 400px;
-    text-align: center;
-    border: 1px rgba(0,0,0, .2) solid;
-    transition: all ease-in-out .2s;
-    border-radius: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  height: 400px;
+  text-align: center;
+  border: 1px rgba(0,0,0, .2) solid;
+  transition: all ease-in-out .2s;
+  border-radius: 10px;
 }
 div.note-box:hover {
     box-shadow: 1px 1px 5px rgba(0,0,0,.2);
@@ -232,16 +258,29 @@ textarea.note-text {
 
 /* botões de salvar-apagar etc */
 div.note-buttons {
-    position: static;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  transition: all .2s linear;
 }
+div.note-box:hover .submitButton {
+  display: block;
+}
+
+div.note-buttons button {
+  margin: 5px;
+}
+
 .submitButton {
-    height: 30px;
-    margin-top: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 12pt;
-    cursor: pointer;
-    background: rgba(0,0,0,.1);
+  position: relative;
+  display: none;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20pt;
+  cursor: pointer;
+  background: transparent;
 }
 
 .codeDiv {
