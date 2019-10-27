@@ -58,7 +58,7 @@ function newNote() {
   colorSwitch.appendChild(colorSwitchIcon)
 
   
-  var pos = noteStorage.indexOf(String(notes));
+  var pos = noteStorage.indexOf(notes);
   
 
   let saveBtn = document.createElement('button');
