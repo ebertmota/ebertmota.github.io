@@ -1,12 +1,12 @@
 @charset "UTF-8";
 /* RESETS */
 
-/* FIRA CODE AND FIRA SANS */ 
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+/* FIRA CODE AND OPEN SANS */ 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap');
 
 * {
-    font-family: 'Fira Sans','Arial', sans-serif;
+    font-family: 'Open Sans','Arial', sans-serif;
     padding: 0;
     margin: 0;
     vertical-align: baseline;
@@ -27,9 +27,14 @@ h2 {
     text-decoration: none;
     color: rgba(0, 0, 205, .6);
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 p {
   word-spacing: 3px;
     margin-top: 10px;
+    margin-bottom: 15px;
     text-align: justify;
 }
 li a {
@@ -307,6 +312,9 @@ div.note-buttons button {
 }
 .margintabX2 {
     margin-left: 60px;
+}
+.margintabX3 {
+  margin-left: 80px;
 }
 .contentDiv {
     left: 50%;

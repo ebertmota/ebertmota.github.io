@@ -148,3 +148,36 @@ table.property-values td,th {
 table.property-values tr:nth-child(even) {
     background-color:rgba(235, 235, 235, 0.5);
 }
+
+
+
+/* MODULOS ES6 JAVASCRIPT */
+
+.content-center {
+  position: relative;
+  width: 75%;
+  margin: 0 auto;
+}
+.background-white {
+  padding: 15px;
+  background-color: #fff;
+}
+#modulos h3 {
+  text-align: center;
+}
+#modulos h2:first-child {
+  background-color: #f9dd3c;
+  padding: 10px;
+}
+
+#modulos {
+  background-image: url('../../assets/modulos.jpg');
+  background-size: contain;
+
+}
+
+#webpack {
+  background-color: #5cadc0;
+  color: #fff;
+  padding: 10px;
+}

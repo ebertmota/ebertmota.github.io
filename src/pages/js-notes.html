@@ -856,6 +856,227 @@
                       </div>
                     </div>
                     
+                    <div class="contentDiv" id="modulos">
+                     
+                        <h2>Módulos</h2>
+
+                        <div class="content-center">
+                          <div class="background-white">
+                            <h3>O que são módulos?</h3>
+                            <p>
+                              Como o capítulo de um livro, os módulos são apenas conjunto de palavras 
+                              (ou códigos).
+                            </p>
+                            <p>
+                              Bons módulos, no entanto, são altamente auto-suficiente com funcionalidades
+                              distintas,o que lhes permite ser misturados, removidos ou adicionaos conforme
+                              a necessidade sem impactar no sistema como um todo.
+                            </p>
+                          </div>
+
+                          <div class="background-white">
+                            <h3>Porquê usar ?</h3>
+
+                            <p>
+                              Existem uma série de benefícios ao usar módulos em favor de uma extensa base 
+                              de códigos interdenpendentes. Os mais importantes geralmente são:
+                            </p>
+                            <p>
+                              <strong>1) Manutenibilidade:</strong> Por definição, um módulo é auto-suficiente,
+                              quando bem projetado visa diminuir as dependências em partes da base de código,
+                              tanto quanto possível, de modo que ele possa crescer e melhorar de forma independentes.
+                              Atualizando um único módulo é muito mais fácil quando o mesmo é dissociado de outros
+                              pedaços de códigos.
+                            </p>
+                            <p>Voltando ao exemplo do livro, se você quisesse atualizar um capítulo de seu livro,
+                              seria um pesadelo se para uma pequena alteração em um capítulo, você tivesse que ajustar 
+                              todos os outros. Em vez disso voçê gostaria de escrever cada capítulo de tal forma
+                              que as melhorias poderiam ser feitas individualmente sem afetar uns aos outros.
+                            </p>
+
+
+                            <p>
+                              <strong>2) Namespacing:</strong> Em JavaScript, variáveis fora do escopo de uma
+                              função de nível superior são globais. Devido a isso é comum ter a "poluição de namespace",
+                              onde completamente existem códigos compartilhados sem referência, variáveis globais.
+                            </p>
+                            <p>
+                              Como veremos no final desse post , módulos nos permitem evitar poluição de 
+                              namespace, criando um espaço privado para nossas variáveis.
+                            </p>
+                                 
+                  
+                          <div class="alertDiv">
+                            
+                            <p>Compartilhamento de variáveis globais entre códigos independentes é 
+                            <strong><a target="_blank" href="http://wiki.c2.com/?GlobalVariablesAreBad" >
+                            inaceitável em desenvolvimento</a></strong></p>
+                          
+                          </div>
+
+                            <p>
+                              <strong>3) Reusabilidade: </strong>Vamos ser honestos, todos nós já copiamos
+                              códigos e escrevemos em novos projetos em um ponto ou outro. Por exemplo, vamos
+                              imaginar que você copiou alguns métodos utilitários que escreveu em um projeto
+                              anterior no seu projeto atual.
+                            </p>
+                            <p>
+                              Isso tudo é bom, mas se você encontrar uma melhor maneira de escrever alguma parte
+                              desse código, voc}e teria que voltar e lembrar de atualizar em qualquer outro 
+                              lugar que você escreveu.
+                            </p>
+                            <p>
+                              Isso é obviamente um enorme desperdício de tempo. Não seria muito mais fácil se
+                              houvesse, por exemplo, um módulo que pudesse ser reutilizável? 
+                            </p>
+                        </div> 
+                        
+                        
+                      </div>
+                      <h2 id="webpack">Webpack</h2>
+                      
+                      <div class="content-center">
+                        <div class="background-white">
+                            <h3>O que é webpack?</h3>
+                            <p>
+                              O webpack é um empacotador de módulos estáticos para aplicações
+                              javascript modernas. Ao processar a aplicação o webpack gera
+                              um grafico que mapeia cada módulo e suas dependências e gera
+                              um ou mais pacotes.
+                            </p>
+
+                            <h3>Conceitos Principais</h3>
+                            <h4>Entry</h4>
+                            <p>
+                              Ponto de entrada que indica qual módulo o webpack deve usar para iniciar a 
+                              construção do gráfico interno de dependência. Ao definir um ponto de entrada,
+                              o webpack irá encontrar todas as dependências e fazer a importação.
+                            </p>
+                            <p>
+                              Por padrão o ponto de entrada é definido no arquivo 
+                              <strong>./src/index.js</strong>, mas é possível definir um arquivo diferente
+                              ou até mesmo múltiplos pontos de entrada no arquivo de configuração
+                              <strong>webpack.config.js</strong>
+                              exemplo de configuração do entry: 
+                            </p>
+                            <div class="codeDiv">
+                              <p>module.exports = {</p>
+                              <p class="margintab">entry: <span class="green">
+                                './path/to/my/entry/file.js'</span></p>
+                              <p>}</p>
+                            </div>
+
+                            <h4>Output</h4>
+                            <p>
+                              A propriedade Output define o nome e local do pacote gerado pelo webpack.
+                              O diretório padrão é o <strong>./dist</strong> e o arquivo 
+                              <strong>./dist/main.js</strong>. Para configurar, devemos definir um objeto
+                              <strong>output</strong> com as propriedades <strong>path</strong> e 
+                              <strong>filename</strong> no arquivo de configuração do webpack:
+                            </p>
+                            <div class="codeDiv">
+                                <p>module.exports = {</p>
+                                  <p class="margintab">entry: <span class="green">
+                                    './path/to/my/entry/file.js'</span></p>
+                                  <p class="margintab">output: {</p>
+                                  <p class="margintabX2">
+                                    path: path.<span class="blue">resolve</span>(
+                                      <span class="green">__dirname</span>, 'dist'),
+                                  </p>
+                                  <p class="margintabX2">
+                                    filename: <span class="green">'webpack.bundle.js'</span>
+                                  </p>
+                                  <p class="margintab">}</p>
+                                  <p>}</p>
+                            </div>
+                            <p>
+                              Essa configuração gera um diretorio dist na raiz do projeto e o arquivo
+                              <strong>webpack.bundle.js</strong> no diretorio dist.
+                            </p>
+                            <p>
+                              A variavel do nodeJS <strong>__dirname</strong> contém o nome do 
+                              diretorio onde se encontra o módulo atual.
+                            </p>
+
+                            <h4>Loaders</h4>
+                            <p>
+                              Por padrão o Webpack só entende arquivos JavaScript, para que ele possa 
+                              entender outros tipos de arquivos devemos usar os Loaders que são módulos 
+                              que podem ser instalados separadamente possibilitando que o webpack 
+                              converta esses arquivos em módulos válidos e os adicione ao gráfico de 
+                              dependência.
+                            </p>
+                            <p>
+                              Os Loaders também são utilizados para converter JavaScript de uma versão para 
+                              outra. Para incluirmos os Loaders criamos uma nova seção module no arquivo
+                              de configuração, nessa seção podemos definir uma ou mais <strong>rules</strong>:
+                            </p>
+                            <div class="codeDiv">
+                              <p>cons path = require('path')</p>
+                              <p>const config = {</p>
+                              <p class="margintab">output: {</p>
+                              <p class="margintabX2">filename: 'my-first-webpack-bundle.js'</p>
+                              <p class="margintab">},</p>
+                              <p class="margintab">
+                                <span class="blue">modules: </span>{
+                              </p>
+                              <p class="margintabX2">
+                                <span class="green">rules</span>: [
+                              </p>
+                              <p class="margintabX2">{</p>
+                                <p class="margintabX3">test: /\.js$/,</p>
+                                <p class="margintabX3">exclude: /node_modules/,</p>
+                                <p class="margintabX3">use: {</p>
+                                  <p class="margintabX3">loader: 'babel-loader'</p>
+                                <p class="margintabX3">}</p>
+                              <p class="margintabX2">}</p>
+                              <p class="margintabX2">]</p>
+                              <p class="margintab">}</p>
+                              <p>}</p>
+                          
+                            </div>
+                            <p>
+                              Essa regra diz ao compilador que quando for encontrado um arquivo
+                              que termine com .JS, ignorando os arquivos .js da pasta node_modules 
+                              o babel-loader deverá ser utilizado para gerar o bundle.
+                            </p>
+                            <p>
+                              <strong>test :</strong> define quais arquivos serão filtrados
+                            </p>
+                            <p>
+                              <strong>use :</strong> define qual módulo será usado
+                            </p>
+
+                            <h4>Mode</h4>
+                            <p>
+                              No atributo mode é definido o mode de execução do webpack como produção,
+                              desenvolvimento ou nenhum. De acordo com a opção definida o webpack ativa
+                              otimizações específicas. O ambiente padrão é produção:
+                            </p>
+                            <div class="codeDiv">
+                              <p>module.exports = {</p>
+                              <p class="margintab">
+                                <span class="blue">mode:</span>
+                                'production'
+                              </p>
+                              <p>}</p>
+                            </div>
+
+                            <h4>Resumo geral de configurações com Babel</h4>
+                            <p>Exemplo de como os arquivos deverão ficar:</p>
+                            <li><a class="blue"
+                            target="_blank" 
+                            href="https://github.com/ebertmota/ourSucess.com/blob/master/webpack.config.js">
+                            webpack.config.js</a></li>
+                            <li><a class="pink" 
+                            target="_blank"
+                            href="https://github.com/ebertmota/ourSucess.com/blob/master/package.json">
+                            package.json
+                            </a></li>
+                        </div>
+                      </div>                     
+                      
+                    </div>
               </main>
               <footer>
                   <p>&copy Ebert Mota</p>
