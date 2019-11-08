@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>JS notes</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/notes.css"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <body>
+    <h1 class="font0">Pagina de Javascript</h1>
+    <!-- start HEADER -->
+    <header id="header">
+      <!-- start SEARCH BAR -->
+      <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
+      <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
+        <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
+        <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
+        <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
+      </form>
+      <!-- end SEARCH BAR -->
+      <!-- start MENU SLIDE -->
+      <div id="menuDiv" class="menuDiv">
+        <nav class="menu-slide">
+            <h1 class="font0">Menu de navegação</h1>
+            <ul>
+              <li><a href="../index.html">Notas</a></li>
+              <li><a href="html-notes.html">Html</a></li>
+              <li><a href="css-notes.html">Css</a></li>
+              <li><a href="js-notes.html">JavaScript</a></li>
+              <li><a href="node-notes.html">Node JS</a></li>
+              <li><a href="linux-notes.html">Linux</a></li>
+              <li><a href="database-notes.html">Banco de dados</a></li>
+            </ul> 
+        </nav>
+      </div>
+      <!-- end MENU SLIDE -->
+    </header>
+    <!--end HEADER --> 
+    <div class="conteiner">
+      <main>
+        <h1 class="title">NodeJS</h1>
+      </main>
+      <div class="contentDiv">
+        <h2>NPM</h2>
+        <p>Npm significa Node Package Manager (Gerenciador de pacotes do Node), 
+          é um repositório online para publicação de projetos de código aberto para NodeJs,
+          e é um utilitário de linha de comando que interage com este repositorio online,
+          e ajuda na instalação de pacotes, gerenciamento de versão e gerenciamento de 
+          dependências.
+        </p>
+        <table class="property-values">
+          <tr>
+            <th>Comando</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td>init</td>
+            <td>iniciar o npm em seu diretorio que foi executado.</td>
+          </tr>
+          <tr>
+            <td>run</td>
+            <td>Rodar script criado no package.json</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="contentDiv">
+        <h2>Event-loop</h2>
+        <p>O Event-loop é um mecanismo interno que utiliza internamente as bibliotecas:</p>
+        <p>
+          <a class="atribute" target="_blank" href="http://pod.tst.eu/http://cvs.schmorp.de/libev/ev.pod">libev</a>
+           e <a class="atribute" target="_blank" href="http://software.schmorp.de/pkg/libeio.html">libeio</a> 
+          que são nativas da linguagem C e responsáveis por prover a funcionalidade de assíncrono
+          I/O para o Node.js
+          </p>
+
+        <h3>Como o Event-loop funciona? </h3>
+        <img src="../../assets/event-loop.png" alt=""/>
+        <p>Quando um determinado código emite um evento, ele é enviado para a fila de enventos
+          para que o Event-loop execute-o, e em seguida retorne seu resultado em um callback.
+          Tal Callback é executado através de um função de escuta, ou mais conhecida como funções 
+          de listen  (on, listen etc).
+        </p>
+
+        <p>Basicamente ele é um loop infinito, que em cada iteração verifica se existem
+          novos eventos em sua fila de eventos.
+        </p>
+
+        <p>O EventEmitter é o módulo responsável por emitir eventos, e a maioria das bibliotecas
+          do Node herdam desse módulo suas funcionalidades de emit e listen.
+        </p>
+      </div>
+    </div>
+    <script src="../script/script.js"></script>
+    <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
+  </body>

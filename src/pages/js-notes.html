@@ -1,1089 +1,1265 @@
-  <!DOCTYPE html>
-  <html lang="pt-br">
-      <head>
-          <title>JS notes</title>
-          <meta charset="UTF-8">
-          <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-          <link rel="stylesheet" type="text/css" href="../css/notes.css"/>
-          <meta name="viewport" content="width=device-width,initial-scale=1">
-      </head>
-      <body>
-          <h1 class="font0">Pagina de Javascript</h1>
-          <!-- start HEADER -->
-          <header id="header">
-              <!-- start SEARCH BAR -->
-              <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
-              <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
-                      <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
-                      <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
-                      <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
-              </form>
-              <!-- end SEARCH BAR -->
-              <!-- start MENU SLIDE -->
-              <div id="menuDiv" class="menuDiv">
-                  <nav class="menu-slide">
-                      <h1 class="font0">Menu de navegação</h1>
-                      <ul>
-                          <li><a href="../index.html">Notas</a></li>
-                          <li><a href="html-notes.html">Html</a></li>
-                          <li><a href="css-notes.html">Css</a></li>
-                          <li><a href="js-notes.html">JavaScript</a></li>
-                          <li><a href="linux-notes.html">Linux</a></li>
-                          <li><a href="database-notes.html">Banco de dados</a></li>
-                      </ul> 
-                  </nav>
-              </div>
-              <!-- end MENU SLIDE -->
-          </header>
-          <!--end HEADER --> 
-          <div class="conteiner">
-              <main>
-                  <h1 class="title">JavaScript</h1>
-                  <div class="contentDiv">
-                      <h2>Arrow Function</h2>
-                      <p>As <i>Arrow Functions</i> foram introduzidas no ES6.</p>
-                      <p>e nos permite escrever uma função com uma sintax mais curta.</p>
-                      <p>Exemplo de função sem sintex Arrow:</p>
-                      <div class="dark-codeDiv">
-                          <p><span class="jsvarcolor">hello</span> = <span class="jskeywordcolor">function</span>() {</p>
-                          <p class="margintab"><span class="jskeywordcolor">return</span> <span class="jsstringcolor">"Hello World"</span>;</p>
-                          <p>};</p>
-                      </div>
-                      <p>Exemplo com Arrow Function:</p>
-                      <div class="dark-codeDiv">
-                          <p><span class="jsvarcolor">hello</span> = () => {</p>
-                          <p class="margintab"><span class="jskeywordcolor">return</span> <span class="jsstringcolor">"Hello World"</span>;</p>
-                          <p>};</p>
-                      </div>
-                      <p>Se a função tiver e receber somente uma instrução ela pode ficar ainda mais curta:</p>
-                      <div class="dark-codeDiv">
-                          <p><span class="jsvarcolor">hello</span> = () => <span class="jsstringcolor">"Hello World"</span>;</p>
-                      </div>
-                      <h3>Arrow Function com parâmetros</h3>
-                      <div class="dark-codeDiv">
-                          <p><span class="jsvarcolor">hello</span> = (val) => <span class="jsstringcolor">"Hello World"</span> + val ;</p>
-                      </div>
-                      <p>Se voce tiver somente um parâmetro pode tirar os parênteses:</p>
-                      <div class="dark-codeDiv">
-                          <p><span class="jsvarcolor">hello</span> = val => <span class="jsstringcolor">"Hello World"</span> + val ;</p>
-                      </div>
-                  </div>
-                  
-                  <div class="contentDiv">
-                      <h2>Tratamento de Dados</h2>
-                      <p>o + pode servir tanto para adição ou concatenação.</p>
-                      <p class="dark-codeDiv"><span class="jscyancolor">number</span> <span class="jskeywordcolor">+</span> <span class="jscyancolor">number</span> => adição</p>
-                      <p class="dark-codeDiv"><sapn class="jsstringcolor">string</sapn> <span class="jskeywordcolor">+</span> <span class="jsstringcolor">string</span> => concatenação</p>
-                  
-                      <p>Para converter uma string em número:</p>
-                      <div class="dark-codeDiv">
-                          <p><span class="jscyancolor">Number</span>.<span class="jsvarcolor">parseInt</span>(n) <span class="jscommentcolor">
-                              // conversão para inteiro</span>
-                          </p>
-                          <p><span class="jscyancolor">Number</span>.<span class="jsvarcolor">parseFloat</span>(n)<span class="jscommentcolor">
-                              // conversão para float(flutuante)</span>
-                          </p>
-                          <p><span class="jscyancolor">Number</span>(n) <span class="jscommentcolor">
-                              // converte para numero mas deixa o js decidir se vai ser int ou float</span>
-                          </p>
-                      </div>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>JS notes</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/notes.css"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <body>
+    <h1 class="font0">Pagina de Javascript</h1>
+    
+    <header id="header">
+      <!-- start SEARCH BAR -->
+      <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
+      <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
+        <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
+        <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
+        <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
+      </form>
+      <!-- end SEARCH BAR -->
+      <!-- start MENU SLIDE -->
+      <div id="menuDiv" class="menuDiv">
+        <nav class="menu-slide">
+          <h1 class="font0">Menu de navegação</h1>
+          <ul>
+            <li><a href="../index.html">Notas</a></li>
+            <li><a href="html-notes.html">Html</a></li>
+            <li><a href="css-notes.html">Css</a></li>
+            <li><a href="js-notes.html">JavaScript</a></li>
+            <li><a href="node-notes.html">Node JS</a></li>
+            <li><a href="linux-notes.html">Linux</a></li>
+            <li><a href="database-notes.html">Banco de dados</a></li>
+          </ul> 
+        </nav>
+      </div>
+    <!-- end MENU SLIDE -->
+    </header>
 
-                      <p>Para converter de número para string:</p>
-                      <p class="dark-codeDiv"><span class="jscyancolor">String</span>(n)</p>
+    <div class="conteiner">
+      <main>
+        <h1 class="title">JavaScript</h1>
 
-                      <h3>Formatando Strings</h3>
-                      <p>Template String</p>
-                      <p>são envolvidas por acentos graves(crases) ` `</p>
-                      <div class="dark-codeDiv">
-                          <p><span class="jskeywordcolor">var</span> a <span class="jskeywordcolor">=</span> <span class="jsnumbercolor">5</span></p>
-                          <p><span class="jskeywordcolor">var</span> b <span class="jskeywordcolor">=</span> <span class="jsnumbercolor">10</span></p>
-                          <p>
-                              <span class="jscyancolor">console.log</span>(<span class="jsstringcolor">`Quinze é <span class="jskeywordcolor">
-                                  ${<span class="jsdefaultcolor">a <span class="jskeywordcolor">+</span> b</span>}</span>e não 
-                                  <span class="jskeywordcolor">${<span class="jsnumbercolor">2</span><span class="jskeywordcolor">+</span> 
-                                  <span class="jsdefaultcolor">a <span class="jskeywordcolor">+</span> b</span>}</span>`
-                              </span>)
-                          </p>
-                      </div>
-                      <p>Algumas formatações com strings:</p>
-                      <div class="dark-codeDiv">
-                          <p><span class="jskeywordcolor">var</span> s = <span class="jsstringcolor">"string"</span></p>
-                          <p>s.<span class="jsvarcolor">length</span> <span class="jscommentcolor">// retorna quantos caracteres a string tem</span></p>
-                          <p>s.<span class="jsvarcolor">toUpperCase</span>() <span class="jscommentcolor">// tudo para MAIÚSCULA</span></p>
-                          <p>s.<span class="jsvarcolor">toLowerCase</span>() <span class="jscommentcolor">// tudo para minúscula</span></p>
-                      </div>
-                  </div>
+        <!-- FUNCTIONS -->
+        <div class="contentDiv">
+          <h2>Functions</h2>
+          <h3>Factory Functions</h3>
+          <p>Em Javascript qualquer função pode retornar um Objeto.</p>
+          <p>
+            Quando uma função retorna um Objeto sem o uso da keyword 
+            <span class="redAtribute">new</span> é uma Factory Function.
+            Exemplo:
+          </p>
+          <div class="dark-codeDiv">
+            <p>
+              <span class="jskeywordcolor">function</span> personFactory (<span 
+              class="jsparametercolor">name</span>) {
+            </p>
+            <p class="margintab"><span class="jskeywordcolor">return</span> {</p>
+            <p class="margintabX2">name<span class="jskeywordcolor">:</span> name ,</p>
+            <p class="margintabX2">
+              type<span class="jskeywordcolor">:</span>
+              <span class="jsstringcolor">'person'</span>
+            </p>
+            <p class="margintab">}</p>
+            <p>}</p>
 
-                  <div class="contentDiv">
-                      <h2>For of</h2>
-                      <p>O loop <strong>for...of</strong> percorre Objetos interativos incluindo Array,Map,Set,
-                      Arguments etc.
-                      </p>
-                      <p>Exemplo de iteração com Array:</p>
-                      <div class="dark-codeDiv">
-                              <p><sapn class="jskeywordcolor">var</sapn> usuarios <span class="jskeywordcolor">=</span> [</p>
-                              <p class="margintab">{</p>
-                                  <p class="margintabX2">nome<span class="jskeywordcolor">:</span>
-                                      <span class="jsstringcolor">'Diego'</span>,</p>
-                                  <p class="margintabX2">habilidades<span class="jskeywordcolor">:</span> 
-                                      [ <span class="jsstringcolor">"Javascript"</span>, <span class="jsstringcolor">"ReactJS"</span>, 
-                                      <span class="jsstringcolor">"Redux"</span> ]</p>
-                              <p class="margintab">},</p>
-                              <p class="margintab">{</p>
-                                  <p class="margintabX2">nome<span class="jskeywordcolor">:</span>
-                                      <span class="jsstringcolor">'Gabriel'</span>,</p>
-                                  <p class="margintabX2">habilidades<span class="jskeywordcolor">:</span>
-                                      [ <span class="jsstringcolor">"VueJS"</span>, <span class="jsstringcolor">"Ruby on Rails"</span>, 
-                                      <span class="jsstringcolor">"Elixir"</span> ]</p>
-                              <p class="margintab">}</p>
-
-                              <p class="jscommentcolor">// Objetivo: Escrever uma função que poduza o seguinte resultado:</p>
-                              <p class="jscommentcolor margintab">//  O Diego possui as habilidades: Javascript, ReactJS, Redux</p>
-                              <p class="jscommentcolor margintab">/// O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir</p>
-
-                              <p><span class="jskeywordcolor">function</span> <span class="jsvarcolor">mostarDadosDoUsurario</span>() {</p>
-                              <p class="margintab jscommentcolor">// sem utilizar for of</p>
-                              <p class="margintab"><span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>
-                                  (<span class="jsstringcolor">`O <span class="jskeywordcolor">${
-                                      <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 0 </span>].nome</span>
-                                      }</span> possui as habilidades: 
-                                      <span class="jskeywordcolor">${
-                                      <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 0 </span>].habilidades</span>
-                                      }</span>`</span>);</p>
-
-                              <p class="margintab"><span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>
-                                  (<span class="jsstringcolor">`O <span class="jskeywordcolor">${
-                                      <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 1 </span>].nome</span>
-                                      }</span> possui as habilidades: 
-                                      <span class="jskeywordcolor">${
-                                      <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 1 </span>].habilidades</span>
-                                      }</span>`</span>);</p>
-
-                              <p class="margintab jscommentcolor">// utilizando for of</p>
-                                  <p class="margintab"><span class="jskeywordcolor">for</span> (<span class="jskeywordcolor">const</span>
-                                      value <span class="jskeywordcolor">of</span> usuarios){</p>
-                                  
-                                    <p class="margintabX2"> <span class="jscyancolor">console<span class="jsdefaultcolor">.</span>log</span>
-                                        (<span class="jsstringcolor">`O <span class="jskeywordcolor">${
-                                            <span class="jsdefaultcolor">value.nome </span>}</span>
-                                              possui as habilidades: 
-                                              <span class="jskeywordcolor">${
-                                                  <span class="jsdefaultcolor">value.habilidades.
-                                                  <span class="jsvarcolor">join</span>(<span class="jsstringcolor"> '-' </span>)
-                                              </span>}</span><span class="jsdefaultcolor">)</span>`</span>;
-                                      </p>
-                                  <p class="margintab">}</p>
-                              <p>];</p>
-
-                            
-                      </div>
-                      <p>Sintaxe:</p>
-                      <div class="dark-codeDiv">
-                          <p><span class="jskeywordcolor">for</span> (variavel 
-                              <span class="jskeywordcolor">of</span> iteravel) {
-                          </p>
-                          <p class="margintab">declaração</p>
-                          <p>}</p>
-
-                          <p class="jscommentcolor">// varaiavel: A cada iteração, um valor de uma propriedade diferente é
-                                                      atribuido a variavel</p>
-                          <p class="jscommentcolor">// iteravel: Objeto cujos atributos serão iterados
-                                                      (nome de um array por exemplo)</p>
-                      </div>
-                  </div>
-
-                  <div class="contentDiv">
-                      <h1 class="ES6">ES6</h1>
-                      <h2>Configurando projeto com <strong>Babel</strong> e <em>Yarn</em></h2>
-
-                      
-                      <p>Apos ter instalado Node Js e o Yarn....</p>
-                      <p>Dentro da pasta de seu projeto rode <span class="jskeywordcolor">yarn init</span></p>
-                      <p>Neste momento o comando cria um arquivo <em>package.json</em> dentro de seu projeto,
-                      este arquivo vai armazenar as informações de depencias da nossa aplicação como o documento
-                      abaixo:
-                      </p>
-
-                      <div class="dark-codeDiv">
-                          <p>{</p>
-                              <p class="margintab"><span class="jscyancolor">"name"</span>
-                                  <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"es6"</span>,</p>
-                              <p class="margintab"><span class="jscyancolor">"version"</span>
-                                  <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"1.0.0"</span>,</p>
-                              <p class="margintab"><span class="jscyancolor">"main"</span>
-                                  <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"index.js"</span>,</p>
-                              <p class="margintab"><span class="jscyancolor">"license"</span>
-                                  <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"MIT"</span>,</p>
-                          <p>}</p>
-                      </div>
-                      <h4>Instalando Dependencias do <em>Babel</em></h4>
-                      <div class="dark-codeDiv">
-                          <p class="jscyancolor">@babel/cli</p>
-                          <p class="jscommentcolor"> // Permite trabalhar com a interface gráfica do babel em linha de comando</p>
-                      </div>
-
-                      <div class="dark-codeDiv">
-                          <p class="jscyancolor">@babel/preset-env</p>
-                          <p class="jscommentcolor">// Vai entender qual é o ambiente que você está trabalhando
-                              (Ex: browser,Node,React etc)
-                          </p>
-                      </div>
-
-                      <div class="dark-codeDiv">
-                          <p class="jscyancolor">@babel/core</p>
-                          <p class="jscommentcolor">// Esse modulo core é o centro nervoso do babel</p>
-                      </div>
-
-                      <p>As dependencias irão criar um arquivo <span class="atribute">yarn.lock</span> onde será armazenado o cache do Yarn,
-                              e uma pasta <span class="atribute">node_modules</span> que irá armazenar todas as dependencias do projeto(as dependencias das dependencias etc)
-                              OBS: adicionar a pasta node_modules/ no seu <span class="atribute">.gitignore</span>
-                      </p>
-                      <h4>Configurando Babel</h4>
-                      <p>Para fazer a configuração crie um arquivo na raiz de seu projeto com o nome de 
-                          <span class="jskeywordcolor"><strong>.babelrc</strong></span>, e dentro desse
-                          arquivo adicione as seguintes linhas:
-                      </p>
-                      <div class="dark-codeDiv">
-                              <p>{</p>
-                                  <p class="margintab"><span class="jscyancolor">"presets"</span>
-                                      <span class="jskeywordcolor">:</span> 
-                                      [<span class="jsstringcolor">"@babel/preset-env"</span>]</p>
-                              <p>}</p>
-                      </div>
-                      <p>Agora dentro do seu packge.json você criará uma nova propriedade:</p>
-                      <div class="dark-codeDiv">
-                          <p><span class="jscyancolor">"scripts"</span>
-                          <span class="jskeywordcolor">:</span> {</p>
-                              <p class="margintab"><span class="jscyancolor">"dev"</span> <span class="jskeywordcolor">:</span>
-                              <span class="jsstringcolor">"babel ./main.js -o ./bundle.js"</span>
-                              </p>
-                          <p>}</p>
-                      </div>
-                      
-                      <p>o <strong class="atribute">"scripts"</strong> é onde você pode adicionar funcionalidades para usar no terminal com o yarn</p>
-                      <p>o <strong class="atribute">"dev"</strong> é o nome do seu script que executa o babel</p>
-                      <p><strong class="atribute">"babel ./main.js -o bundle.js -w"</strong> => basicamente executa o babel passando os parametros
-                          -o e -w.</p>
-                      <p>O <strong class="atribute">-o</strong> envia o conteudo do main.js para o bundle.js tornando ele compativel</p>
-                      <p>E o <strong class="atribute">-w</strong> ativa a monitoração para ele atualizar as alterações no main.js automaticamente
-                          sem ser necessario você rodar o comando toda hora.</p>
-
-                      <p>Assim então toda funcionalidade nova do Javascript que você inserir no <em>main.js</em>
-                          sera convertida para ser compativel em diversos browsers que não suportam ainda estas
-                          funcionalidades, e toda essa conversão vai pro arquivo <em>bundle.js</em>
-                      </p>
-                      <p>Por isso chame o <strong>bundle.js</strong> em vez do <em>main.js</em> na sua pagina
-                      html.</p>
-
-                      <p>Depois de todo o procedimento nosso <em>package.json</em> ficará assim:</p>
-                      <div class="dark-codeDiv">
-                          <p>{</p>
-                              <p class="margintab"><span class="jscyancolor">"name"</span>
-                                  <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"es6"</span>,</p>
-                              <p class="margintab"><span class="jscyancolor">"version"</span>
-                                  <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"1.0.0"</span>,</p>
-                              <p class="margintab"><span class="jscyancolor">"main"</span>
-                                  <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"index.js"</span>,</p>
-                              <p class="margintab"><span class="jscyancolor">"license"</span>
-                                  <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"MIT"</span>,</p>
-                              <p class="margintab"><span class="jscyancolor">"dependencies"</span>
-                                  <span class="jskeywordcolor">:</span> {</p>
-                              <p class="margintabX2"><span class="jscyancolor">"@babel/cli"</span>
-                                  <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"^7.6.2"</span>,</p>
-                              <p class="margintabX2"><span class="jscyancolor">"@babel/core"</span>
-                                  <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"^7.6.2"</span>,</p>
-                              <p class="margintabX2"><span class="jscyancolor">"@babel/preset-env"</span>
-                                  <span class="jskeywordcolor">:</span>   <span class="jsstringcolor">"^7.6.2"</span></p>
-                              <p class="margintab">}</p>
-                          <p>}</p>
-                      </div>  
-                      
-
-                  </div>
-                  
-                  <div class="contentDiv">
-                      <h2>Class</h2>
-                      <p>Uma classe é um tipo de função, mas em vez de usar a keyword <span class="redAtribute">function</span>
-                      para inciá-la, usamos a keyword <span class="redAtribute">class</span>, e as propriedades são atribuídas
-                      dentro de um método <span class="redAtribute">constructor()</span>.</p>
-
-                      <h3>constructor</h3>
-                      <p>O Constructor é um método especial para criar e inicializar um objeto criado a partir de uma classe.</p>
-                      <p><strong>Apenas um</strong> método especial com o nome constructor pode existir em uma classe, se a classe
-                      conter mais de um constructor() será mostrado o erro  <span class="atribute">SyntaxError</span>.</p>
-                      <p>É o primeiro método instanciado todo vez que executarmos uma classe.</p>
-                      <p>No constructor podemos fazer ações que disparam assim que o objeto é criado ou iniciar variaveis.</p>
-
-                      <h3>Definição</h3>
-                      <p>Use a keyword <span class="redAtribute">class</span> para criar uma classe e <strong>sempre</strong>
-                      adicione um metodo constructor.</p>
-                      <p>O método constructor vai ser chamado cada vez que o objeto for iniciado.</p>
-                      <p>Exemplo:</p>
-                      
-                      <div class="dark-codeDiv">
-                              <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
-                                  <p class="margintab"><span class="jskeywordcolor">constructor</span>
-                                      (<span class="jsparametercolor">marca</span>, <span class="jsparametercolor">ano</span>,
-                                      <span class="jsparametercolor">situacao</span>){</p>
-
-                                      <p class="margintabX2"><span class="jsnumbercolor">this</span>.nome_do_carro <span class="jskeywordcolor">=</span> 
-                                          marca;</p>
-                                      <p class="margintabX2"><span class="jsnumbercolor">this</span>.ano_do_carro <span class="jskeywordcolor">=</span> 
-                                          ano;</p> 
-                                      <p class="margintabX2"><span class="jsnumbercolor">this</span>.situacao_do_carro <span class="jskeywordcolor">=</span>
-                                          situacao;</p>
-                                  <p class="margintab">};</p>
-                              <p>};</p>
-
-                              <p><span class="jskeywordcolor">let</span> meuGolQuadrado <span class="jskeywordcolor">=</span> 
-                                  <span class="jskeywordcolor bold">new</span> <span class="jscyancolor">Carro</span> 
-                              (<span class="jsstringcolor">'Gol Quadrado'</span>,
-                              <span class="jsstringcolor">'2010'</span>, <span class="jsstringcolor">'Usado'</span>);</p>
-
-                              <p><span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>(meuGolQuadrado.nome_do_carro
-                                  +meuGolQuadrado.ano_do_carro+meuGolQuadrado.situacao_do_carro)</p>
-
-                              <p>Console > Gol Quadrado 2010 usado</p>
-                        
-                      </div>
-
-                      <h3>Metodos</h3>
-                      <p>O método contructor é especial, é onde você inicializa propriedade, é chamado automaticamente quando 
-                          uma classe é iniciada.</p>
-                      <p>E ele precisa ter o nome exato "constructor", de fato se você não tiver um método constructor, o 
-                          Javascript adicionará um método constructor invisível e vazio.
-                      </p>
-                      <p>Você também é livre para criar seus próprios métodos, a sintaxe deve ser familiar:</p>
-
-                      <div class="dark-codeDiv">
-                              <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
-                                  <p class="margintab"><span class="jskeywordcolor">constructor</span>
-                                      (<span class="jsparametercolor">marca</span>){</p>
-                                      <p class="margintabX2"><span class="jsnumbercolor">this</span>.nome_do_carro 
-                                          <span class="jskeywordcolor">=</span> marca;</p>
-                                  <p class="margintab">}</p>
-                                  <p class="margintab"><span class="jsvarcolor">present</span>() {</p>
-                                      <p class="margintabX2"><span class="jskeywordcolor">return</span> 
-                                          <span class="jsstringcolor">"Eu tenho um "</span> <span class="jskeywordcolor">+</span>
-                                          <span class="jsnumbercolor">this</span>.nome_do_carro;</p>
-                                  <p class="margintab">}</p>
-                              <p>}</p>
-                      
-                              <p><span class="jskeywordcolor">var</span> meuCarro 
-                                  <span class="jskeywordcolor">=</span> <span class="jskeywordcolor bold">new</span>
-                                  <span class="jscyancolor">Carro</span>(<span class="jsstringcolor">'Gol Quadrado'</span>);</p>
-                              
-                              <p><span class="jscyancolor">console</span>.<span class="jscyancolor">log(</span>
-                                  meuCarro.<span class="jsvarcolor">present</span>());</p>
+            <p>
+              <span class="jscyancolor">console.log</span>(
+              <span class="jsvarcolor">personFactory</span>(
+                <span class="jsstringcolor">'Ebert'</span> ));
+            </p>
+          </div>
           
-                      </div>
+          <table class="property-values">
+            <tr>
+              <th>Vantagens</th>
+              <th>Desvantagens</th>
+            </tr>  
+            <tr>
+              <td>Facilita a criação de objetos com o reuso </td>
+              <td>Um pouco mais burocrática e verbosa em relação a constructor</td>
+            </tr>
+            <tr>
+              <td>Mais simples e mais clara que a constructor</td>
+              <td>Um pouco menos performática em relação a constructor</td>
+            </tr>
+            <tr>
+              <td>O possível uso de Closures.</td>
+            </tr>
+            <tr>
+              <td>Restringe o uso do this.</td>
+            </tr>
+          </table>
+          <br><br><br><br>
+    
+      
+         
+         
 
-                      <p>Como você viu no exemplo acima, você chama o método present() que consulta o método contructor, você pode
-                          passar qualquer parâmetro entre parênteses para o método present('qualquerParametro')
-                      </p>
+          <h3>Constructor Funtions</h3>
+          <p>Por convenção sempre criar Constructor Functions usando a primeira letra em Uppercase.</p>
+          <p>
+            Um constructor é basicamente uma função. Ela pode ser executada como uma função ou 
+            pode ser utilizada para instanciar um objeto utilizando a keyword 
+            <span class="redAtribute">new</span>
+          </p>
+          <div class="alertDiv">
+            <p>Se você <strong>não usar</strong> o new, a função não utiliza o prototype e 
+            é executada como uma função qualquer. E o this é referenciado no escopo global -window</p>
+          </div>
+          <p>Exemplo:</p>
+          <div class="dark-codeDiv">
+            <p>
+              <span class="jskeywordcolor">function</span> Cachorro( 
+                <span class="jsparamcolor">nome , idade</span> ) {
+            </p>
+            <p class="margintab">
+              <span class="jsnumbercolor">this</span>.nome
+              <span class="jskeywordcolor">=</span> nome
+            </p>
+            <p class="margintab">
+                <span class="jsnumbercolor">this</span>.idade
+                <span class="jskeywordcolor">=</span> idade
+            </p>
+            <p>}</p>
 
-                      <h3>Métodos Static</h3>
-                      <p>Os métodos Static são definidos na própria classe e não no <em>prototype</em>.</p>
-                      <p>Isso significa que você não pode chamar um método Static no objeto (meuCarro), mas
-                          na classe (Carro)</p>
+            <p>
+              <span class="jskeywordcolor">const</span> cachorro 
+              <span class="jskeywordcolor">=</span> 
+              <strong><span class="jskeywordcolor">new</span>
+              <span class="jscyancolor">Cachorro</span></strong>
+              (<span class="jsstringcolor">'Ebert'</span>, 18) ;
+            </p>
+          </div>
+          <table class="property-values">
+              <tr>
+                <th>Vantagens</th>
+                <th>Desvantagens</th>
+              </tr>  
+              <tr>
+                <td>Menos verbosa</td>
+                <td>Sempre que instanciarmos um novo objeto, será criado um espaço na memória.</td>
+              </tr>
+              <tr>
+                <td>Possibilidade de criar métodos e propriedades privadas</td>
+                <td>Utiliza o operador new que pode ser incompreendido por muitos.</td>
+              </tr>
+              <tr>
+                <td>Reusabilidade</td>
+                <td>Uso do this.</td>
+              </tr>
+              <tr>
+                <td>Ideais para objetos que podem existir como múltiplas instâncias no mesmo contexto.</td>
+              </tr>
+              <tr>
+                <td>prototype é mais eficiente tanto em uso de memória quanto de CPU.</td>
+              </tr>
+              <tr>
+                <td>Instanciar um objeto sem se preocupar com efeitos colaterais.</td>
+              </tr>
+              <tr>
+                <td>Ajuda a ter um código padronizado, flexível e seguro.</td>
+              </tr>
+            </table>
+        </div>
 
-                          <div class="dark-codeDiv">
-                                  <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
-                                      <p class="margintab"><span class="jskeywordcolor">constructor</span>
-                                          (<span class="jsparametercolor">marca</span>){</p>
-                                          <p class="margintabX2"><span class="jsnumbercolor">this</span>.nome_do_carro 
-                                              <span class="jskeywordcolor">=</span> marca;</p>
-                                      <p class="margintab">}</p>
-                                      <p class="margintab"><span class="jskeywordcolor">static</span>
-                                          <span class="jsvarcolor">Hello</span>(<span class="jsparametercolor">parametro</span>){</p>
-                                          <p class="margintabX2"><span class="jskeywordcolor">return</span> 
-                                              <span class="jsstringcolor">"Hello "</span> <span class="jskeywordcolor">+</span>
-                                              parametro.nome_do_carro;</p>
-                                      <p class="margintab">}</p>
-                                  <p>}</p>
-                          
-                                  <p><span class="jskeywordcolor">var</span> meuCarro <span class="jskeywordcolor">=</span> 
-                                      <span class="jskeywordcolor bold">new</span>
-                                      <span class="jscyancolor">Carro</span>(<span class="jsstringcolor">'Gol Quadrado'</span>);</p>
-                                  
-                                  <p><span class="jscyancolor">console</span>.<span class="jscyancolor">log(</span>
-                                      Carro.<span class="jsvarcolor">Hello</span>(meuCarro));</p>
-              
-                          </div>
-                          <h3>Sub Classes ou Herança/Inheritance</h3>
-                          <p>Para criar uma classe com herança, use a keyword <span class="redAtribute">extends</span>.</p>
-                          <p>A classe criada com extends herda todos os métodos da outra classe.</p>
-                          <div class="dark-codeDiv">
-                              <p>Exemplo:</p>
-                              <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
-                                  <p class="margintab"><span class="jskeywordcolor">constructor</span>
-                                      (<span class="jsparametercolor">marca</span>){</p>
-                                      <p class="margintabX2"><span class="jsnumbercolor">this</span>.nome_do_carro 
-                                          <span class="jskeywordcolor">=</span> marca;</p>
-                                  <p class="margintab">}</p>
-                                  <p class="margintab"><span class="jsvarcolor">present</span>() {</p>
-                                      <p class="margintabX2"><span class="jskeywordcolor">return</span> 
-                                          <span class="jsstringcolor">"Eu tenho um "</span> <span class="jskeywordcolor">+</span>
-                                          <span class="jsnumbercolor">this</span>.nome_do_carro;</p>
-                                  <p class="margintab">}</p>
-                              <p>}</p>
 
-                              <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Modelo</span> 
-                              <span class="jskeywordcolor">extends</span> <span class="jscyancolor">Carro</span> {</p>
-                                  <p class="margintab"><span class="jskeywordcolor">constructor</span>
-                                      (<span class="jsparametercolor">marca</span>,<span class="jsparametercolor">modelo)</span> 
-                                      {</p>
-                                      <p class="margintabX2"><span class="jsnumbercolor">super</span>(marca);</p>
-                                      <p class="margintabX2"><span class="jsnumbercolor">this</span>.modelo 
-                                      <span class="jskeywordcolor">=</span> modelo;</p>
-                                  <p class="margintab">}</p>
-                                  <p class="margintab"><span class="jsvarcolor">show</span>() {</p>
-                                      <p class="margintabX2">
-                                          <span class="jskeywordcolor">return</span>
-                                          <span class="jsnumbercolor">this</span>.<span class="jsvarcolor">present</span>() 
-                                          <span class="jskeywordcolor">+</span> <span class="jsstringcolor">
-                                          ', que é um '</span> <span class="jskeywordcolor">+</span> 
-                                          <span class="jsnumbercolor">this</span>.modelo;
-                                      </p>
-                                  <p class="margintab">}</p>
-                              <p>}</p>
 
-                              <p><span class="jskeywordcolor">var</span> meuCarro <span class="jskeywordcolor">=</span>
-                                  <span class="jskeywordcolor bold">new</span> <span class="jscyancolor">Modelo</span>
-                                  (<span class="jsstringcolor">'Ford', 'Mustang'</span>);</p>
 
-                              <p><span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>
-                              ( meuCarro.<span class="jsvarcolor">show</span>() );</p>
 
-                          </div>
+        <!-- ARROW FUNCTION -->
+        <div class="contentDiv">
+          <h2>Arrow Function</h2>
+          <p>As <i>Arrow Functions</i> foram introduzidas no ES6.</p>
+          <p>e nos permite escrever uma função com uma sintax mais curta.</p>
+          <p>Exemplo de função sem sintex Arrow:</p>
+          <div class="dark-codeDiv">
+            <p><span class="jsvarcolor">hello</span> = <span class="jskeywordcolor">function</span>() {</p>
+            <p class="margintab"><span class="jskeywordcolor">return</span> <span class="jsstringcolor">"Hello World"</span>;</p>
+            <p>};</p>
+          </div>
+          <p>Exemplo com Arrow Function:</p>
+          <div class="dark-codeDiv">
+            <p><span class="jsvarcolor">hello</span> = () => {</p>
+            <p class="margintab"><span class="jskeywordcolor">return</span> <span class="jsstringcolor">"Hello World"</span>;</p>
+            <p>};</p>
+          </div>
+          <p>Se a função tiver e receber somente uma instrução ela pode ficar ainda mais curta:</p>
+          <div class="dark-codeDiv">
+            <p><span class="jsvarcolor">hello</span> = () => <span class="jsstringcolor">"Hello World"</span>;</p>
+          </div>
+          <h3>Arrow Function com parâmetros</h3>
+          <div class="dark-codeDiv">
+            <p><span class="jsvarcolor">hello</span> = (val) => <span class="jsstringcolor">"Hello World"</span> + val ;</p>
+          </div>
+          <p>Se voce tiver somente um parâmetro pode tirar os parênteses:</p>
+          <div class="dark-codeDiv">
+            <p><span class="jsvarcolor">hello</span> = val => <span class="jsstringcolor">"Hello World"</span> + val ;</p>
+          </div>
+          </div>
+                  
+          <!-- TRATAMENTO DE DADOS -->
+          <div class="contentDiv">
+            <h2>Tratamento de Dados</h2>
+            <p>o + pode servir tanto para adição ou concatenação.</p>
+            <p class="dark-codeDiv"><span class="jscyancolor">number</span> <span class="jskeywordcolor">+</span> <span class="jscyancolor">number</span> => adição</p>
+            <p class="dark-codeDiv"><sapn class="jsstringcolor">string</sapn> <span class="jskeywordcolor">+</span> <span class="jsstringcolor">string</span> => concatenação</p>
+            <p>Para converter uma string em número:</p>
+            <div class="dark-codeDiv">
+              <p>
+                <span class="jscyancolor">Number</span>.<span class="jsvarcolor">parseInt</span>(n) <span class="jscommentcolor">
+                // conversão para inteiro</span>
+              </p>
+              <p>
+                <span class="jscyancolor">Number</span>.<span class="jsvarcolor">parseFloat</span>(n)<span class="jscommentcolor">
+                // conversão para float(flutuante)</span>
+              </p>
+              <p>
+                <span class="jscyancolor">Number</span>(n) <span class="jscommentcolor">
+                // converte para numero mas deixa o js decidir se vai ser int ou float</span>
+              </p>
+            </div>
+            <p>Para converter de número para string:</p>
+            <p class="dark-codeDiv"><span class="jscyancolor">String</span>(n)</p>
+            <h3>Formatando Strings</h3>
+            <p>Template String</p>
+            <p>são envolvidas por acentos graves(crases) ` `</p>
+            <div class="dark-codeDiv">
+              <p><span class="jskeywordcolor">var</span> a <span class="jskeywordcolor">=</span> <span class="jsnumbercolor">5</span></p>
+              <p><span class="jskeywordcolor">var</span> b <span class="jskeywordcolor">=</span> <span class="jsnumbercolor">10</span></p>
+              <p>
+                <span class="jscyancolor">console.log</span>(<span class="jsstringcolor">`Quinze é <span class="jskeywordcolor">
+                ${<span class="jsdefaultcolor">a <span class="jskeywordcolor">+</span> b</span>}</span>e não 
+                <span class="jskeywordcolor">${<span class="jsnumbercolor">2</span><span class="jskeywordcolor">+</span> 
+                <span class="jsdefaultcolor">a <span class="jskeywordcolor">+</span> b</span>}</span>`
+                </span>)
+              </p>
+            </div>
+            <p>Algumas formatações com strings:</p>
+            <div class="dark-codeDiv">
+              <p><span class="jskeywordcolor">var</span> s = <span class="jsstringcolor">"string"</span></p>
+              <p>s.<span class="jsvarcolor">length</span> <span class="jscommentcolor">// retorna quantos caracteres a string tem</span></p>
+              <p>s.<span class="jsvarcolor">toUpperCase</span>() <span class="jscommentcolor">// tudo para MAIÚSCULA</span></p>
+              <p>s.<span class="jsvarcolor">toLowerCase</span>() <span class="jscommentcolor">// tudo para minúscula</span></p>
+            </div>
 
-                          <p>O método <span class="redAtribute">super()</span> se refere a classe do pai.</p>
-                          <p>Ao chamar o método <span class="redAtribute">super()</span> no método constructor,
-                          chamamos o método constructor do Pai e obtemos acesso às propriedades e métodos do pai.</p>    
-                  </div>
-                  <div class="contentDiv">
-                    <h2>Promisses</h2>
-                    <p>Promisses são um conceito essencial do JavaScript. Elas estão presentes em 
-                      praticamente todo o ecossistema da linguagem.
-                    </p>
-                    <p>Promisses são um padrão de desenvolvimento que visam representar a conclusão 
-                      de operações assincronas.
-                    </p>
-                    <p>Exemplo de uma função normal:</p>
+            <!-- FOR OF -->
+            <div class="contentDiv">
+              <h2>For of</h2>
+              <p>
+                O loop <strong>for...of</strong> percorre Objetos interativos incluindo Array,Map,Set,
+                Arguments etc.
+              </p>
+              <p>Exemplo de iteração com Array:</p>
+              <div class="dark-codeDiv">
+                <p><sapn class="jskeywordcolor">var</sapn> usuarios <span class="jskeywordcolor">=</span> [</p>
+                <p class="margintab">{</p>
+                <p class="margintabX2">
+                  nome<span class="jskeywordcolor">:</span>
+                  <span class="jsstringcolor">'Diego'</span>,
+                </p>
+                <p class="margintabX2">
+                  habilidades<span class="jskeywordcolor">:</span> 
+                  [ <span class="jsstringcolor">"Javascript"</span>, <span class="jsstringcolor">"ReactJS"</span>, 
+                  <span class="jsstringcolor">"Redux"</span> ]
+                </p>
+                <p class="margintab">},</p>
+                <p class="margintab">{</p>
+                <p class="margintabX2">nome<span class="jskeywordcolor">:</span>
+                <span class="jsstringcolor">'Gabriel'</span>,</p>
+                <p class="margintabX2">habilidades<span class="jskeywordcolor">:</span>
+                [ <span class="jsstringcolor">"VueJS"</span>, <span class="jsstringcolor">"Ruby on Rails"</span>, 
+                <span class="jsstringcolor">"Elixir"</span> ]</p>
+                <p class="margintab">}</p>
 
-                    <div class="dark-codeDiv">
+                <p class="jscommentcolor">// Objetivo: Escrever uma função que poduza o seguinte resultado:</p>
+                <p class="jscommentcolor margintab">//  O Diego possui as habilidades: Javascript, ReactJS, Redux</p>
+                <p class="jscommentcolor margintab">/// O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir</p>
 
-                      <p><span class="jskeywordcolor">function</span> <span class="jsvarcolor">sumNumbers</span> ( ) {</p>
-                      <p class="margintab"><span class="jskeywordcolor">let</span> result <span class="jskeywordcolor"> 
-                          <span class="jsnumbercolor">1</span> + <span class="jsnumbercolor">1</span></span>;</p> 
-                      <p class="margintab"><span class="jskeywordcolor">if</span> (result <span class="jskeywordcolor">==</span>
-                        <span class="jsnumbercolor">2</span>) {</p>
-                      <p class="margintabX2"><span class="jsvarcolor">sucessCallback</span>();</p>
-                      <p class="margintab">} <span class="jskeywordcolor">else</span> { </p>
-                      <p class="margintabX2"><span class="jsvarcolor">errorCallback</span>( ) ;</p>
-                      <p class="margintab"> } </p>
+                <p><span class="jskeywordcolor">function</span> <span class="jsvarcolor">mostarDadosDoUsurario</span>() {</p>
+                <p class="margintab jscommentcolor">// sem utilizar for of</p>
+                <p class="margintab"><span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>
+                (<span class="jsstringcolor">`O <span class="jskeywordcolor">${
+                <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 0 </span>].nome</span>
+                }</span> possui as habilidades: 
+                <span class="jskeywordcolor">${
+                <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 0 </span>].habilidades</span>
+                }</span>`</span>);</p>
 
-                      <p>}</p>
-                      <p><span class="jskeywordcolor">function</span> 
-                        <span class="jsvarcolor">sucessCallback</span>( ) { </p>
-                          <p class="margintab"><span class="jscyancolor">console.log</span>
-                            (<span class="jsstringcolor">' YEAH BITCH! Number 2 '</span>)</p>
-                        <p>}</p>
+                <p class="margintab"><span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>
+                    (<span class="jsstringcolor">`O <span class="jskeywordcolor">${
+                    <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 1 </span>].nome</span>
+                    }</span> possui as habilidades: 
+                    <span class="jskeywordcolor">${
+                    <span class="jsdefaultcolor">usuarios[<span class="jsnumbercolor"> 1 </span>].habilidades</span>
+                    }</span>`</span>);
+                </p>
+                <p class="margintab jscommentcolor">// utilizando for of</p>
+                <p class="margintab">
+                  <span class="jskeywordcolor">for</span> (<span class="jskeywordcolor">const</span>
+                  value <span class="jskeywordcolor">of</span> usuarios){
+                </p>
+                <p class="margintabX2"> <span class="jscyancolor">console<span class="jsdefaultcolor">.</span>log</span>
+                    (<span class="jsstringcolor">`O <span class="jskeywordcolor">${
+                    <span class="jsdefaultcolor">value.nome </span>}</span>
+                    possui as habilidades: 
+                    <span class="jskeywordcolor">${
+                    <span class="jsdefaultcolor">value.habilidades.
+                    <span class="jsvarcolor">join</span>(<span class="jsstringcolor"> '-' </span>)
+                    </span>}</span><span class="jsdefaultcolor">)</span>`</span>;
+                </p>
+                <p class="margintab">}</p>
+                <p>];</p>
+      
+              </div>
+              <p>Sintaxe:</p>
+              <div class="dark-codeDiv">
+                <p>
+                  <span class="jskeywordcolor">for</span> (variavel 
+                  <span class="jskeywordcolor">of</span> iteravel) {
+                </p>
+                <p class="margintab">declaração</p>
+                <p>}</p>
+                <p class="jscommentcolor">
+                  // varaiavel: A cada iteração, um valor de uma propriedade diferente é
+                  atribuido a variavel
+                </p>
+                <p class="jscommentcolor">
+                  // iteravel: Objeto cujos atributos serão iterados
+                  (nome de um array por exemplo)
+                </p>
+              </div>
+            </div>
+
+            <!-- ES6 -->
+            <div class="contentDiv">
+              <h1 class="ES6">ES6</h1>
+              <h2>Configurando projeto com <strong>Babel</strong> e <em>Yarn</em></h2>
                       
-                      <p><span class="jskeywordcolor">function</span> <span class="jsvarcolor">errorCallback</span>
-                        ( ) {</p>
+              <p>Apos ter instalado Node Js e o Yarn....</p>
+              <p>Dentro da pasta de seu projeto rode <span class="jskeywordcolor">yarn init</span></p>
+              <p>
+                Neste momento o comando cria um arquivo <em>package.json</em> dentro de seu projeto,
+                este arquivo vai armazenar as informações de depencias da nossa aplicação como o documento
+                abaixo:
+              </p>
 
-                          <p class="margintab"><span class="jscyancolor">console.log</span>
-                            (<span class="jsstringcolor">' Something is wrong... '</span>);</p>
+              <div class="dark-codeDiv">
+                <p>{</p>
+                <p class="margintab"><span class="jscyancolor">"name"</span>
+                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"es6"</span>,</p>
+                <p class="margintab"><span class="jscyancolor">"version"</span>
+                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"1.0.0"</span>,</p>
+                <p class="margintab"><span class="jscyancolor">"main"</span>
+                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"index.js"</span>,</p>
+                <p class="margintab"><span class="jscyancolor">"license"</span>
+                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"MIT"</span>,</p>
+                <p>}</p>
+              </div>
+              <h4>Instalando Dependencias do <em>Babel</em></h4>
+              <div class="dark-codeDiv">
+                <p class="jscyancolor">@babel/cli</p>
+                <p class="jscommentcolor"> // Permite trabalhar com a interface gráfica do babel em linha de comando</p>
+              </div>
 
-                      <p>}</p>
-                    </div>
+              <div class="dark-codeDiv">
+                <p class="jscyancolor">@babel/preset-env</p>
+                <p class="jscommentcolor">
+                  // Vai entender qual é o ambiente que você está trabalhando
+                  (Ex: browser,Node,React etc)
+                </p>
+              </div>
 
-                    <p>Exemplo dessa mesma função com Promise:</p>
+              <div class="dark-codeDiv">
+                <p class="jscyancolor">@babel/core</p>
+                <p class="jscommentcolor">// Esse modulo core é o centro nervoso do babel</p>
+              </div>
 
-                    <div class="dark-codeDiv">
-                        <p class="jscommentcolor">//com promisse</p>
-
-                        <p class="jscommentcolor">//uma promisse sempre recebe uma função com dois parâmetros:</p>
-                        <p class="jscommentcolor">//resolve e reject</p>
-
-                        <p><span class="jskeywordcolor">let</span> p <span class="jskeywordcolor">=</span>
-                          <strong class="jskeywordcolor">new</strong> <span class="jscyancolor">Promise</span>
-                          ( (  resolve, reject  ) <span class="jskeywordcolor"> => </span> {</p>
-                            <p class="margintab"><span class="jskeywordcolor">let</span> 
-                              a  <span class="jskeywordcolor"> = </span><span class="jsnumbercolor"> 1 </span> 
-                              <span class="jskeywordcolor">+</span>
-                              <span class="jsnumbercolor">1</span> ;</p>
-                              <p class="margintab"><span class="jskeywordcolor">if</span> 
-                                ( a <span class="jskeywordcolor">==</span> <span class="jsnumbercolor">2</span> ) {</p>
-                                  <p class="margintabX2"> <span class="jsvarcolor">resolve</span>
-                                    ( <span class="jsstringcolor">'Sucess'</span> )</p>
-                                <p class="margintab">} <span class="jskeywordcolor">else</span> { </p>
-                                  <p class="margintabX2"><span class="jsvarcolor">reject</span> 
-                                  ( <span class="jsstringcolor">'Failed'</span> )</p>
-
-                                <p class="margintab">}</p>
-                          <p>} ) ;</p>
-                          
-                          <p class="jscommentcolor">//chamando promisse</p>
-
-                          <p class="jscommentcolor">//then para RESOLVE</p>
-                          <p class="jscommentcolor">//catch para REJECT</p>
-
-                          <p>p.<span class="jsvarcolor">then</span>( ( <span class="jsparametercolor">message</span> ) 
-                            <span class="jskeywordcolor"> => </span> {</p>
-                              <p class="margintab"><span class="jscyancolor">console.log</span>
-                                ( <span class="jsstringcolor">'This is in the then '</span> 
-                                <span class="jskeywordcolor">+</span> message);</p>
-                            <p>}); .<span class="jsvarcolor">catch</span>
-                              ( ( <span class="jsparametercolor">error</span> ) <span class="jskeywordcolor">  => </span> 
-                              {</p>
-                                <p class="margintab"><span class="jscyancolor">console.log</span>
-                                ( <span class="jsstringcolor">'This is in the cath'</span> 
-                                <span class="jskeywordcolor">+</span> error);</p>
-                                <p>});</p>
-                            
-                    </div>
-
-                  </div>
-              
-                  <div class="contentDiv">
-                    <h2>Async / Await</h2>
-                        <p>Plugins para trabalhar com async/await no babel:</p>
-                        <p><strong>@babel/plugin-transform-async-to-generator</strong></p>
-                        <p><strong>@babel/polyfill</strong></p>
-                        <h3>Syntax</h3>
-                        <p>
-                          Utilizamos o prefixo <span class="atribute">async</span> antes de definir
-                          uma função para indicar que estamos tratando de um código assíncrono, e 
-                          com o prefixo adicionado, podemos utilizar o <span class="atribute">await</span>
-                          antes das <em>Promises</em> indicando um ponto a ser aguardado pelo código.
-                          Exemplo:
-
-                        </p>
-                        <div class="dark-codeDiv">
-                          <p class="jscommentcolor">// Modelo Antigo ( ES6 )</p>
-
-                          <p><span class="jskeywordcolor">function</span> 
-                            <span class="jsvarcolor">fetchUser</span>
-                            (<span class="jsparametercolor"> user </span>) { </p>
-                          <p class="margintab">api.<span class="jsvarcolor">get</span>
-                          <span class="jsstringcolor">(`/users/${<span class="jskeywordcolor">user
-                            }`)</span>})</span>.<span class="jsvarcolor">then</span> (response 
-                            <span class="jskeywordcolor"> => </span> { 
-                          </p>
-                          <p class="margintabX2"><span class="jscyancolor">console.log</span>
-                          ( response );</p>
-
-                          <p class="margintab">});</p>
-
-
-                          <p>}</p>    
-
-                          <p class="jscommentcolor">// Modelo Novo ( ES8 )</p>
-                          <p><span class="jskeywordcolor">async function </span> 
-                          <span class="jsvarcolor">fetchUser</span> (
-                            <span class="jsparametercolor"> user </span>) {</p>
-                              <p class="margintab"><span class="jskeywordcolor">const</span>  response
-                              <span class="jskeywordcolor"> = await</span> api.<span class="jsvarcolor">get</span>
-                            <span class="jsstringcolor">(`/users/${<span class="jskeywordcolor">user</span>});
-                           </span></p>
-                           <p class="margintab"><span class="jscyancolor">console.log</span>( response );</p>
-                          <p>}</p>
-
-                        </div>
-                        <p>Ao utilizar o async/await o código fica muito mais limpo, e você não precisa
-                          declarar mais os <span class="atribute">.then</span> e <span class="atribute">.catch</span>
-                        </p>
-                        <p>Cada vez que definimos um await estamos indicando para o nosso código aguardar 
-                          a Promise seguinte executar e retornar um resultado para seguir adiante, dessa 
-                          forma evitamos que as próximas linhas executem sem as variáveis necessárias.</p>
-
-                        <div class="alertDiv">
-                          <p>
-                            Vale lembrar que toda função que definimos com 
-                            <span class="redAtribute">async</span> automaticamente se torna
-                            uma Promise, tornando possíveis anexar funções assíncronas uma às 
-                            outras.
-                        </p>
-                        </div>
-                  </div>
-
-
-                  <div class="contentDiv">
-                    <h2>Object</h2>
-                      <p>Sintax:</p>
-                      <div class="dark-codeDiv">
-                        <p><span class="jskeywordcolor">let</span> objeto <span class="jskeywordcolor">=</span> {</p>
-                          <p class="margintab">chave<span class="jskeywordcolor">:</span> 
-                            <span class="jsstringcolor">'Valor'</span>;</p>
-                        <p>}</p>
-                      </div>
-
-                      <p>Deletando Propriedade - Sintax: delete.objeto.chave - Exemplo:</p>
-                      <div class="dark-codeDiv">
-                      <p><span class="jskeywordcolor">let</span> usuario 
-                        <span class="jskeywordcolor">=</span> { </p>
-                          <p class="margintab">nome<span class="jskeywordcolor">:</span> 
-                            <span class="jsstringcolor">'Valor'</span> ;</p>
-                          <p class="margintab">
-                            idade<span class="jskeywordcolor">:</span> <span class="jsstringcolor">'Ebert'</span>
-                          </p>
-                          <p>}</p>
-                          <p><span class="jskeywordcolor">delete</span> usuario.idade ;</p>
-                      </div>
+              <p>
+                As dependencias irão criar um arquivo <span class="atribute">yarn.lock</span> onde será armazenado o cache do Yarn,
+                e uma pasta <span class="atribute">node_modules</span> que irá armazenar todas as dependencias do projeto(as dependencias das dependencias etc)
+                OBS: adicionar a pasta node_modules/ no seu <span class="atribute">.gitignore</span>
+              </p>
+              <h4>Configurando Babel</h4>
+              <p>
+                Para fazer a configuração crie um arquivo na raiz de seu projeto com o nome de 
+                <span class="jskeywordcolor"><strong>.babelrc</strong></span>, e dentro desse
+                arquivo adicione as seguintes linhas:
+              </p>
+              <div class="dark-codeDiv">
+                <p>{</p>
+                <p class="margintab">
+                  <span class="jscyancolor">"presets"</span>
+                  <span class="jskeywordcolor">:</span> 
+                  [<span class="jsstringcolor">"@babel/preset-env"</span>]
+                </p>
+                <p>}</p>
+              </div>
+              <p>Agora dentro do seu packge.json você criará uma nova propriedade:</p>
+              <div class="dark-codeDiv">
+                <p><span class="jscyancolor">"scripts"</span>
+                <span class="jskeywordcolor">:</span> {</p>
+                <p class="margintab"><span class="jscyancolor">
+                  "dev"</span> <span class="jskeywordcolor">:</span>
+                  <span class="jsstringcolor">"babel ./main.js -o ./bundle.js"</span>
+                </p>
+                <p>}</p>
+              </div>
                       
-                      <h3>Unindo dois ou mais Objects:</h3>
-                      <p>Forma mais convencional (antes do ES6<span class="jskeywordcolor">...</span>)</p>
-                      <div class="dark-codeDiv">
-                        <p><span class="jscyancolor">Object</span>.<span class="jsvarcolor">assign</span>
-                        ( {} , <i>objeto1</i> , <i>objeto2</i> )</p>
-                        <p class="jscommentcolor">// O método <span class="jsdefaultcolor">
-                          Object.assign( )</span>
-                          é usado para copiar os valores de todas as propriedades de um ou 
-                          mais objetos para um objeto destino que pode ser 
-                          um objeto existente ou um novo.
-                        </p>
-                        <p class="jscommentcolor">// O assign recebe dois parâmetros sendo o Primeiro o 
-                          objeto que vai receber o resultado da uniao <span class="jsdefaultcolor">{  }</span>
-                          (chaves vazias) significam que a uniao vai para um novo Objeto.
-                        </p>
-                        <p class="jscommentcolor">// O segundo Parâmetro é o primeiro objeto da União.</p>
-                        <p class="jscommentcolor">// O terceiro é o segundo objeto da união.</p>
-                        <p class="jscommentcolor">// So foram usados 3 parâmetros pois no exemplo so unimos dois Objects
-                          mas voce pode usar mais.
-                        </p>
-                      </div>
-                      <p>Utilizando o Spread... (ES6)</p>
-                      <div class="dark-codeDiv">
-                        <p>
-                          <span class="jskeywordcolor">let</span> novoObjeto <span class="jskeywordcolor">=</span> {</p>
-                          
-                        <p class="margintab"><span class="jskeywordcolor">...</span> objeto1,</p>
-                        <p class="margintab"><span class="jskeywordcolor">...</span> objeto2</p>
-                        <p>}</p>
+              <p>o <strong class="atribute">"scripts"</strong> é onde você pode adicionar funcionalidades para usar no terminal com o yarn</p>
+              <p>o <strong class="atribute">"dev"</strong> é o nome do seu script que executa o babel</p>
+              <p>
+                <strong class="atribute">"babel ./main.js -o bundle.js -w"</strong> => basicamente executa o babel passando os parametros
+                -o e -w.
+              </p>
+              <p>O <strong class="atribute">-o</strong> envia o conteudo do main.js para o bundle.js tornando ele compativel</p>
+              <p>
+                E o <strong class="atribute">-w</strong> ativa a monitoração para ele atualizar as alterações no main.js automaticamente
+                sem ser necessario você rodar o comando toda hora.
+              </p>
 
-                        <p class="jscommentcolor">// O REST ( ... ) significa tudo dos outros objetos</p>
-                      </div>
+              <p>
+                Assim então toda funcionalidade nova do Javascript que você inserir no <em>main.js</em>
+                sera convertida para ser compativel em diversos browsers que não suportam ainda estas
+                funcionalidades, e toda essa conversão vai pro arquivo <em>bundle.js</em>
+              </p>
+              <p>
+                Por isso chame o <strong>bundle.js</strong> em vez do <em>main.js</em> na sua pagina
+                html.
+              </p>
 
-                      <h3>Usando variaveis no lugar das chaves:</h3>
-                      <div class="dark-codeDiv">
-                        <p><span class="jskeywordcolor">let</span> suaVariavel = <span class="jsstringcolor">'Estado'</span></p>
-                        <p><span class="jskeywordcolor">let</span> usuario <span class="jskeywordcolor">=</span> {</p>
-                          <p class="margintab">nome<span class="jskeywordcolor">:</span>
-                            <span class="jsstringcolor">'Ebert'</span> ,</p>
-                          <p class="margintab">[ suaVariavel ]<span class="jskeywordcolor">:</span> 
-                          <span class="jsstringcolor">'Bahia'</span></p>
-                          <p>}</p>
-                          <p class="jscommentcolor">// a variavel tem que estar entre [  ] ;</p>
-                      </div>
-
-                      <h3>Desestruturação</h3>
-                      <p>Temos aqui um objeto simples para utilizarmos de exemplo:</p>
-                      <div class="dark-codeDiv">
-                        <p><span class="jskeywordcolor">let</span> novoUsuario <span class="jskeywordcolor">=</span> {</p>
-                          <p class="margintab">nome<span class="jskeywordcolor">:</span>
-                          <span class="jsstringcolor">'Ebert'</span>,</p>
-                          <p class="margintab">idade<span class="jskeywordcolor">:</span>
-                            <span class="jsnumbercolor">27</span>,</p>
-                            <p class="margintab">pais<span class="jskeywordcolor">:</span>
-                              <span class="jsstringcolor">'Brasil'</span></p>
-                        <p>}</p>
-                      </div>
-                      <p>Vamos supor que precisaremos de variaveis que contenham dados desse Object
-                          então declarariamos elas assim:</p>
-                      <div class="dark-codeDiv">
-                        <p><span class="jskeywordcolor">let</span> nome <span class="jskeywordcolor">=</span>
-                        novoUsuario.nome ;</p>
-                        <p><span class="jskeywordcolor">let</span> idade <span class="jskeywordcolor">=</span>
-                        novoUsuario.idade ;</p>
-                        <p><span class="jskeywordcolor">let</span> pais <span class="jskeywordcolor">=</span>
-                        novoUsuario.pais ;</p>
-                      </div>
-
-                      <p>Agora usando a Desestruturação vinda do ES6 podemos tornar isso muito mais pratico:</p>
-                      <div class="dark-codeDiv">
-                        <p><span class="jskeywordcolor">let</span> {  nome, idade, pais  } 
-                          <span class="jskeywordcolor">=</span> novoUsuario ;</p>
-
-                        <p class="jscommentcolor">// as chaves {  }  indicam que as propriedades dentro do Objeto</p>
-                      </div>
-                    </div>
-
-                    <div class="contentDiv">
-                      <h2>Importação/exportação</h2>
-                      <p>A importação e exportação de módulos permite a utilização de funções,
-                        variáveis e classes de um arquivo em outro, vamos entender como isso funciona:
-                      </p>
-
-                      <div class="dark-codeDiv">
-                        <p class="jscommentcolor">// App.js</p>
-                        <p>
-                          <span class="jskeywordcolor">export function</span> 
-                          <span class="jsvarcolor"> soma</span>(a, b) {
-                        </p>
-                        <p class="margintab">
-                          <span class="jskeywordcolor">return</span> a 
-                          <span class="jskeywordcolor"></span>+ b;
-                        </p>
-                        <p>}</p>
-
-                        <p>
-                          <span class="jskeywordcolor">export const </span> user 
-                          <span class="jskeywordcolor">=</span> {
-                        </p>
-                        <p class="margintab">
-                          nome<span class="jsstringcolor">: 'Ebert'</span> ,</p>
-                        <p class="margintab">
-                          empresa<span class="jsstringcolor">: 'RocketSeat</span>
-                        </p>
-                        
-                        <p>};</p>
-
-                        <p>
-                          <span class="jskeywordcolor">export default class </span>
-                          <span class="jsparametercolor"> App</span> {
-                        </p>
-                        <p class="margintab"><span class="jskeywordcolor">static</span>
-                        <span class="jsvarcolor">log</span>)() {</p>
-                          <p class="margintabX2">
-                            <span class="jscyancolor">console.log</span>(
-                              <span class="jsstringcolor">'Hey'</span> );
-                          </p>
-                          <p class="margintab">}</p>
-                        <p>}</p>
-                      </div>
-
-                      <p>
-                        Nesse primeiro arquivo estamos exportando uma função 
-                        <span class="atribute">soma</span>, um objeto <span class="atribute">user</span>
-                        e uma classe <span class="atribute">App</span>.
-                      </p>
-                      <p>
-                        Note que na última exportação estamos passando a palavra 
-                        <span class="redAtribute">default</span> e dessa forma estamos sinalizando
-                        que se não informamos a esse arquivo o quê estamos importando, por padrão ele
-                        deve retornar essa classe.
-                      </p>
-                      <p class="alertDiv">
-                        O <strong>export default</strong> só pode ser utilizado uma vez em cada
-                        arquivo Javascript
-                      </p>
-                      <p>Vamos ver as importações agora:</p>
-                      <div class="dark-codeDiv">
-                        <p class="jscommentcolor">// OutroArquivo.js</p>
-
-                        <p>
-                          <span class="jskeywordcolor">import </span>App 
-                          <span class="jskeywordcolor">from</span>
-                          <span class="jsstringcolor"> 'App' ;</span> 
-                          <span class="jscommentcolor">// Podemos omitir o .js aqui</span>
-                        </p>
-
-                        <p>App.<span class="jsvarcolor">log</span>( );
-                        <span class="jscommentcolor">// Hey</span></p>
-                        <p>
-                          <span class="jsvarcolor">soma</span>(
-                            <span class="jsnumbercolor">1, 2</span>)
-                            <span class="jscommentcolor"> // Error: undefined function soma</span>
-                        </p>  
-                      </div>
-                      <p>
-                        Note que ele importou apenas a class <span class="atribute">App</span>
-                        e nada mais. Para importarmos variáveis, objetos ou classes que não estão
-                        com a notação <span class="atribute">default</span> podemos utilizar a 
-                        Desestruturação.
-                      </p>
-                      <p>Exemplo:</p>
+              <p>Depois de todo o procedimento nosso <em>package.json</em> ficará assim:</p>
+              <div class="dark-codeDiv">
+                <p>{</p>
+                <p class="margintab"><span class="jscyancolor">"name"</span>
+                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"es6"</span>,</p>
+                <p class="margintab"><span class="jscyancolor">"version"</span>
+                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"1.0.0"</span>,</p>
+                <p class="margintab"><span class="jscyancolor">"main"</span>
+                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"index.js"</span>,</p>
+                <p class="margintab"><span class="jscyancolor">"license"</span>
+                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"MIT"</span>,</p>
+                <p class="margintab"><span class="jscyancolor">"dependencies"</span>
+                <span class="jskeywordcolor">:</span> {</p>
+                <p class="margintabX2"><span class="jscyancolor">"@babel/cli"</span>
+                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"^7.6.2"</span>,</p>
+                <p class="margintabX2"><span class="jscyancolor">"@babel/core"</span>
+                <span class="jskeywordcolor">:</span> <span class="jsstringcolor">"^7.6.2"</span>,</p>
+                <p class="margintabX2"><span class="jscyancolor">"@babel/preset-env"</span>
+                <span class="jskeywordcolor">:</span>   <span class="jsstringcolor">"^7.6.2"</span></p>
+                <p class="margintab">}</p>
+                <p>}</p>
+              </div>  
                       
-                      <div class="dark-codeDiv">
-                        <p class="jscommentcolor">// OutroArquivo.js</p>
+            </div>
 
-                        <p>
-                          <span class="jskeywordcolor">import</span>
-                           { soma, user } <span class="jskeywordcolor">from</span>
-                           <span class="jsstringcolor">'App' ;</span>
-                        </p>
 
-                        <p>
-                          <span class="jsvarcolor">soma</span>(
-                            <span class="jsnumbercolor">1, 3</span>);
-                            <span class="jscommentcolor"> // 4</span>
-                        </p>
+            <!-- CLASS -->
+                  
+            <div class="contentDiv">
+              <h2>Class</h2>
+              <p>
+                Uma classe é um tipo de função, mas em vez de usar a keyword <span class="redAtribute">function</span>
+                para inciá-la, usamos a keyword <span class="redAtribute">class</span>, e as propriedades são atribuídas
+                dentro de um método <span class="redAtribute">constructor()</span>.
+              </p>
 
-                        <p>
-                          <span class="jscyancolor">console.log</span>
-                          (user.nome) 
-                          <span class="jscommentcolor"> // Ebert</span>
-                        </p>
-                      </div>
+              <h3>constructor</h3>
+              <p>O Constructor é um método especial para criar e inicializar um objeto criado a partir de uma classe.</p>
+              <p><strong>Apenas um</strong> método especial com o nome constructor pode existir em uma classe, se a classe
+              conter mais de um constructor() será mostrado o erro  <span class="atribute">SyntaxError</span>.</p>
+              <p>É o primeiro método instanciado todo vez que executarmos uma classe.</p>
+              <p>No constructor podemos fazer ações que disparam assim que o objeto é criado ou iniciar variaveis.</p>
 
-                      <p>Outra forma de importar todas as exportações sem a 
-                        notação default de um arquivo, é utilizando o <em>wildcard</em>
-                        <span class="redAtribute">*</span>;
-                      </p>
-
-                      <div class="dark-codeDiv">
-                        <p>
-                          <span class="jskeywordcolor">import 
-                            <span class="jscyancolor">*</span> as</span>
-                           helpers <span class="jskeywordcolor">from</span>
-                           <span class="jsstringcolor">'App'</span> ;
-
-                           <p>helpers.<span class="jsvarcolor">soma</span>
-                          (<span class="jsnumbercolor">1, 3</span>)
-                            <span class="jscommentcolor">// 4</span></p>
-                        </p>
-
-                        <p>
-                          <span class="jscyancolor">console.log</span>
-                          (helpers.user.nome); 
-                          <span class="jscommentcolor">// Ebert</span>
-                        </p>
-                      </div>
-
-                      <p>Ainda podemos unir a importação do <span class="atribute">default</span>
-                      e das outras exportações em um único <span class="atribut">import</span>.</p>
-
-                      <div class="dark-codeDiv">
-                        <p>
-                          <span class="jskeywordcolor">import</span>
-                           App, <span class="jsstringcolor">{ 
-                             <span class="jsdefaultcolor">soma, user</span> }</span>
-                           <span class="jskeywordcolr">from</span>
-                           <span class="jsstringcolor">'App'</span> ;
-                        </p>
-                      </div>
-                    </div>
+              <h3>Definição</h3>
+              <p>Use a keyword <span class="redAtribute">class</span> para criar uma classe e <strong>sempre</strong>
+              adicione um metodo constructor.</p>
+              <p>O método constructor vai ser chamado cada vez que o objeto for iniciado.</p>
+              <p>Exemplo:</p>
                     
-                    <div class="contentDiv" id="modulos">
-                     
-                        <h2>Módulos</h2>
+              <div class="dark-codeDiv">
+                <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
+                <p class="margintab">
+                  <span class="jskeywordcolor">constructor</span>
+                  (<span class="jsparametercolor">marca</span>, <span class="jsparametercolor">ano</span>,
+                  <span class="jsparametercolor">situacao</span>){
+                </p>
+                <p class="margintabX2">
+                  <span class="jsnumbercolor">this</span>.nome_do_carro <span class="jskeywordcolor">=</span> 
+                  marca;
+                </p>
+                <p class="margintabX2">
+                  <span class="jsnumbercolor">this</span>.ano_do_carro <span class="jskeywordcolor">=</span> 
+                  ano;
+                </p> 
+                <p class="margintabX2">
+                  <span class="jsnumbercolor">this</span>.situacao_do_carro <span class="jskeywordcolor">=</span>
+                  situacao;
+                </p>
+                <p class="margintab">};</p>
+                <p>};</p>
 
-                        <div class="content-center">
-                          <div class="background-white">
-                            <h3>O que são módulos?</h3>
-                            <p>
-                              Como o capítulo de um livro, os módulos são apenas conjunto de palavras 
-                              (ou códigos).
-                            </p>
-                            <p>
-                              Bons módulos, no entanto, são altamente auto-suficiente com funcionalidades
-                              distintas,o que lhes permite ser misturados, removidos ou adicionaos conforme
-                              a necessidade sem impactar no sistema como um todo.
-                            </p>
-                          </div>
+                <p><span class="jskeywordcolor">let</span> meuGolQuadrado <span class="jskeywordcolor">=</span> 
+                <span class="jskeywordcolor bold">new</span> <span class="jscyancolor">Carro</span> 
+                (<span class="jsstringcolor">'Gol Quadrado'</span>,
+                <span class="jsstringcolor">'2010'</span>, <span class="jsstringcolor">'Usado'</span>);</p>
+                <p>
+                  <span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>(meuGolQuadrado.nome_do_carro
+                  +meuGolQuadrado.ano_do_carro+meuGolQuadrado.situacao_do_carro)
+                </p>
 
-                          <div class="background-white">
-                            <h3>Porquê usar ?</h3>
+                <p>Console > Gol Quadrado 2010 usado</p>
+                        
+              </div>
+              <h3>Metodos</h3>
+              <p>O método contructor é especial, é onde você inicializa propriedade, é chamado automaticamente quando 
+              uma classe é iniciada.</p>
+              <p>E ele precisa ter o nome exato "constructor", de fato se você não tiver um método constructor, o 
+              Javascript adicionará um método constructor invisível e vazio.
+              </p>
+              <p>Você também é livre para criar seus próprios métodos, a sintaxe deve ser familiar:</p>
 
-                            <p>
-                              Existem uma série de benefícios ao usar módulos em favor de uma extensa base 
-                              de códigos interdenpendentes. Os mais importantes geralmente são:
-                            </p>
-                            <p>
-                              <strong>1) Manutenibilidade:</strong> Por definição, um módulo é auto-suficiente,
-                              quando bem projetado visa diminuir as dependências em partes da base de código,
-                              tanto quanto possível, de modo que ele possa crescer e melhorar de forma independentes.
-                              Atualizando um único módulo é muito mais fácil quando o mesmo é dissociado de outros
-                              pedaços de códigos.
-                            </p>
-                            <p>Voltando ao exemplo do livro, se você quisesse atualizar um capítulo de seu livro,
-                              seria um pesadelo se para uma pequena alteração em um capítulo, você tivesse que ajustar 
-                              todos os outros. Em vez disso voçê gostaria de escrever cada capítulo de tal forma
-                              que as melhorias poderiam ser feitas individualmente sem afetar uns aos outros.
-                            </p>
+              <div class="dark-codeDiv">
+                <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
+                <p class="margintab"><span class="jskeywordcolor">constructor</span>
+                (<span class="jsparametercolor">marca</span>){</p>
+                <p class="margintabX2"><span class="jsnumbercolor">this</span>.nome_do_carro 
+                <span class="jskeywordcolor">=</span> marca;</p>
+                <p class="margintab">}</p>
+                <p class="margintab"><span class="jsvarcolor">present</span>() {</p>
+                <p class="margintabX2"><span class="jskeywordcolor">return</span> 
+                <span class="jsstringcolor">"Eu tenho um "</span> <span class="jskeywordcolor">+</span>
+                <span class="jsnumbercolor">this</span>.nome_do_carro;</p>
+                <p class="margintab">}</p>
+                <p>}</p>
+                      
+                <p><span class="jskeywordcolor">var</span> meuCarro 
+                <span class="jskeywordcolor">=</span> <span class="jskeywordcolor bold">new</span>
+                <span class="jscyancolor">Carro</span>(<span class="jsstringcolor">'Gol Quadrado'</span>);</p>
+                <p><span class="jscyancolor">console</span>.<span class="jscyancolor">log(</span>
+                meuCarro.<span class="jsvarcolor">present</span>());</p>
+          
+              </div>
+
+              <p>
+                Como você viu no exemplo acima, você chama o método present() que consulta o método contructor, você pode
+                passar qualquer parâmetro entre parênteses para o método present('qualquerParametro')
+              </p>
+
+              <h3>Métodos Static</h3>
+              <p>Os métodos Static são definidos na própria classe e não no <em>prototype</em>.</p>
+              <p>Isso significa que você não pode chamar um método Static no objeto (meuCarro), mas
+              na classe (Carro)</p>
+
+              <div class="dark-codeDiv">
+                <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
+                <p class="margintab"><span class="jskeywordcolor">constructor</span>
+                (<span class="jsparametercolor">marca</span>){</p>
+                <p class="margintabX2"><span class="jsnumbercolor">this</span>.nome_do_carro 
+                <span class="jskeywordcolor">=</span> marca;</p>
+                <p class="margintab">}</p>
+                <p class="margintab"><span class="jskeywordcolor">static</span>
+                <span class="jsvarcolor">Hello</span>(<span class="jsparametercolor">parametro</span>){</p>
+                <p class="margintabX2"><span class="jskeywordcolor">return</span> 
+                <span class="jsstringcolor">"Hello "</span> <span class="jskeywordcolor">+</span>
+                parametro.nome_do_carro;</p>
+                <p class="margintab">}</p>
+                <p>}</p>
+                          
+                <p><span class="jskeywordcolor">var</span> meuCarro <span class="jskeywordcolor">=</span> 
+                <span class="jskeywordcolor bold">new</span>
+                <span class="jscyancolor">Carro</span>(<span class="jsstringcolor">'Gol Quadrado'</span>);</p>
+                                  
+                <p><span class="jscyancolor">console</span>.<span class="jscyancolor">log(</span>
+                Carro.<span class="jsvarcolor">Hello</span>(meuCarro));</p>
+              
+              </div>
+              <h3>Sub Classes ou Herança/Inheritance</h3>
+              <p>Para criar uma classe com herança, use a keyword <span class="redAtribute">extends</span>.</p>
+              <p>A classe criada com extends herda todos os métodos da outra classe.</p>
+              <div class="dark-codeDiv">
+                <p>Exemplo:</p>
+                <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Carro</span> {</p>
+                <p class="margintab"><span class="jskeywordcolor">constructor</span>
+                (<span class="jsparametercolor">marca</span>){</p>
+                <p class="margintabX2"><span class="jsnumbercolor">this</span>.nome_do_carro 
+                <span class="jskeywordcolor">=</span> marca;</p>
+                <p class="margintab">}</p>
+                <p class="margintab"><span class="jsvarcolor">present</span>() {</p>
+                <p class="margintabX2"><span class="jskeywordcolor">return</span> 
+                <span class="jsstringcolor">"Eu tenho um "</span> <span class="jskeywordcolor">+</span>
+                <span class="jsnumbercolor">this</span>.nome_do_carro;</p>
+                <p class="margintab">}</p>
+                <p>}</p>
+
+                <p><span class="jskeywordcolor">class</span> <span class="jscyancolor">Modelo</span> 
+                <span class="jskeywordcolor">extends</span> <span class="jscyancolor">Carro</span> {</p>
+                <p class="margintab"><span class="jskeywordcolor">constructor</span>
+                (<span class="jsparametercolor">marca</span>,<span class="jsparametercolor">modelo)</span> 
+                {</p>
+                <p class="margintabX2"><span class="jsnumbercolor">super</span>(marca);</p>
+                <p class="margintabX2"><span class="jsnumbercolor">this</span>.modelo 
+                <span class="jskeywordcolor">=</span> modelo;</p>
+                <p class="margintab">}</p>
+                <p class="margintab"><span class="jsvarcolor">show</span>() {</p>
+                <p class="margintabX2">
+                  <span class="jskeywordcolor">return</span>
+                  <span class="jsnumbercolor">this</span>.<span class="jsvarcolor">present</span>() 
+                  <span class="jskeywordcolor">+</span> <span class="jsstringcolor">
+                  ', que é um '</span> <span class="jskeywordcolor">+</span> 
+                  <span class="jsnumbercolor">this</span>.modelo;
+                </p>
+                <p class="margintab">}</p>
+                <p>}</p>
+
+                <p><span class="jskeywordcolor">var</span> meuCarro <span class="jskeywordcolor">=</span>
+                <span class="jskeywordcolor bold">new</span> <span class="jscyancolor">Modelo</span>
+                (<span class="jsstringcolor">'Ford', 'Mustang'</span>);</p>
+
+                <p><span class="jscyancolor">console</span>.<span class="jscyancolor">log</span>
+                ( meuCarro.<span class="jsvarcolor">show</span>() );</p>
+
+              </div>
+
+              <p>O método <span class="redAtribute">super()</span> se refere a classe do pai.</p>
+              <p>
+                Ao chamar o método <span class="redAtribute">super()</span> no método constructor,
+                chamamos o método constructor do Pai e obtemos acesso às propriedades e métodos do pai.
+              </p>   
+              
+            </div>
+              <!-- PROMISES -->
+                      
+            <div class="contentDiv">
+              <h2>Promises</h2>
+              <p>
+                Promises são um conceito essencial do JavaScript. Elas estão presentes em 
+                praticamente todo o ecossistema da linguagem.
+              </p>
+              <p>
+                Promises são um padrão de desenvolvimento que visam representar a conclusão 
+                de operações assincronas.
+              </p>
+              <p>Exemplo de uma função normal:</p>
+
+              <div class="dark-codeDiv">
+                <p><span class="jskeywordcolor">function</span> <span class="jsvarcolor">sumNumbers</span> ( ) {</p>
+                <p class="margintab"><span class="jskeywordcolor">let</span> result <span class="jskeywordcolor"> 
+                <span class="jsnumbercolor">1</span> + <span class="jsnumbercolor">1</span></span>;</p> 
+                <p class="margintab"><span class="jskeywordcolor">if</span> (result <span class="jskeywordcolor">==</span>
+                <span class="jsnumbercolor">2</span>) {</p>
+                <p class="margintabX2"><span class="jsvarcolor">sucessCallback</span>();</p>
+                <p class="margintab">} <span class="jskeywordcolor">else</span> { </p>
+                <p class="margintabX2"><span class="jsvarcolor">errorCallback</span>( ) ;</p>
+                <p class="margintab"> } </p>
+                <p>}</p>
+                <p><span class="jskeywordcolor">function</span> 
+                <span class="jsvarcolor">sucessCallback</span>( ) { </p>
+                <p class="margintab"><span class="jscyancolor">console.log</span>
+                (<span class="jsstringcolor">' YEAH BITCH! Number 2 '</span>)</p>
+                <p>}</p>
+                <p><span class="jskeywordcolor">function</span> <span class="jsvarcolor">errorCallback</span>
+                ( ) {</p>
+                <p class="margintab"><span class="jscyancolor">console.log</span>
+                (<span class="jsstringcolor">' Something is wrong... '</span>);</p>
+                <p>}</p>
+              </div>
+
+              <p>Exemplo dessa mesma função com Promise:</p>
+
+              <div class="dark-codeDiv">
+                <p class="jscommentcolor">//com promisse</p>
+
+                <p class="jscommentcolor">//uma promisse sempre recebe uma função com dois parâmetros:</p>
+                <p class="jscommentcolor">//resolve e reject</p>
+                <p><span class="jskeywordcolor">let</span> p <span class="jskeywordcolor">=</span>
+                <strong class="jskeywordcolor">new</strong> <span class="jscyancolor">Promise</span>
+                ( (  resolve, reject  ) <span class="jskeywordcolor"> => </span> {</p>
+                <p class="margintab"><span class="jskeywordcolor">let</span> 
+                a  <span class="jskeywordcolor"> = </span><span class="jsnumbercolor"> 1 </span> 
+                <span class="jskeywordcolor">+</span>
+                <span class="jsnumbercolor">1</span> ;</p>
+                <p class="margintab"><span class="jskeywordcolor">if</span> 
+                ( a <span class="jskeywordcolor">==</span> <span class="jsnumbercolor">2</span> ) {</p>
+                <p class="margintabX2"> <span class="jsvarcolor">resolve</span>
+                ( <span class="jsstringcolor">'Sucess'</span> )</p>
+                <p class="margintab">} <span class="jskeywordcolor">else</span> { </p>
+                <p class="margintabX2"><span class="jsvarcolor">reject</span> 
+                ( <span class="jsstringcolor">'Failed'</span> )</p>
+
+                <p class="margintab">}</p>
+                <p>} ) ;</p>
+                          
+                <p class="jscommentcolor">//chamando promisse</p>
+
+                <p class="jscommentcolor">//then para RESOLVE</p>
+                <p class="jscommentcolor">//catch para REJECT</p>
+
+                <p>p.<span class="jsvarcolor">then</span>( ( <span class="jsparametercolor">message</span> ) 
+                <span class="jskeywordcolor"> => </span> {</p>
+                <p class="margintab"><span class="jscyancolor">console.log</span>
+                ( <span class="jsstringcolor">'This is in the then '</span> 
+                <span class="jskeywordcolor">+</span> message);</p>
+                <p>}); .<span class="jsvarcolor">catch</span>
+                ( ( <span class="jsparametercolor">error</span> ) <span class="jskeywordcolor">  => </span> 
+                {</p>
+                <p class="margintab"><span class="jscyancolor">console.log</span>
+                ( <span class="jsstringcolor">'This is in the cath'</span> 
+                <span class="jskeywordcolor">+</span> error);</p>
+                <p>});</p>
+                            
+              </div>
+
+            </div>
+              
+
+            <!-- ASYNC / AWAIT -->
+            <div class="contentDiv">
+              <h2>Async / Await</h2>
+              <p>Plugins para trabalhar com async/await no babel:</p>
+              <p><strong>@babel/plugin-transform-async-to-generator</strong></p>
+              <p><strong>@babel/polyfill</strong></p>
+              <h3>Syntax</h3>
+              <p>
+                Utilizamos o prefixo <span class="atribute">async</span> antes de definir
+                uma função para indicar que estamos tratando de um código assíncrono, e 
+                com o prefixo adicionado, podemos utilizar o <span class="atribute">await</span>
+                antes das <em>Promises</em> indicando um ponto a ser aguardado pelo código.
+                Exemplo:
+
+              </p>
+              <div class="dark-codeDiv">
+                <p class="jscommentcolor">// Modelo Antigo ( ES6 )</p>
+
+                <p>
+                  <span class="jskeywordcolor">function</span> 
+                  <span class="jsvarcolor">fetchUser</span>
+                  (<span class="jsparametercolor"> user </span>) { </p>
+                  <p class="margintab">api.<span class="jsvarcolor">get</span>
+                  <span class="jsstringcolor">(`/users/${<span class="jskeywordcolor">user
+                  }`)</span>})</span>.<span class="jsvarcolor">then</span> (response 
+                  <span class="jskeywordcolor"> => </span> { 
+                </p>
+                <p class="margintabX2"><span class="jscyancolor">console.log</span>
+                ( response );</p>
+
+                <p class="margintab">});</p>
+
+                <p>}</p>   
+
+                <p class="jscommentcolor">// Modelo Novo ( ES8 )</p>
+                <p><span class="jskeywordcolor">async function </span> 
+                <span class="jsvarcolor">fetchUser</span> (
+                <span class="jsparametercolor"> user </span>) {</p>
+                <p class="margintab"><span class="jskeywordcolor">const</span>  response
+                <span class="jskeywordcolor"> = await</span> api.<span class="jsvarcolor">get</span>
+                <span class="jsstringcolor">(`/users/${<span class="jskeywordcolor">user</span>});
+                </span></p>
+                <p class="margintab"><span class="jscyancolor">console.log</span>( response );</p>
+                <p>}</p>
+
+              </div>
+              <p>
+                Ao utilizar o async/await o código fica muito mais limpo, e você não precisa
+                declarar mais os <span class="atribute">.then</span> e <span class="atribute">.catch</span>
+              </p>
+              <p>
+                Cada vez que definimos um await estamos indicando para o nosso código aguardar 
+                a Promise seguinte executar e retornar um resultado para seguir adiante, dessa 
+                forma evitamos que as próximas linhas executem sem as variáveis necessárias.
+              </p>
+              <div class="alertDiv">
+                <p>
+                  Vale lembrar que toda função que definimos com 
+                  <span class="redAtribute">async</span> automaticamente se torna
+                  uma Promise, tornando possíveis anexar funções assíncronas uma às 
+                  outras.
+                </p>
+              </div>
+            </div>
+
+            <!-- OBJECT -->
+            <div class="contentDiv">
+              <h2>Object</h2>
+              <p>Sintax:</p>
+              <div class="dark-codeDiv">
+                <p><span class="jskeywordcolor">let</span> objeto <span class="jskeywordcolor">=</span> {</p>
+                <p class="margintab">chave<span class="jskeywordcolor">:</span> 
+                <span class="jsstringcolor">'Valor'</span>;</p>
+                <p>}</p>
+              </div>
+
+              <p>Deletando Propriedade - Sintax: delete.objeto.chave - Exemplo:</p>
+              <div class="dark-codeDiv">
+                <p><span class="jskeywordcolor">let</span> usuario 
+                <span class="jskeywordcolor">=</span> { </p>
+                <p class="margintab">nome<span class="jskeywordcolor">:</span> 
+                <span class="jsstringcolor">'Valor'</span> ;</p>
+                <p class="margintab">
+                  idade<span class="jskeywordcolor">:</span> <span class="jsstringcolor">'Ebert'</span>
+                </p>
+                <p>}</p>
+                <p><span class="jskeywordcolor">delete</span> usuario.idade ;</p>
+              </div>
+                      
+              <h3>Unindo dois ou mais Objects:</h3>
+              <p>Forma mais convencional (antes do ES6<span class="jskeywordcolor">...</span>)</p>
+              <div class="dark-codeDiv">
+                <p><span class="jscyancolor">Object</span>.<span class="jsvarcolor">assign</span>
+                ( {} , <i>objeto1</i> , <i>objeto2</i> )</p>
+                <p class="jscommentcolor">
+                  // O método <span class="jsdefaultcolor">
+                  Object.assign( )</span>
+                  é usado para copiar os valores de todas as propriedades de um ou 
+                  mais objetos para um objeto destino que pode ser 
+                  um objeto existente ou um novo.
+                </p>
+                <p class="jscommentcolor">
+                  // O assign recebe dois parâmetros sendo o Primeiro o 
+                  objeto que vai receber o resultado da uniao <span class="jsdefaultcolor">{  }</span>
+                  (chaves vazias) significam que a uniao vai para um novo Objeto.
+                </p>
+                <p class="jscommentcolor">// O segundo Parâmetro é o primeiro objeto da União.</p>
+                <p class="jscommentcolor">// O terceiro é o segundo objeto da união.</p>
+                <p class="jscommentcolor">// So foram usados 3 parâmetros pois no exemplo so unimos dois Objects
+                mas voce pode usar mais.
+                </p>
+              </div>
+              <p>Utilizando o Spread... (ES6)</p>
+              <div class="dark-codeDiv">
+                <p>
+                  <span class="jskeywordcolor">let</span> novoObjeto <span class="jskeywordcolor">=</span> {
+                </p>
+                <p class="margintab"><span class="jskeywordcolor">...</span> objeto1,</p>
+                <p class="margintab"><span class="jskeywordcolor">...</span> objeto2</p>
+                <p>}</p>
+
+                <p class="jscommentcolor">// O REST ( ... ) significa tudo dos outros objetos</p>
+              </div>
+
+              <h3>Usando variaveis no lugar das chaves:</h3>
+              <div class="dark-codeDiv">
+                <p><span class="jskeywordcolor">let</span> suaVariavel = <span class="jsstringcolor">'Estado'</span></p>
+                <p><span class="jskeywordcolor">let</span> usuario <span class="jskeywordcolor">=</span> {</p>
+                <p class="margintab">nome<span class="jskeywordcolor">:</span>
+                <span class="jsstringcolor">'Ebert'</span> ,</p>
+                <p class="margintab">[ suaVariavel ]<span class="jskeywordcolor">:</span> 
+                <span class="jsstringcolor">'Bahia'</span></p>
+                <p>}</p>
+                <p class="jscommentcolor">// a variavel tem que estar entre [  ] ;</p>
+              </div>
+
+              <h3>Desestruturação</h3>
+              <p>Temos aqui um objeto simples para utilizarmos de exemplo:</p>
+              <div class="dark-codeDiv">
+                <p><span class="jskeywordcolor">let</span> novoUsuario <span class="jskeywordcolor">=</span> {</p>
+                <p class="margintab">nome<span class="jskeywordcolor">:</span>
+                <span class="jsstringcolor">'Ebert'</span>,</p>
+                <p class="margintab">idade<span class="jskeywordcolor">:</span>
+                <span class="jsnumbercolor">27</span>,</p>
+                <p class="margintab">pais<span class="jskeywordcolor">:</span>
+                <span class="jsstringcolor">'Brasil'</span></p>
+                <p>}</p>
+              </div>
+              <p>Vamos supor que precisaremos de variaveis que contenham dados desse Object
+              então declarariamos elas assim:</p>
+              <div class="dark-codeDiv">
+                <p><span class="jskeywordcolor">let</span> nome <span class="jskeywordcolor">=</span>
+                novoUsuario.nome ;</p>
+                <p><span class="jskeywordcolor">let</span> idade <span class="jskeywordcolor">=</span>
+                novoUsuario.idade ;</p>
+                <p><span class="jskeywordcolor">let</span> pais <span class="jskeywordcolor">=</span>
+                novoUsuario.pais ;</p>
+              </div>
+
+              <p>Agora usando a Desestruturação vinda do ES6 podemos tornar isso muito mais pratico:</p>
+              <div class="dark-codeDiv">
+                <p><span class="jskeywordcolor">let</span> {  nome, idade, pais  } 
+                <span class="jskeywordcolor">=</span> novoUsuario ;</p>
+
+                <p class="jscommentcolor">// as chaves {  }  indicam que as propriedades dentro do Objeto</p>
+              </div>
+            </div>
+
+            <!-- IMPORT / EXPORT -->
+            <div class="contentDiv">
+              <h2>Importação/exportação</h2>
+              <p>A importação e exportação de módulos permite a utilização de funções,
+              variáveis e classes de um arquivo em outro, vamos entender como isso funciona:
+              </p>
+
+              <div class="dark-codeDiv">
+                <p class="jscommentcolor">// App.js</p>
+                <p>
+                  <span class="jskeywordcolor">export function</span> 
+                  <span class="jsvarcolor"> soma</span>(a, b) {
+                </p>
+                <p class="margintab">
+                <span class="jskeywordcolor">return</span> a 
+                <span class="jskeywordcolor"></span>+ b;
+                </p>
+                <p>}</p>
+
+                <p>
+                  <span class="jskeywordcolor">export const </span> user 
+                  <span class="jskeywordcolor">=</span> {
+                </p>
+                <p class="margintab">
+                  nome<span class="jsstringcolor">: 'Ebert'</span> ,
+                </p>
+                <p class="margintab">
+                  empresa<span class="jsstringcolor">: 'RocketSeat</span>
+                </p>
+                          
+                <p>};</p>
+
+                <p>
+                  <span class="jskeywordcolor">export default class </span>
+                  <span class="jsparametercolor"> App</span> {
+                </p>
+                <p class="margintab"><span class="jskeywordcolor">static</span>
+                <span class="jsvarcolor">log</span>)() {</p>
+                <p class="margintabX2">
+                  <span class="jscyancolor">console.log</span>(
+                  <span class="jsstringcolor">'Hey'</span> );
+                </p>
+                <p class="margintab">}</p>
+                <p>}</p>
+              </div>
+              <p>
+                Nesse primeiro arquivo estamos exportando uma função 
+                <span class="atribute">soma</span>, um objeto <span class="atribute">user</span>
+                e uma classe <span class="atribute">App</span>.
+              </p>
+              <p>
+                Note que na última exportação estamos passando a palavra 
+                <span class="redAtribute">default</span> e dessa forma estamos sinalizando
+                que se não informamos a esse arquivo o quê estamos importando, por padrão ele
+                deve retornar essa classe.
+              </p>
+              <p class="alertDiv">
+                O <strong>export default</strong> só pode ser utilizado uma vez em cada
+                arquivo Javascript
+              </p>
+              <p>Vamos ver as importações agora:</p>
+              <div class="dark-codeDiv">
+                <p class="jscommentcolor">// OutroArquivo.js</p>
+
+                <p>
+                  <span class="jskeywordcolor">import </span>App 
+                  <span class="jskeywordcolor">from</span>
+                  <span class="jsstringcolor"> 'App' ;</span> 
+                  <span class="jscommentcolor">// Podemos omitir o .js aqui</span>
+                </p>
+
+                <p>App.<span class="jsvarcolor">log</span>( );
+                <span class="jscommentcolor">// Hey</span></p>
+                <p>
+                  <span class="jsvarcolor">soma</span>(
+                  <span class="jsnumbercolor">1, 2</span>)
+                  <span class="jscommentcolor"> // Error: undefined function soma</span>
+                </p>  
+              </div>
+              <p>
+                Note que ele importou apenas a class <span class="atribute">App</span>
+                e nada mais. Para importarmos variáveis, objetos ou classes que não estão
+                com a notação <span class="atribute">default</span> podemos utilizar a 
+                Desestruturação.
+              </p>
+              <p>Exemplo:</p>     
+              <div class="dark-codeDiv">
+                <p class="jscommentcolor">// OutroArquivo.js</p>
+
+                <p>
+                  <span class="jskeywordcolor">import</span>
+                  { soma, user } <span class="jskeywordcolor">from</span>
+                  <span class="jsstringcolor">'App' ;</span>
+                </p>
+
+                <p>
+                  <span class="jsvarcolor">soma</span>(
+                  <span class="jsnumbercolor">1, 3</span>);
+                  <span class="jscommentcolor"> // 4</span>
+                </p>
+
+                <p>
+                  <span class="jscyancolor">console.log</span>
+                  (user.nome) 
+                  <span class="jscommentcolor"> // Ebert</span>
+                </p>
+              </div>
+
+              <p>
+                Outra forma de importar todas as exportações sem a 
+                notação default de um arquivo, é utilizando o <em>wildcard</em>
+                <span class="redAtribute">*</span>;
+              </p>
+
+              <div class="dark-codeDiv">
+                <p>
+                <span class="jskeywordcolor">import 
+                <span class="jscyancolor">*</span> as</span>
+                helpers <span class="jskeywordcolor">from</span>
+                <span class="jsstringcolor">'App'</span> ;
+
+                <p>
+                  helpers.<span class="jsvarcolor">soma</span>
+                  (<span class="jsnumbercolor">1, 3</span>)
+                  <span class="jscommentcolor">// 4</span></p>
+                </p>
+
+                <p>
+                  <span class="jscyancolor">console.log</span>
+                  (helpers.user.nome); 
+                  <span class="jscommentcolor">// Ebert</span>
+                </p>
+              </div>
+              <p>Ainda podemos unir a importação do <span class="atribute">default</span>
+              e das outras exportações em um único <span class="atribut">import</span>.</p>
+
+              <div class="dark-codeDiv">
+                <p>
+                  <span class="jskeywordcolor">import</span>
+                  App, <span class="jsstringcolor">{ 
+                  <span class="jsdefaultcolor">soma, user</span> }</span>
+                  <span class="jskeywordcolr">from</span>
+                  <span class="jsstringcolor">'App'</span> ;
+                </p>
+              </div>
+            </div>
+            
+            <!-- MODULOS -->
+
+            <div class="contentDiv" id="modulos">
+              <h2>Módulos</h2>
+
+              <div class="content-center">
+                <div class="background-white">
+                  <h3>O que são módulos?</h3>
+                  <p>
+                  Como o capítulo de um livro, os módulos são apenas conjunto de palavras 
+                  (ou códigos).
+                  </p>
+                  <p>
+                    Bons módulos, no entanto, são altamente auto-suficiente com funcionalidades
+                    distintas,o que lhes permite ser misturados, removidos ou adicionaos conforme
+                    a necessidade sem impactar no sistema como um todo.
+                    </p>
+                </div>
+
+                <div class="background-white">
+                  <h3>Porquê usar ?</h3>
+                  <p>
+                    Existem uma série de benefícios ao usar módulos em favor de uma extensa base 
+                    de códigos interdenpendentes. Os mais importantes geralmente são:
+                  </p>
+                  <p>
+                    <strong>1) Manutenibilidade:</strong> Por definição, um módulo é auto-suficiente,
+                    quando bem projetado visa diminuir as dependências em partes da base de código,
+                    tanto quanto possível, de modo que ele possa crescer e melhorar de forma independentes.
+                    Atualizando um único módulo é muito mais fácil quando o mesmo é dissociado de outros
+                    pedaços de códigos.
+                  </p>
+                  <p>
+                    Voltando ao exemplo do livro, se você quisesse atualizar um capítulo de seu livro,
+                    seria um pesadelo se para uma pequena alteração em um capítulo, você tivesse que ajustar 
+                    todos os outros. Em vez disso voçê gostaria de escrever cada capítulo de tal forma
+                    que as melhorias poderiam ser feitas individualmente sem afetar uns aos outros.
+                  </p>
 
 
-                            <p>
-                              <strong>2) Namespacing:</strong> Em JavaScript, variáveis fora do escopo de uma
-                              função de nível superior são globais. Devido a isso é comum ter a "poluição de namespace",
-                              onde completamente existem códigos compartilhados sem referência, variáveis globais.
-                            </p>
-                            <p>
-                              Como veremos no final desse post , módulos nos permitem evitar poluição de 
-                              namespace, criando um espaço privado para nossas variáveis.
-                            </p>
+                  <p>
+                    <strong>2) Namespacing:</strong> Em JavaScript, variáveis fora do escopo de uma
+                    função de nível superior são globais. Devido a isso é comum ter a "poluição de namespace",
+                    onde completamente existem códigos compartilhados sem referência, variáveis globais.
+                  </p>
+                  <p>
+                    Como veremos no final desse post , módulos nos permitem evitar poluição de 
+                    namespace, criando um espaço privado para nossas variáveis.
+                  </p>
                                  
                   
-                          <div class="alertDiv">
-                            
-                            <p>Compartilhamento de variáveis globais entre códigos independentes é 
-                            <strong><a target="_blank" href="http://wiki.c2.com/?GlobalVariablesAreBad" >
-                            inaceitável em desenvolvimento</a></strong></p>
-                          
-                          </div>
+                  <div class="alertDiv"> 
+                    <p>
+                      Compartilhamento de variáveis globais entre códigos independentes é 
+                      <strong><a target="_blank" href="http://wiki.c2.com/?GlobalVariablesAreBad" >
+                      inaceitável em desenvolvimento</a></strong>
+                    </p>
+                  </div>
 
-                            <p>
-                              <strong>3) Reusabilidade: </strong>Vamos ser honestos, todos nós já copiamos
-                              códigos e escrevemos em novos projetos em um ponto ou outro. Por exemplo, vamos
-                              imaginar que você copiou alguns métodos utilitários que escreveu em um projeto
-                              anterior no seu projeto atual.
-                            </p>
-                            <p>
-                              Isso tudo é bom, mas se você encontrar uma melhor maneira de escrever alguma parte
-                              desse código, voc}e teria que voltar e lembrar de atualizar em qualquer outro 
-                              lugar que você escreveu.
-                            </p>
-                            <p>
-                              Isso é obviamente um enorme desperdício de tempo. Não seria muito mais fácil se
-                              houvesse, por exemplo, um módulo que pudesse ser reutilizável? 
-                            </p>
-                        </div> 
+                  <p>
+                    <strong>3) Reusabilidade: </strong>Vamos ser honestos, todos nós já copiamos
+                    códigos e escrevemos em novos projetos em um ponto ou outro. Por exemplo, vamos
+                    imaginar que você copiou alguns métodos utilitários que escreveu em um projeto
+                    anterior no seu projeto atual.
+                  </p>
+                  <p>
+                    Isso tudo é bom, mas se você encontrar uma melhor maneira de escrever alguma parte
+                    desse código, voc}e teria que voltar e lembrar de atualizar em qualquer outro 
+                    lugar que você escreveu.
+                  </p>
+                  <p>
+                    Isso é obviamente um enorme desperdício de tempo. Não seria muito mais fácil se
+                    houvesse, por exemplo, um módulo que pudesse ser reutilizável? 
+                  </p>
+                </div> 
                         
                         
-                      </div>
-                      <h2 id="webpack">Webpack</h2>
+              </div>
+              <h2 id="webpack">Webpack</h2>
                       
-                      <div class="content-center">
-                        <div class="background-white">
-                            <h3>O que é webpack?</h3>
-                            <p>
-                              O webpack é um empacotador de módulos estáticos para aplicações
-                              javascript modernas. Ao processar a aplicação o webpack gera
-                              um grafico que mapeia cada módulo e suas dependências e gera
-                              um ou mais pacotes.
-                            </p>
+              <div class="content-center">
+                <div class="background-white">
+                  <h3>O que é webpack?</h3>
+                  <p>
+                    O webpack é um empacotador de módulos estáticos para aplicações
+                    javascript modernas. Ao processar a aplicação o webpack gera
+                    um grafico que mapeia cada módulo e suas dependências e gera
+                    um ou mais pacotes.
+                  </p>
 
-                            <h3>Conceitos Principais</h3>
-                            <h4>Entry</h4>
-                            <p>
-                              Ponto de entrada que indica qual módulo o webpack deve usar para iniciar a 
-                              construção do gráfico interno de dependência. Ao definir um ponto de entrada,
-                              o webpack irá encontrar todas as dependências e fazer a importação.
-                            </p>
-                            <p>
-                              Por padrão o ponto de entrada é definido no arquivo 
-                              <strong>./src/index.js</strong>, mas é possível definir um arquivo diferente
-                              ou até mesmo múltiplos pontos de entrada no arquivo de configuração
-                              <strong>webpack.config.js</strong>
-                              exemplo de configuração do entry: 
-                            </p>
-                            <div class="codeDiv">
-                              <p>module.exports = {</p>
-                              <p class="margintab">entry: <span class="green">
-                                './path/to/my/entry/file.js'</span></p>
-                              <p>}</p>
-                            </div>
+                  <h3>Conceitos Principais</h3>
+                  <h4>Entry</h4>
+                  <p>
+                    Ponto de entrada que indica qual módulo o webpack deve usar para iniciar a 
+                    construção do gráfico interno de dependência. Ao definir um ponto de entrada,
+                    o webpack irá encontrar todas as dependências e fazer a importação.
+                  </p>
+                  <p>
+                    Por padrão o ponto de entrada é definido no arquivo 
+                    <strong>./src/index.js</strong>, mas é possível definir um arquivo diferente
+                    ou até mesmo múltiplos pontos de entrada no arquivo de configuração
+                    <strong>webpack.config.js</strong>
+                    exemplo de configuração do entry: 
+                  </p>
+                  <div class="codeDiv">
+                    <p>module.exports = {</p>
+                    <p class="margintab">entry: <span class="green">
+                    './path/to/my/entry/file.js'</span></p>
+                    <p>}</p>
+                  </div>
 
-                            <h4>Output</h4>
-                            <p>
-                              A propriedade Output define o nome e local do pacote gerado pelo webpack.
-                              O diretório padrão é o <strong>./dist</strong> e o arquivo 
-                              <strong>./dist/main.js</strong>. Para configurar, devemos definir um objeto
-                              <strong>output</strong> com as propriedades <strong>path</strong> e 
-                              <strong>filename</strong> no arquivo de configuração do webpack:
-                            </p>
-                            <div class="codeDiv">
-                                <p>module.exports = {</p>
-                                  <p class="margintab">entry: <span class="green">
-                                    './path/to/my/entry/file.js'</span></p>
-                                  <p class="margintab">output: {</p>
-                                  <p class="margintabX2">
-                                    path: path.<span class="blue">resolve</span>(
-                                      <span class="green">__dirname</span>, 'dist'),
-                                  </p>
-                                  <p class="margintabX2">
-                                    filename: <span class="green">'webpack.bundle.js'</span>
-                                  </p>
-                                  <p class="margintab">}</p>
-                                  <p>}</p>
-                            </div>
-                            <p>
-                              Essa configuração gera um diretorio dist na raiz do projeto e o arquivo
-                              <strong>webpack.bundle.js</strong> no diretorio dist.
-                            </p>
-                            <p>
-                              A variavel do nodeJS <strong>__dirname</strong> contém o nome do 
-                              diretorio onde se encontra o módulo atual.
-                            </p>
+                  <h4>Output</h4>
+                  <p>
+                    A propriedade Output define o nome e local do pacote gerado pelo webpack.
+                    O diretório padrão é o <strong>./dist</strong> e o arquivo 
+                    <strong>./dist/main.js</strong>. Para configurar, devemos definir um objeto
+                    <strong>output</strong> com as propriedades <strong>path</strong> e 
+                    <strong>filename</strong> no arquivo de configuração do webpack:
+                  </p>
+                  <div class="codeDiv">
+                    <p>module.exports = {</p>
+                    <p class="margintab">entry: <span class="green">
+                    './path/to/my/entry/file.js'</span></p>
+                    <p class="margintab">output: {</p>
+                    <p class="margintabX2">
+                      path: path.<span class="blue">resolve</span>(
+                      <span class="green">__dirname</span>, 'dist'),
+                    </p>
+                    <p class="margintabX2">
+                      filename: <span class="green">'webpack.bundle.js'</span>
+                    </p>
+                    <p class="margintab">}</p>
+                    <p>}</p>
+                  </div>
+                  <p>
+                    Essa configuração gera um diretorio dist na raiz do projeto e o arquivo
+                    <strong>webpack.bundle.js</strong> no diretorio dist.
+                  </p>
+                  <p>
+                    A variavel do nodeJS <strong>__dirname</strong> contém o nome do 
+                    diretorio onde se encontra o módulo atual.
+                  </p>
 
-                            <h4>Loaders</h4>
-                            <p>
-                              Por padrão o Webpack só entende arquivos JavaScript, para que ele possa 
-                              entender outros tipos de arquivos devemos usar os Loaders que são módulos 
-                              que podem ser instalados separadamente possibilitando que o webpack 
-                              converta esses arquivos em módulos válidos e os adicione ao gráfico de 
-                              dependência.
-                            </p>
-                            <p>
-                              Os Loaders também são utilizados para converter JavaScript de uma versão para 
-                              outra. Para incluirmos os Loaders criamos uma nova seção module no arquivo
-                              de configuração, nessa seção podemos definir uma ou mais <strong>rules</strong>:
-                            </p>
-                            <div class="codeDiv">
-                              <p>cons path = require('path')</p>
-                              <p>const config = {</p>
-                              <p class="margintab">output: {</p>
-                              <p class="margintabX2">filename: 'my-first-webpack-bundle.js'</p>
-                              <p class="margintab">},</p>
-                              <p class="margintab">
-                                <span class="blue">modules: </span>{
-                              </p>
-                              <p class="margintabX2">
-                                <span class="green">rules</span>: [
-                              </p>
-                              <p class="margintabX2">{</p>
-                                <p class="margintabX3">test: /\.js$/,</p>
-                                <p class="margintabX3">exclude: /node_modules/,</p>
-                                <p class="margintabX3">use: {</p>
-                                  <p class="margintabX3">loader: 'babel-loader'</p>
-                                <p class="margintabX3">}</p>
-                              <p class="margintabX2">}</p>
-                              <p class="margintabX2">]</p>
-                              <p class="margintab">}</p>
-                              <p>}</p>
+                  <h4>Loaders</h4>
+                  <p>
+                    Por padrão o Webpack só entende arquivos JavaScript, para que ele possa 
+                    entender outros tipos de arquivos devemos usar os Loaders que são módulos 
+                    que podem ser instalados separadamente possibilitando que o webpack 
+                    converta esses arquivos em módulos válidos e os adicione ao gráfico de 
+                    dependência.
+                  </p>
+                  <p>
+                    Os Loaders também são utilizados para converter JavaScript de uma versão para 
+                    outra. Para incluirmos os Loaders criamos uma nova seção module no arquivo
+                    de configuração, nessa seção podemos definir uma ou mais <strong>rules</strong>:
+                  </p>
+                  <div class="codeDiv">
+                    <p>cons path = require('path')</p>
+                    <p>const config = {</p>
+                    <p class="margintab">output: {</p>
+                    <p class="margintabX2">filename: 'my-first-webpack-bundle.js'</p>
+                    <p class="margintab">},</p>
+                    <p class="margintab">
+                      <span class="blue">modules: </span>{
+                    </p>
+                    <p class="margintabX2">
+                      <span class="green">rules</span>: [
+                    </p>
+                    <p class="margintabX2">{</p>
+                    <p class="margintabX3">test: /\.js$/,</p>
+                    <p class="margintabX3">exclude: /node_modules/,</p>
+                    <p class="margintabX3">use: {</p>
+                    <p class="margintabX3">loader: 'babel-loader'</p>
+                    <p class="margintabX3">}</p>
+                    <p class="margintabX2">}</p>
+                    <p class="margintabX2">]</p>
+                    <p class="margintab">}</p>
+                    <p>}</p>
                           
-                            </div>
-                            <p>
-                              Essa regra diz ao compilador que quando for encontrado um arquivo
-                              que termine com .JS, ignorando os arquivos .js da pasta node_modules 
-                              o babel-loader deverá ser utilizado para gerar o bundle.
-                            </p>
-                            <p>
-                              <strong>test :</strong> define quais arquivos serão filtrados
-                            </p>
-                            <p>
-                              <strong>use :</strong> define qual módulo será usado
-                            </p>
+                  </div>
+                  <p>
+                    Essa regra diz ao compilador que quando for encontrado um arquivo
+                    que termine com .JS, ignorando os arquivos .js da pasta node_modules 
+                    o babel-loader deverá ser utilizado para gerar o bundle.
+                  </p>
+                  <p>
+                    <strong>test :</strong> define quais arquivos serão filtrados
+                  </p>
+                  <p>
+                    <strong>use :</strong> define qual módulo será usado
+                  </p>
 
-                            <h4>Mode</h4>
-                            <p>
-                              No atributo mode é definido o mode de execução do webpack como produção,
-                              desenvolvimento ou nenhum. De acordo com a opção definida o webpack ativa
-                              otimizações específicas. O ambiente padrão é produção:
-                            </p>
-                            <div class="codeDiv">
-                              <p>module.exports = {</p>
-                              <p class="margintab">
-                                <span class="blue">mode:</span>
-                                'production'
-                              </p>
-                              <p>}</p>
-                            </div>
+                  <h4>Mode</h4>
+                  <p>
+                    No atributo mode é definido o mode de execução do webpack como produção,
+                    desenvolvimento ou nenhum. De acordo com a opção definida o webpack ativa
+                    otimizações específicas. O ambiente padrão é produção:
+                  </p>
+                  <div class="codeDiv">
+                    <p>module.exports = {</p>
+                    <p class="margintab">
+                    <span class="blue">mode:</span>
+                    'production'
+                    </p>
+                    <p>}</p>
+                  </div>
 
-                            <h4>Resumo geral de configurações com Babel</h4>
-                            <p>Exemplo de como os arquivos deverão ficar:</p>
-                            <li><a class="blue"
-                            target="_blank" 
-                            href="https://github.com/ebertmota/ourSucess.com/blob/master/webpack.config.js">
-                            webpack.config.js</a></li>
-                            <li><a class="pink" 
-                            target="_blank"
-                            href="https://github.com/ebertmota/ourSucess.com/blob/master/package.json">
-                            package.json
-                            </a></li>
-                        </div>
-                      </div>                     
-                      
-                    </div>
-              </main>
-              <footer>
-                  <p>&copy Ebert Mota</p>
-              </footer>
-              
-              
-          </div>
+                  <h4>Resumo geral de configurações com Babel</h4>
+                  <p>Exemplo de como os arquivos deverão ficar:</p>
+                  <li>
+                    <a class="blue"
+                    target="_blank" 
+                    href="https://github.com/ebertmota/ourSucess.com/blob/master/webpack.config.js">
+                    webpack.config.js</a>
+                  </li>
+                  <li>
+                    <a class="pink" 
+                    target="_blank"
+                    href="https://github.com/ebertmota/ourSucess.com/blob/master/package.json">
+                    package.json
+                    </a>
+                  </li>
+                </div>
+              </div>                     
+            </div>
+      </main>
+      <footer>
+      <p>&copy Ebert Mota</p>
+      </footer>
+    </div>
           <script src="../script/script.js"></script>
           <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
       </body>
