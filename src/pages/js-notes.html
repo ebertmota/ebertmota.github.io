@@ -93,11 +93,7 @@
             </tr>
           </table>
           <br><br><br><br>
-    
-      
          
-         
-
           <h3>Constructor Funtions</h3>
           <p>Por convenção sempre criar Constructor Functions usando a primeira letra em Uppercase.</p>
           <p>
@@ -162,7 +158,114 @@
               <tr>
                 <td>Ajuda a ter um código padronizado, flexível e seguro.</td>
               </tr>
-            </table>
+          </table>
+
+          <h3>IIFE => Imediately invoked function expression</h3>
+          <p>Uma IIFE é uma função que se auto-executa, e gera um novo escopo dentro dela própria.</p>
+          <div class="dark-codeDiv">
+            <p>(</p>
+            <p class="margintab">
+              <span class="jskeywordcolor">function</span> () {
+            </p>
+            <p class="margintabX2">
+              <span class="jscyancolor">console.log</span>(<span class="jsstringcolor">
+                Não estou tocando no escopo global
+              </span>)
+            </p>
+            <p class="margintab">}</p>
+            <p>) ( );</p>
+          </div>
+          <p>
+            No exemplo acima, envolvemos a declaração da função em <strong>parênteses</strong>
+            e acrescentamos mais um par de parênteses no final, invocando assim a função de 
+            imediato. 
+          </p>
+          <p>Uma IIFE pode ser criada com nome ou anônima como no exemplo acima.</p>
+          
+          <h3>Generator function</h3>
+          <p>
+            A declaração de <span class="redAtribute">function*</span>
+            (seguida de um asterisco) define uma função geradora que retorna um object 
+            Generator
+          </p>
+          <p>
+            Funções geradoras são funções que podem ter sua execução "pausada" e posteriormente
+            resumida, seus contextos de associações de variavel ficarão salvos entre cada execução.
+          </p>
+          <div class="dark-codeDiv">
+            <p>
+              <span class="jskeywordcolor">function*</span> 
+              <span class="jsvarcolor">geradora1</span>() {
+            </p>
+            <p class="margintab">
+              <span class="jskeywordcolor">yield</span>
+              <span class="jsstringcolor">'Valor 1'</span> ;
+            </p>
+            <p class="margintab">
+              <span class="jskeywordcolor">yield</span>
+              <span class="jsstringcolor">'Valor 2'</span> ;
+            </p>
+            <p class="margintab">
+              <span class="jskeywordcolor">yield</span>
+              <span class="jsstringcolor">'Valor 3'</span> ;
+            </p>
+            <p>}</p>
+          </div>
+          <div class="alertDiv">
+            <p>
+              Chamar um função geradora não executa seu conteúdo imediatamente, ao invés disso 
+              um objeto iterator é retornado. Quando o objeto <span class="atribute">next()</span>
+              é chamado, o conteudo da função geradora é executado até a primeira expressão 
+              <span class="atribute">yield</span>.
+            </p>
+          </div>
+          <p>
+            O método <span class="atribute">next()</span> retorna um objeto com uma propriedade
+            <span class="atribute">value</span> contendo o valor retornado, e a propriedade
+            boolean <span class="atribute">done</span> indicando se o gerador produziu seu 
+            ultimo valor.
+          </p>
+          <p>
+            Uma expressão <span class="redAtribute">return</span> em um gerador quando executada 
+            fará com que o gerador termine ou seja a propriedade done do objeto retornado terá 
+            o valor <strong>true</strong>.
+          </p>
+          <p>Exemplo útil como Generator functions:</p>
+          <div class="dark-codeDiv">
+            <p>
+              <span class="jskeywordcolor">function*</span>
+              <span class="jsvarcolor">idGenerator()</span> {
+            </p>
+            <p class="margintab">
+              <span class="jskeywordcolor">let</span>
+              index <span class="jskeywordcolor">=</span>
+              <span class="jsnumbercolor">0</span> ;
+            </p>
+            <p class="margintab">
+              <span class="jskeywordcolor">while</span> (
+                <span class="jsnumbercolor">true</span> ) {
+            </p>
+            <p class="margintabX2">
+              <span class="jskeywordcolor">yield</span> index ;
+            </p>
+            <p class="margintabX2">index<span class="jskeywordcolor">++</span> ;</p>
+            <p class="margintab">}</p>
+            <p>}</p>
+
+            <p>
+              <span class="jskeywordcolor">const </span> id 
+              <span class="jskeywordcolor">=</span> 
+              <span class="jsvarcolor">idGenerator()</span> ;
+            </p>
+            <p>
+              <span class="jscyancolor">console.log</span>(
+                id.<span class="jsvarcolor">next</span>( ).value
+              );
+              <span class="jscommentcolor">
+                // Toda vez q a função for chamada um numero de 0 ao infinito será retornado
+              </span>
+            </p>
+          </div>
         </div>
 
 
@@ -244,6 +347,7 @@
               <p>s.<span class="jsvarcolor">toUpperCase</span>() <span class="jscommentcolor">// tudo para MAIÚSCULA</span></p>
               <p>s.<span class="jsvarcolor">toLowerCase</span>() <span class="jscommentcolor">// tudo para minúscula</span></p>
             </div>
+          </div>
 
             <!-- FOR OF -->
             <div class="contentDiv">

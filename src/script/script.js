@@ -6,6 +6,18 @@ $btnMenuOpenAndClose.addEventListener('click',function() {      //quando $btnMen
   });
 
 
+    function* idGene() {
+      let index = 0;
+      while(true) {
+        yield index;
+        index++
+      }
+    } 
+    const idd = idGene();
+    console.log(idd.next().value)
+    console.log(idd.next().value)
+    console.log(idd.next().value)
+
     //AQUI ACONTECE A MAGICA 
     function findString (str)
     {
@@ -16,7 +28,7 @@ $btnMenuOpenAndClose.addEventListener('click',function() {      //quando $btnMen
    
      if (window.find) //funcao de encontrar
       {
-       strFound = self.find(str)
+       strFound = self.find(str);
    
        if (!strFound)
         {

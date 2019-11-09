@@ -379,7 +379,7 @@ h1.ES6 {
     .txtSearch {
         width: 400px;
     }
-    #supercomboIframe {
+    .main-iframe {
         width: 80%;
     }
 }
@@ -387,7 +387,7 @@ h1.ES6 {
     .search-form {
         margin-left: 10%;
     }
-    #supercomboIframe {
+    .main-iframe {
         width: 80%;
     }
 }
