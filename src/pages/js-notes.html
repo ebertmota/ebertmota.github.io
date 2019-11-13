@@ -266,6 +266,7 @@
               </span>
             </p>
           </div>
+
           <!-- ARROW FUNCTION -->
         
           <h3 id="arrow-functions">Arrow Function</h3>
@@ -575,8 +576,7 @@
             <span class="jskeywordcolor">const</span> newArray 
             <span class="jskeywordcolor">=</span>
             array.<span class="jsvarcolor">filter</span>(
-              <span class="jsparametercolor">callback</span>
-              [, <span class="jsnumbercolor">thisArg</span>] );
+            <span class="jsparametercolor">callback</span>);
           </p>
           <p class="jscommentcolor">
             // Callback é uma função que testa cada elemento do array, retornando true para
@@ -590,10 +590,6 @@
           </p>
           <p class="jscommentcolor margintab">
             array => O proprio array que é retornado a cada iteração no filter
-          </p>
-          <p class="jscommentcolor">
-            // thisArg é Opcional, e define o valor a ser usado como <em>this</em> durante
-            a execução do callback
           </p>
         </div>
         <p>Veja um exemplo simples:</p>
@@ -744,7 +740,312 @@
           <p class="jscommentcolor">*/</p>
         </div>
 
-        
+        <h3>Map</h3>
+        <p>Map modifica o array, ou seja tem sempre o mesmo tamanho do array original.</p>
+        <p>Sintax:</p>
+        <div class="dark-codeDiv">
+          <p>
+            array.<span class="jsvarcolor">map</span>(
+            <span class="jskeywordcolor">function</span> (
+            <span class="jsparametercolor">currentValue, index, arr</span> ));
+          </p>
+        </div>
+        <p>Exemplo multiplicando todos os valores do array por 10:</p>
+        <div class="dark-codeDiv">
+          <p>
+            <span class="jskeywordcolor">const</span> numeros 
+            <span class="jskeywordcolor">=</span>
+            [<span class="jsnumbercolor"> 65, 44, 12, 4 </span>];
+          </p>
+          <p>
+          <span class="jskeywordcolor">const</span> numerosX10
+          <span class="jskeywordcolor">=</span> 
+          numeros.<span class="jsvarcolor">map</span>
+          ( (<span class="jsparametercolor">value</span>) <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            <span class="jskeywordcolor">return</span> value
+            <span class="jskeywordcolor">*</span>
+            <span class="jsnumbercolor">10</span> ;
+          </p>
+          <p>});</p>
+        </div>
+        <p>Exemplo um pouco mais complexo:</p>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// Para cada elemento:</p>
+          <p>1. retorne apenas uma string com o nome da pessoa</p>
+          <p>2. remova apenas a chave nome do Objeto</p>
+          <p>3. adicione uma chave id em cada objeto</p>
+
+          <p>
+            <span class="jskeywordcolor">const</span> pessoas 
+            <span class="jskeywordcolor">=</span> [
+          </p>
+          <p class="margintab">
+            { nome<span class="jskeywordcolor">:</span>
+            <span class="jsstringcolor">'Luiz'</span>,
+            idade<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">62</span> },
+          </p>
+          <p class="margintab">
+            { nome<span class="jskeywordcolor">:</span>
+            <span class="jsstringcolor">'Maria'</span>,
+            idade<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">23</span> },
+          </p>
+          <p class="margintab">
+            { nome<span class="jskeywordcolor">:</span>
+            <span class="jsstringcolor">'Eduardo'</span>,
+            idade<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">55</span> },
+          </p>
+          <p class="margintab">
+            { nome<span class="jskeywordcolor">:</span>
+            <span class="jsstringcolor">'Leticia'</span>,
+            idade<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">19</span> },
+          </p>
+          <p class="margintab">
+            { nome<span class="jskeywordcolor">:</span>
+            <span class="jsstringcolor">'Rosana'</span>,
+            idade<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">32</span> },
+          </p>
+          <p class="margintab">
+            { nome<span class="jskeywordcolor">:</span>
+            <span class="jsstringcolor">'Wallace'</span>,
+            idade<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">47</span> },
+          </p>
+          <p>];</p>
+          
+          <p class="jscommentcolor">1.</p>
+          <p>
+            <span class="jskeywordcolor">const</span> string 
+            <span class="jskeywordcolor">=</span>
+            pessoas.<span class="jsvarcolor">map</span>(
+            <span class="jsparametercolor">value</span>
+            <span class="jskeywordcolor">=></span> value.nome ) ;
+          </p>
+
+          <p class="jscommentcolor">2.</p>
+          <p>
+            <span class="jskeywordcolor">const</span> semNome
+            <span class="jskeywordcolor">=</span>
+            pessoas.<span class="jsvarcolor">map</span>(
+            (<span class="jsparametercolor">value</span>)
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+              <span class="jskeywordcolor">delete</span> value.nome;
+          </p>
+          <p class="margintab">
+              <span class="jskeywordcolor">return</span> value;
+          </p>
+          <p>});</p>
+
+          <p class="jscommentcolor">3.</p>
+          <p>
+            <span class="jskeywordcolor">const</span> chaveId
+            <span class="jskeywordcolor">=</span>
+            pessoas.<span class="jsvarcolor">map</span>(
+            (<span class="jsparametercolor">value, index</span>)
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+              value.id <span class="jskeywordcolor">=</span> index;
+          </p>
+          <p class="margintab">
+              <span class="jskeywordcolor">return</span> value;
+          </p>
+          <p>});</p>
+        </div>
+        <p>
+          Você também pode utilizar o map sem alterar o array principal, ou seja
+          criando outro array com o mesmo conteudo, Exemplo:
+        </p>
+        <div class="dark-codeDiv">
+          <p>
+            <span class="jskeywordcolor">const</span> numeros
+            <span class="jskeywordcolor">=</span>
+            [<span class="jsnumbercolor">10, 20, 30, 40</span>];
+          </p>
+          <p>
+            <span class="jskeywordcolor">const</span> numerosX2
+            <span class="jskeywordcolor">=</span>
+            numeros.<span class="jsvarcolor">map</span>(
+            (<span class="jsparametercolor">value</span>) 
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            <span class="jskeywordcolor">let</span> numerosMultiplicados
+            <span class="jskeywordcolor">=</span>
+            value <span class="jskeywordcolor">*</span> 2 ;
+          </p>
+          <p class="margintab">
+            <span class="jskeywordcolor">return</span>
+            numerosMultiplicados
+          </p>
+          <p>});</p>
+        </div>
+
+        <h3>Reduce</h3>
+        <p>
+          Como o nome sugere, o reduce busca reduzir um array. 
+          Ele iterará por cada elemento dessa lista com o objetivo 
+          de ao final gerar um único valor (de qualquer tipo), 
+          como por exemplo a soma de todos os elementos desse array. 
+          Lembrando que não ficamos presos apenas a números.
+        </p>
+        <p>Sintax:</p>
+        <div class="dark-codeDiv">
+          <p>
+            array.<span class="jsvarcolor">reduce</span>
+            (<span class="jskeywordcolor">function</span>
+            (<span class="jsparametercolor">acumulator, currentValue, index, array</span>) {}
+            , acumulatorInitialValue);
+          </p>
+          <p class="jscommentcolor">
+            // Acumulator é a variável que vai servir como acumuladora
+            (que é o valor retornado na ultima iteração) (obrigatório).
+          </p>
+          <p class="jscommentcolor">
+            // acumulatorInitialValue será o valor que a variável acumuladora iniciará,
+            Se não passarmos nada, o valor do acumulator será o primeiro valor do array,
+             e o valor atual(2 parâmetro do callback value) iniciará pelo segundo.
+          </p>
+        </div>
+        <p>Exemplos:</p>
+        <div class="dark-codeDiv">
+          <p>
+            <span class="jskeywordcolor">const</span> numeros
+            <span class="jskeywordcol">=</span>
+            [<span class="jsnumbercolor">5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27</span>];
+          </p>
+          <p class="jscommentcolor">
+            // Retorne a soma de todos os numeros
+          </p>
+          <p>
+            <span class="jskeywordcolor">const</span> soma
+            <span class="jskeywordcolor">=</span>
+            numeros.<span class="jsvarcolor">reduce</span>
+            ( (<span class="jsparametercolor">acumulator, value</span>)
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            acumulator <span class="jskeywordcolor">+=</span> value;
+            <span class="jskeywordcolor">return</span> acumulator;
+          </p>
+          <p>}, <span class="jsnumbercolor">0</span> );</p>
+          <p class="jscommentcolor">// 236</p>
+        </div>
+        <p>
+          O reduce também pode cumprir o papel do map e do filter o que <strong>não é recomendado</strong> 
+          mas que veremos em exemplos abaixo:
+        </p>
+        <div class="dark-codeDiv">
+           <p class="jscommentcolor">//Retorne um array com os numeros pares (Filter)</p>
+           <p>
+              <span class="jskeywordcolor">const</span> pares 
+              <span classs="jskeywordcolor">=</span>
+              numeros.<span class="jsvarcolor">reduce</span>
+              ( (<span class="jsparametercolor">acumulator, value</span>)
+              <span class="jskeywordcolor"> =></span> {
+           </p>
+           <p class="margintab">
+              <span class="jskeywordcolor">if</span> 
+              (value <span class="jskeywordcolor">%</span> 
+              <span class="jsnumbercolor">2 <span class="jskeywordcolor">===</span> 0</span>)
+              acumulator.<span class="jsvarcolor">push</span>(value);
+           </p>
+           <p class="margintab">
+             <span class="jskeywordcolor">return</span> acumulator;
+           </p>
+           <p>}, [ ]);</p>
+           <p class="jscommentcolor">// [ 50, 80, 2, 8, 22 ]</p>
+
+           <p class="jscommentcolor">//Retorne um Array com o Dobro dos valores (MAP)</p>
+           <p>
+              <span class="jskeywordcolor">const</span> dobro 
+              <span classs="jskeywordcolor">=</span>
+              numeros.<span class="jsvarcolor">reduce</span>
+              ( (<span class="jsparametercolor">acumulator, value</span>)
+              <span class="jskeywordcolor"> =></span> {
+           </p>
+           <p class="margintab">
+              acumulator.<span class="jsvarcolor">push</span>
+              (value <span class="jskeywordcolor">*</span> <span class="jsnumbercolor">2</span>);
+           </p>
+           <p class="margintab">
+              <span class="jskeywordcolor">return</span> acumulator;
+            </p>
+           <p>}, [ ]);</p>
+           <p class="jscommentcolor">// [ 10, 100, 160, 2, 4, 6, 10, 16, 14, 22, 30, 44, 54 ]</p>
+        </div>  
+        <p>Exemplo com objetos:</p>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// Retorne a pessoa mais velha</p>
+          <p>
+              <span class="jskeywordcolor">const</span> pessoas
+              <span class="jskeywordcolor">=</span> [
+            </p>
+            <p class="margintab">
+              { nome<span class="jskeywordcolor">:</span>
+                <span class="jsstringcolor">'Luiz'</span> ,
+                idade<span class="jskeywordcolor">:</span>
+                  <span class="jsnumbercolor">62</span> },
+            </p>
+            <p class="margintab">
+              { nome<span class="jskeywordcolor">:</span>
+                <span class="jsstringcolor">'Maria'</span> ,
+                idade<span class="jskeywordcolor">:</span>
+                <span class="jsnumbercolor">23</span> },
+            </p>
+            <p class="margintab">
+              { nome<span class="jskeywordcolor">:</span>
+              <span class="jsstringcolor">'Eduardo'</span> ,
+              dade<span class="jskeywordcolor">:</span>
+              <span class="jsnumbercolor">55</span> },
+            </p>
+            <p class="margintab">
+              { nome<span class="jskeywordcolor">:</span>
+              <span class="jsstringcolor">'Leticia'</span> ,
+              dade<span class="jskeywordcolor">:</span>
+              <span class="jsnumbercolor">19</span> },
+            </p>
+            <p class="margintab">
+              { nome<span class="jskeywordcolor">:</span>
+              <span class="jsstringcolor">'Rosana'</span> ,
+              dade<span class="jskeywordcolor">:</span>
+              <span class="jsnumbercolor">32</span> },
+            </p> 
+            <p class="margintab">
+              { nome<span class="jskeywordcolor">:</span>
+              <span class="jsstringcolor">'Wallace'</span> ,
+              dade<span class="jskeywordcolor">:</span>
+              <span class="jsnumbercolor">470</span> },
+            </p>         
+            <p>];</p>
+
+            <p>
+              <span class="jskeywordcolor">const</span> maisVelha 
+              <span classs="jskeywordcolor">=</span>
+              numeros.<span class="jsvarcolor">reduce</span>
+              ( (<span class="jsparametercolor">acumulator, value</span>)
+              <span class="jskeywordcolor"> =></span> {
+            </p>
+            <p class="margintab">
+              <span class="jskeywordcolor">if</span>
+              (acumulator.idade <span class="jskeywordcolor">></span> value.idade)
+              <span class="jskeywordcolor">return</span> acumulator;
+            </p>
+            <p class="margintab">
+              <span class="jskeywordcolor">return</span> value;
+            </p>
+            <p>}, <span class="jsnumbercolor">0</span>)</p>
+            <p class="jscommentcolor">{ nome: 'Moisés', idade: 470 }</p>
+
+        </div>
         
         <!-- FOR OF -->
         <h3>For of</h3>
