@@ -18,7 +18,7 @@ $btnMenuOpenAndClose.addEventListener('click',function() {      //quando $btnMen
     console.log(idd.next().value)
     console.log(idd.next().value)
 
-    //AQUI ACONTECE A MAGICA 
+    
     function findString (str)
     {
      let TRange = null

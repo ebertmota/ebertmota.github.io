@@ -5,32 +5,33 @@ let id = 0
 
 //procura suas notas salvas se não encontrar exibe um exemplo
 var noteStorage = JSON.parse(localStorage.getItem('notes'))  || ['Anote aqui...'];
-
+let notesIndex = '';
 
 function renderNotes() {
-
-  
-  if (noteStorage == ""){
-    setTimeout( () => {
-      noteStorage = ["Dont live me alone baby...."];
-      renderNotes()
-    },4000)
-  }
-
   //apaga todo conteudo para reconstruir
   noteContainer.innerHTML = '';
   
   //para cada item de noteStorage...
-  for (notes of noteStorage){
+  for (note of noteStorage){
+    notesIndex = note;
     newNote();
+    //ALGUM ERRO AQ 
     let textarea = document.getElementById(id);
-    textarea.value = notes;
+    textarea.value = note;
+    
+   
     
   }
 }
 
 //assim que o documento carregar chama o renderNotes
 document.body.onload = renderNotes();
+
+/* color */
+
+function colorSwitch() {
+ alert('Funcionalidade ainda não disponível...')
+}
 
 function newNote() {
   //chama o gerador de Id para cada Elemento ter uma primary Key
@@ -49,16 +50,16 @@ function newNote() {
 
   let divButton = document.createElement('div');
   divButton.setAttribute('class', 'note-buttons')
-
+  
 
   let colorSwitch = document.createElement('button');
+  colorSwitch.setAttribute('onclick', `colorSwitch(${pos})`)
   colorSwitch.setAttribute('class', 'submitButton');
   let colorSwitchIcon = document.createElement('i');
   colorSwitchIcon.setAttribute('class', 'fas fa-palette')
   colorSwitch.appendChild(colorSwitchIcon)
-
   
-  var pos = noteStorage.indexOf(notes);
+  var pos = noteStorage.indexOf(notesIndex);
   
 
   let saveBtn = document.createElement('button');
@@ -127,3 +128,5 @@ function idGenerator(){
        timeStamp.getSeconds().toString() +
        timeStamp.getMilliseconds().toString();
 } 
+
+

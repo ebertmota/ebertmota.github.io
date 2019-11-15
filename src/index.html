@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <title>simpleNote</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-    </head>
-    <body>
-         <!-- start HEADER -->
-        <header id="header">
-            <!-- start SEARCH BAR -->
-            <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
-            <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
-                    <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
-                    <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
-                    <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
-            </form>
-            <!-- end SEARCH BAR -->
-            
-            <!-- start MENU SLIDE -->
-             <div id="menuDiv" class="menuDiv">
-                <nav class="menu-slide">
-                    <ul>
-                        <li><a href="index.html">Notas</a></li>
-                        <li><a href="./pages/html-notes.html">Html</a></li>
-                        <li><a href="./pages/css-notes.html">Css</a></li>
-                        <li><a href="./pages/js-notes.html">JavaScript</a></li>
-                        <li><a href="node-notes.html">Node JS</a></li>
-                        <li><a href="./pages/linux-notes.html">Linux</a></li>
-                        <li><a href="./pages/database-notes.html">Banco de dados</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <!-- end MENU SLIDE -->
-        </header>
-        <div class="conteiner">
-            <button id="add-note" onclick="addNote()">Adicionar Nota +</button>
-            <div class="note-conteiner">
-                
-                
+  <head>
+    <title>simpleNote</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <body>
+    <!-- start HEADER -->
+    <header id="header">
+    <!-- start SEARCH BAR -->
+    <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
+    <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
+            <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
+            <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
+            <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
+    </form>
+    <!-- end SEARCH BAR -->
+    
+    <!-- start MENU SLIDE -->
+    <div id="menuDiv" class="menuDiv">
+      <nav class="menu-slide">
+          <ul>
+              <li><a href="index.html">Notas</a></li>
+              <li><a href="./pages/html-notes.html">Html</a></li>
+              <li><a href="./pages/css-notes.html">Css</a></li>
+              <li><a href="./pages/js-notes.html">JavaScript</a></li>
+              <li><a href="node-notes.html">Node JS</a></li>
+              <li><a href="./pages/linux-notes.html">Linux</a></li>
+              <li><a href="./pages/database-notes.html">Banco de dados</a></li>
+          </ul>
+      </nav>
+    </div>
+    <!-- end MENU SLIDE -->
+    </header>
+    <div class="conteiner">
+      <button id="add-note" onclick="addNote()">Adicionar Nota +</button>
+      <div class="note-conteiner"></div> 
+    </div>
+    <!--end HEADER --> 
 
-                
-            </div>
-           
-        </div>
-        <!--end HEADER --> 
-
-        <script src="script/script.js"></script>
-        <script src="script/notes.js"></script>
-        <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
-    </body>
+    <script src="script/script.js"></script>
+    <script src="script/notes.js"></script>
+    <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
+  </body>
 </html>
