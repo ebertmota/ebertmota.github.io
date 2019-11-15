@@ -1047,6 +1047,68 @@
 
         </div>
         
+        <h3>For Each</h3>
+        <p>
+          O método <span class="redAtribute">forEach()</span> chama uma função uma vez
+          para cada elemento em um array, em ordem.
+        </p>
+        <p>Sintax</p>
+        <div class="dark-codeDiv">
+          <p>
+            array.<span class="jsvarcolor">forEach</span>
+            (<span class="jskeywordcolor">function</span>
+            (<span class="jsparametercolor">currentValue, index, array</span>),
+            <span class="jsnumbercolor">thisValue</span>)
+          </p>
+        </div>
+        <p>Exemplos:</p>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// Retorne a soma de todos os valores em um Array</p>
+          <p>
+            <span class="jskeywordcolor">let</span> sum
+            <span class="jskeywordcolor">=</span>
+            <span class="jsnumbercolor">0</span>;
+          </p>
+          <p>
+            <span class="jskeywordcolor">const</span> numbers
+            <span class="jskeywordcolor">=</span>
+            [ <span class="jsnumbercolor">60, 9, 24, 12</span> ];
+          </p>
+          <p>
+            numbers.<span class="jsvarcolor">forEach</span>(
+            ( <span class="jsparametercolor">item</span> )
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            sum <span class="jskeywordcolor">+=</span> item;
+          </p>
+          <p>});</p>
+          <p>
+            <span class="jscyancolor">console.log</span>(sum);
+          </p>
+          <p class="jscommentcolor">// 105</p>
+        </div>
+
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// Multiplique o valor de cada elemento por 10</p>
+          <p>
+            <span class="jskeywordcolor">const</span> numbers
+            <span class="jskeywordcolor">=</span>
+            [ <span class="jsnumbercolor">60, 9, 24, 12</span> ];
+          </p>
+          <p>numbers.<span class="jsvarcolor">forEach</span>(myFunction);</p>
+          <p>
+            <span class="jskeywordcolor">function</span> myFunction(
+            <span class="jsparametercolor">item, index, array</span>) {
+          </p>
+          <p class="margintab">
+            array[index] = item <span class="jskeywordcolor">*</span>
+            <span class="jsnumbercolor">10</span>
+          </p>
+          <p>}</p>
+          <p class="jscommentcolor">// [ 600, 90, 240, 120 ]</p>
+        </div>
+
         <!-- FOR OF -->
         <h3>For of</h3>
         <p>
