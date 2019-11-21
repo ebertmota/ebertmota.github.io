@@ -181,3 +181,25 @@ table.property-values tr:nth-child(even) {
   color: #fff;
   padding: 10px;
 }
+
+.list-style li {
+  position: relative;
+  text-align: left;
+  list-style: disc;
+  list-style-position: inside;
+}
+
+/* NODEJS */
+.node-background {
+  background-image: url('../../assets/nodejs.jpeg');
+}
+
+.node-body .contentDiv {
+  background: rgba(255,255,255);
+}
+
+.node-body h1 {
+  color: rgb(152, 252, 161);
+  border-bottom: 1px solid rgb(155, 245, 162);
+  ;
+}

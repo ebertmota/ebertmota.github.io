@@ -7,10 +7,10 @@
     <link rel="stylesheet" type="text/css" href="../css/notes.css"/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
-  <body>
+  <body class="node-body node-background">
     <h1 class="font0">Pagina de Javascript</h1>
     <!-- start HEADER -->
-    <header id="header">
+    <header id="header" class="node-background">
       <!-- start SEARCH BAR -->
       <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
       <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
@@ -42,6 +42,25 @@
         <h1 class="title">NodeJS</h1>
       </main>
       <div class="contentDiv">
+        <h2>Atualizando o Node (Linux)</h2>
+        <h3># Desinstalando a versão antiga</h3>
+        <div class="codeDiv">
+          <p>sudo apt purge --auto-remove nodejs -y</p>
+          <p>sudo rm /etc/apt/sources.list.d/nodesource.list*</p>
+        </div>
+        <h3>Instalando nova versão</h3>
+        <div class="codeDiv">
+          <p>Escolha a versão que deseja instalar e siga as instruções para sua distro</p>
+          <p><a 
+            class="atribute"
+            href="https://github.com/nodesource/distributions"
+            target="_blank">
+              github.com/nodesource
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="contentDiv">
         <h2>NPM</h2>
         <p>Npm significa Node Package Manager (Gerenciador de pacotes do Node), 
           é um repositório online para publicação de projetos de código aberto para NodeJs,
@@ -59,8 +78,24 @@
             <td>iniciar o npm em seu diretorio que foi executado.</td>
           </tr>
           <tr>
+            <td>install</td>
+            <td>instalar dependência</td>
+          </tr>
+          <tr>
+            <td>uninstall</td>
+            <td>desinstalar dependências</td>
+          </tr>
+          <tr>
             <td>run</td>
             <td>Rodar script criado no package.json</td>
+          </tr>
+          <tr>
+            <td>ls --depth=0</td>
+            <td>ver todas as dependências que você instalou</td>
+          </tr>
+          <tr>
+            <td>outdated</td>
+            <td>ver quais pacotes seus estão desatualizados</td>
           </tr>
         </table>
       </div>
@@ -91,7 +126,48 @@
           do Node herdam desse módulo suas funcionalidades de emit e listen.
         </p>
       </div>
+
+      <div class="contentDiv">
+        <h2>Express</h2>
+        <p>É um micro framework projetado para criar aplicativos web e APIs.</p>
+        <h3>Rotas</h3>
+        <p>A definição de rotas segue a seguinte estrutura:</p>
+        <div class="dark-codeDiv">
+          <p>
+            app.<span class="jsvarcolor">method</span>( <span class="jsstringcolor">Path</span>,
+            Handler );
+          </p>
+        </div>
+        <p>Onde:</p>
+        <ul class="list-style">
+          <li><strong>app</strong> é a const em que o express foi instanciado.</li>
+          <li><strong>method</strong> é um HTTP request method (como get post put delete...)</li>
+          <li><strong>Path</strong> é caminho do servidor ou a rota da sua aplicação</li>
+          <li>
+            <strong>Handler</strong> é uma função que é executada quando sua aplicação cai na rota que 
+            você passou no path.
+          </li>
+        </ul>
+        <p>Um exemplo simples e prático:</p>
+        <div class="dark-codeDiv">
+          <p>
+            app.<span class="jsvarcolor">get</span>(
+            <span class="jsstringcolor">'/'</span>,
+            ( ) <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            res.<span class="jsvarcolor">send</span>(
+            <span class="jsstringcolor">'Hello World'</span> )
+          </p>
+          <p>});</p>
+          <p class="jscommentcolor">
+            // quando o usuario acessar seu site na rota principal uma 
+            mensagem de 'Hello World' será retornada
+          </p>
+        </div>
+      </div>
     </div>
     <script src="../script/script.js"></script>
+    <script src="../script/nodejspage.js"></script>
     <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
   </body>
