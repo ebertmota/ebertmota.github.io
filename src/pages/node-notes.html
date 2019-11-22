@@ -68,35 +68,40 @@
           e ajuda na instalação de pacotes, gerenciamento de versão e gerenciamento de 
           dependências.
         </p>
-        <table class="property-values">
-          <tr>
-            <th>Comando</th>
-            <th>Descrição</th>
-          </tr>
-          <tr>
-            <td>init</td>
-            <td>iniciar o npm em seu diretorio que foi executado.</td>
-          </tr>
-          <tr>
-            <td>install</td>
-            <td>instalar dependência</td>
-          </tr>
-          <tr>
-            <td>uninstall</td>
-            <td>desinstalar dependências</td>
-          </tr>
-          <tr>
-            <td>run</td>
-            <td>Rodar script criado no package.json</td>
-          </tr>
-          <tr>
-            <td>ls --depth=0</td>
-            <td>ver todas as dependências que você instalou</td>
-          </tr>
-          <tr>
-            <td>outdated</td>
-            <td>ver quais pacotes seus estão desatualizados</td>
-          </tr>
+        <table class="table-material">
+          <thead>
+            <tr>
+              <th>Comando</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>init</td>
+              <td>iniciar o npm em seu diretorio que foi executado.</td>
+            </tr>
+            <tr>
+              <td>install</td>
+              <td>instalar dependência</td>
+            </tr>
+            <tr>
+              <td>uninstall</td>
+              <td>desinstalar dependências</td>
+            </tr>
+            <tr>
+              <td>run</td>
+              <td>Rodar script criado no package.json</td>
+            </tr>
+              <tr>
+              <td>ls --depth=0</td>
+              <td>ver todas as dependências que você instalou</td>
+            </tr>
+            <tr>
+              <td>outdated</td>
+              <td>ver quais pacotes seus estão desatualizados</td>
+            </tr>
+          </tbody>
+          
         </table>
       </div>
 
@@ -164,9 +169,299 @@
             // quando o usuario acessar seu site na rota principal uma 
             mensagem de 'Hello World' será retornada
           </p>
+          </div>
+          <h4>Métodos de roteamento</h4>
+          <p>
+            Um método de roteamento é derivado a partir de um dos métodos HTTP,
+            e é anexado a uma instancia da classe express.
+          </p>
+          <div class="dark-codeDiv">
+            <p class="jscommentcolor">// Rota com método GET </p>
+            <p>
+              app.<span class="jsvarcolor">get</span>(
+              <span class="jsstringcolor">'/'</span>, (
+              <span class="jsparametercolor">req, res</span> )
+              <span class="jskeywordcolor">=></span> {
+            </p>
+            <p class="margintab">
+              res.<span class="jsvarcolor">send</span>(
+              <span class="jsstringcolor">'Get request to the homepage'</span>
+              )
+            </p>
+            <p>});</p>
+            <p class="jscommentcolor">// Rota com método POST </p>
+            <p>
+              app.<span class="jsvarcolor">post</span>(
+              <span class="jsstringcolor">'/'</span>, (
+              <span class="jsparametercolor">req, res</span> )
+              <span class="jskeywordcolor">=></span> {
+            </p>
+            <p class="margintab">
+              res.<span class="jsvarcolor">send</span>(
+              <span class="jsstringcolor">'POST request to the homepage'</span>
+              )
+            </p>
+            <p>});</p>
+        </div>
+        <p>
+          Existe um método de roteamento especial, app.all( ), que não é 
+          derivado de nenhum método HTTP, este método é usado para carregar
+          funções de 
+          <a
+          class="link"
+          target="_blank" 
+          href="https://expressjs.com/pt-br/guide/using-middleware.html">
+          middleware
+          </a>
+          em um caminho para todos os métodos de solicitação.
+        </p>
+        <h4>Caminhos de rota</h4>
+        <p>
+          Caminhos de rotas podem ser sequências de caracteres, padrões de sequências
+          ou expressões regulares.
+        </p>
+        <p>
+          Aqui estão alguns exemplos de caminhos de rota baseados em sequeências de 
+          caracteres:
+        </p>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// corresponde ao caminho '/about'</p>
+          <p>
+            app.<span class="jsvarcolor">get</span>(
+            <span class="jsstringcolor">'/about'</span>, (
+            <span class="jsparametercolor">req, res</span>)
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            res.<span class="jsvarcolor">send</span>(
+            <span class="jsstringcolor">'about'</span>)
+          </p>
+          <p>});</p>
+
+          <p class="jscommentcolor">// corresponde ao caminho '/pages'</p>
+          <p>
+            app.<span class="jsvarcolor">get</span>(
+            <span class="jsstringcolor">'/about'</span>, (
+            <span class="jsparametercolor">req, res</span>)
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            res.<span class="jsvarcolor">send</span>(
+            <span class="jsstringcolor">'pages'</span>)
+          </p>
+          <p>});</p>
+        </div>
+        <p>Exemplo de caminhos de rotas baseados em expressões regulares:</p>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">
+            // este caminho irá corresponder a qualquer coisa com um "a" no nome
+          </p>
+          <p>
+            app.<span class="jsvarcolor">get</span>(
+            <span class="jsstringcolor">/a/</span>, (
+            <span class="jsparametercolor">req, res</span>)
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            res.<span class="jsvarcolor">send</span>(
+            <span class="jsstringcolor">'/a/'</span>)
+          </p>
+          <p>});</p>
+          <p class="jscommentcolor">
+              // este caminho irá corresponder a qualquer coisa que termine com fly
+            </p>
+            <p>
+              app.<span class="jsvarcolor">get</span>(
+              <span class="jsstringcolor">/.*fly$/</span>, (
+              <span class="jsparametercolor">req, res</span>)
+              <span class="jskeywordcolor">=></span> {
+            </p>
+            <p class="margintab">
+              res.<span class="jsvarcolor">send</span>(
+              <span class="jsstringcolor">'/.*fly$/'</span>)
+            </p>
+            <p>});</p>
+        </div>
+        <h4>Métodos de resposta</h4>
+        <p>
+          Os métodos do objeto de resposta (res) na seguinte tabela podem enviar uma 
+          resposta ao cliente, e finalizar o ciclo de solicitação-resposta.
+        </p>
+        <table class="table-material">
+          <thead>
+            <tr>
+              <th>Método</th>
+              <th>Descrição</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>res.download()</td>
+              <td>Solicita que seja efetuado o download de um arquivo</td>
+            </tr>
+            <tr>
+              <td>res.end()</td>
+              <td>Termina o processo de resposta.</td>
+            </tr>   
+            <tr>
+              <td>res.json()</td>
+              <td>Envia uma resposta JSON.</td>
+            </tr>         
+            <tr>
+              <td>res.jsonp()</td>
+              <td>Envia uma resposta JSON com suporta ao JSONP.</td>
+            </tr>
+            <tr>
+              <td>res.redirect()</td>
+              <td>Redireciona uma solicitação.</td>
+            </tr>
+            <tr>
+              <td>res.render()</td>
+              <td>Renderiza um modelo de visualização.</td>
+            </tr>
+            <tr>
+              <td>res.send()</td>
+              <td>Envia uma resposta de vários tipos.</td>
+            </tr>
+            <tr>
+              <td>res.sendFile</td>
+              <td>Envia um arquivo como um fluxo de octeto.</td>
+            </tr>
+            <tr>
+              <td>res.sendStatus()</td>
+              <td>
+                Configura o código do status de resposta e envia a sua representação
+                em sequência de caracteres como o corpo de resposta.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h4>Parâmetros e Queries na rota</h4>
+        <p>Exemplo de Rota com Url param:</p>
+        <div class="codeDiv">
+        <p>http://facebook.com/profiles/<span class="green">174652</span></p> 
+        <p class="jscommentcolor">
+          O 174652 no exemplo é da conta do usuario que está acessando o
+          facebook, e é um parâmetro de rota
+        </p>
+        </div>
+        <p>Agora veja o mesmo exemplo com Query string:</p>
+        <div class="codeDiv">
+          <p>
+            http://facebook.com/profiles/174652/<span class="green">?campanha=googleads</span>
+          </p>
+        </div>
+        <ul class="list-style">
+          <li><span class="green">?</span> sinaliza que você está iniciando uma query string</li>
+          <li><span class="green">campanha</span> é a chave de sua query string</li>
+          <li><span class="green">googleads</span> é o valor</li>
+        </ul>
+        <p>
+          Você também pode adicionar vários paramêtros em query string usando entre eles um
+          <span class="green">&</span> Ex:
+        </p>
+        <div class="codeDiv">
+          <p>
+            .../profiles/<span class="green">?campanha=googleads & param2=value2 & param3=value3</span>
+          </p>
+          <p class="jscommentcolor">espaços usados apenas para melhor visualização do &</p>
+        </div>
+        <div class="alertDiv">
+          <p>
+            Se você não informar ao express que sua rota vai receber um parâmetro o uso dele
+            não vai ser posível.
+          </p>
+        </div>
+        <p>Para dizer que sua rota vai receber um parâmetro:</p>
+        <div class="dark-codeDiv">
+          <p>
+            app.<span class="jsvarcolor">get</span>(
+            <span class="jsstringcolor">'/testes/:user_id'</span>, ( )
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">...restante do código aqui</p>
+          <p>});</p>
+          <p class="jscommentcolor">
+            // usando o '/:' você indica que a rota vai receber um parametro
+          </p>
+          <p class="jscommentcolor">
+            // o que vier depois do /:, nesse caso user_id vai ser a chave referente ao valor
+            que você enviar como parâmetro na url
+          </p>
+        </div>
+        <p>
+          Dessa maneira se você tentar acessar /testes SEM PASSAR um parâmetro
+          não vai funcionar.
+        </p>
+        <p>Para poder tornar o parâmetro opcional adicione <span class="green">?</span> como no ex:</p>
+        <div class="dark-codeDiv">
+          <p>
+            app.<span class="jsvarcolor">get</span>(
+            <span class="jsstringcolor">'/testes/:user_id?'</span>, ( )
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">...restante do código aqui</p>
+          <p>});</p>
+        </div>
+        <h4>Enviando parâmetros no corpo da requisição</h4>
+        <p>
+          No exemplo abaixo temos um formulário com method post sendo enviado
+          para a rota raiz do site:
+        </p>
+        <div class="dark-codeDiv">
+          <p>
+            app.<span class="jsvarcolor">get</span>(
+            <span class="jsstringcolor">'/'</span> ( )
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            res.<span class="jsvarcolor">send</span>(
+          </p>
+          <p class="margintabX2 jsstringcolor">
+            `&ltform action="/" method="POST"&gt
+          </p>
+          <p class="margintabX2 jsstringcolor">&ltinput type="text" name="nome"&gt</p>
+          <p class="margintabX2 jsstringcolor">&ltbutton>Enviar&lt/button&gt</p> 
+          <p class="margintabX2 jsstringcolor">&lt/form&gt`</p>
+          <p class="margintab">)</p>
+          <p>});</p>
+
+          <p>
+            app.<span class="jsvarcolor">post</span>(
+            <span class="jsstringcolor">'/'</span>, (<span class="jsparametercolor">req, res</span>)
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            <span class="jscyancolor">console.log</span>(req.body);
+          </p>
+          <p class="margintab">
+            res.<span class="jsvarcolor">send</span>(
+            `<span class="jsstringcolor">O que você me enviou foi </span>
+            <span class="jskeywordcolor">${
+            <span class="jsdefaultcolor">req.body.nome </span>}</span>`);
+            <span class="jscommentcolor">//esse nome é o name do input do form</span>
+          </p>
+          <p>});</p>
+
+          <p class="jscommentcolor">// O que você escrever no input será enviado no body da requisição e não na url</p>
+        </div>
+        <p>
+          Para enviar esses parâmetros no corpo da requisição você tem que informar ao express com 
+          a linha de código abaixo:
+        </p>
+        <div class="dark-codeDiv">
+          <p>
+            app.<span class="jsvarcolor">use</span>(
+            express.<span class="jsvarcolor">urlencoded</span>
+            ({ extended<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">true</span> }) );
+          </p>
         </div>
       </div>
-    </div>
+      
+
+
+    </div> <!-- end container div-->
     <script src="../script/script.js"></script>
     <script src="../script/nodejspage.js"></script>
     <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>

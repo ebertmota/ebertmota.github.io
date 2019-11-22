@@ -63,7 +63,9 @@
     background-color: rgba(148, 148, 148, 0.1);
     color: rgba(231, 43, 59, 0.9);
 }
-
+.link {
+  color: rgb(6, 141, 182);
+}
 
 table#simpleTable {
     
@@ -199,7 +201,26 @@ table.property-values tr:nth-child(even) {
 }
 
 .node-body h1 {
-  color: rgb(152, 252, 161);
-  border-bottom: 1px solid rgb(155, 245, 162);
+  color: #72f372;
+  border-bottom: 1px solid #72f372;
   ;
+}
+
+.table-material {
+  display: table;
+  border-spacing: 2px;
+  margin: 1px 1px 1px 0;
+  border-collapse: collapse;
+  empty-cells: show;
+  width: 100%;
+}
+.table-material thead,
+.table-material thead tr {
+  background-color: rgb(231, 231, 238);
+}
+.table-material thead th {
+  text-align: center;
+}
+.table-material tbody td:first-child {
+  color: rgb(11, 8, 167);
 }
