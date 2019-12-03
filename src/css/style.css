@@ -332,6 +332,7 @@ div.note-buttons button {
   margin-left: 80px;
 }
 .contentDiv {
+    background: rgba(255,255,255);
     left: 50%;
     transform: translateX(-50%);
     width: 100%;

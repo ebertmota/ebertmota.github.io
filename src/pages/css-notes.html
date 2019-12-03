@@ -1,218 +1,217 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <title>Css notes</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="../css/notes.css"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-    </head>
-    <body>
-         <!-- start HEADER -->
-        <header id="header">
-            <!-- start SEARCH BAR -->
-            <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
-            <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
-                    <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
-                    <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
-                    <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
-            </form>
-            <!-- end SEARCH BAR -->
-             <!-- start MENU SLIDE -->
-             <div id="menuDiv" class="menuDiv">
-                <nav class="menu-slide">
-                    <ul>
-                        <li><a href="../index.html">Notas</a></li>
-                        <li><a href="html-notes.html">Html</a></li>
-                        <li><a href="css-notes.html">Css</a></li>
-                        <li><a href="js-notes.html">JavaScript</a></li>
-                        <li><a href="node-notes.html">Node JS</a></li>
-                        <li><a href="linux-notes.html">Linux</a></li>
-                        <li><a href="database-notes.html">Banco de dados</a></li>
-                    </ul>
-                </nav>
+  <head>
+    <title>Css notes</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/notes.css"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <body class="css-background">
+  <!-- start HEADER -->
+    <header id="header">
+   <!-- start SEARCH BAR -->
+      <a id="btn-open-menu"><i class="fas fa-bars search-icon menu"></i></a>
+      <form action='javascript:void()' class='search-form' onSubmit='findString(this.search.value)'>
+        <button class="submitBtn"  type="reset" ><i id="xbtn"class="fas fa-times search-icon" ></i></button>
+        <input class="txtSearch" type=text name=search placeholder="Pesquisar" size=20 autocomplete="off">
+        <button class="submitBtn"><i id="btnlupa"class="fas fa-search search-icon"></i></button>
+      </form>
+    <!-- end SEARCH BAR -->
 
+    <!-- start MENU SLIDE -->
+      <div id="menuDiv" class="menuDiv">
+        <nav class="menu-slide">
+          <ul>
+            <li><a href="../index.html">Notas</a></li>
+            <li><a href="html-notes.html">Html</a></li>
+            <li><a href="css-notes.html">Css</a></li>
+            <li><a href="js-notes.html">JavaScript</a></li>
+            <li><a href="node-notes.html">Node JS</a></li>
+            <li><a href="linux-notes.html">Linux</a></li>
+            <li><a href="database-notes.html">Banco de dados</a></li>
+          </ul>
+        </nav>
+      </div>
+    <!-- end MENU SLIDE -->
+    </header>
+    <!--end HEADER --> 
 
-            </div>
-            <!-- end MENU SLIDE -->
-        </header>
-        <!--end HEADER --> 
-        <div class="conteiner">
-            <main>
-                
-                <h1 class="title">CSS</h1>
-                <div class="contentDiv">
-                    <h2>Meta tag viewport</h2>
-                    <p>Um site tipicamente otimizado para dispositivos móveis, contém algo como o que segue:</p>
-                    <p class="codeDiv">&lt<label class="pink">meta</label><label class="green"> name</label>=<label class="blue">"viewport"</label>
-                        <label class="green">content</label>=<label class="blue">"width=device-width, user-scalable=no"</label>&gt
-                    </p>
-                    <p class="notHover">A propriedade <label class="spotlight">width</label> controla o tamanho da viewport. O valor desta propriedade pode 
-                        ser definido com um número específico de píxels como por exemplo <label class="spotlight">width=600</label> ou com um valor especial chamado <label class="spotlight">device-width</label> 
-                        que representa a largura da onde o conteúdo está sendo apresentado em pixels de CSS considerando uma escala de 100%. 
-                        (Ainda há as propriedades <label class="spotlight">height</label> e <label class="spotlight">device-height</label>, as quais podem ser úteis para páginas com elementos que mudam de posição 
-                        baseado na altura da viewport.)</p>
+    <div class="conteiner">
+      <main>   
+        <h1 class="title">CSS</h1>
+        <div class="contentDiv">
+          <h2>Meta tag viewport</h2>
+          <p>Um site tipicamente otimizado para dispositivos móveis, contém algo como o que segue:</p>
+          <p class="codeDiv">&lt<label class="pink">meta</label><label class="green"> name</label>=<label class="blue">"viewport"</label>
+              <label class="green">content</label>=<label class="blue">"width=device-width, user-scalable=no"</label>&gt
+          </p>
+          <p class="notHover">A propriedade <label class="spotlight">width</label> controla o tamanho da viewport. O valor desta propriedade pode 
+              ser definido com um número específico de píxels como por exemplo <label class="spotlight">width=600</label> ou com um valor especial chamado <label class="spotlight">device-width</label> 
+              que representa a largura da onde o conteúdo está sendo apresentado em pixels de CSS considerando uma escala de 100%. 
+              (Ainda há as propriedades <label class="spotlight">height</label> e <label class="spotlight">device-height</label>, as quais podem ser úteis para páginas com elementos que mudam de posição 
+              baseado na altura da viewport.)</p>
 
-                    <p class="notHover">
-                        A propriedade <label class="spotlight">initial-scale</label> controla o nível de amplificação quando a página é carregada pela primeira vez.
-                        As propriedades <label class="spotlight">maximum-scale</label>, <label class="spotlight">minimum-scale</label>, 
-                        e <label class="spotlight">user-scalable</label> controlam a permissão para o usuário efetuar aumento ou diminuição da página.
-                    </p>
-                    <p>Alem disso a meta viewport auxilia para o funcionamento de media query nos browsers.</p>
-                </div>
-
-                <div class="contentDiv">
-                    <h2>Centralizando conteúdo com FlexBox</h2>
-                    
-                    <p>display: flex;</p>
-                    <p>justify-content: center;</p>
-                    <p>align-items: center;</p>
-                    <p>flex-direction: row;</p>
-                </div>
-
-                <div class="contentDiv">
-                    <h2>Mudando cor da seleção em sua página</h2>
-                    <p class="codeDiv" ><span class="pink">*::selection</span> {
-                        <span class="green">background:</span> <sapn class="blue">#f7e018</span>;
-                        <span class="green">color:</span> <span class="blue">#000</span>;  
-                    }</p>
-                </div>
-
-                <div class="contentDiv">
-                    <h2>Gradiente ou degradê</h2>
-                    <p>Gradiente Simples</p>
-                    <p class="codeDiv"><span class="pink">background:</span> 
-                    <span class="green">linear-gradient(<span class="blue">to right,#f000,#ff0</span>);
-                    </span></p>
-
-                    <p>Sintax: </p>
-                    <p>background: <strong>tipo_do</strong>-gradient(<strong>direção</strong>,
-                    <strong>cor1</strong>,<strong>cor2</strong>);</p>
-                </div>
-                
-                <div class="contentDiv">
-                    <h2>Display</h2>
-                    <p><span class="blue">Css syntax</span>: display: value;</p>
-                    <p><span class="blue">JavaScript syntax</span>:	object.style.display="none"</p>
-                    <p>A propriedade <i>Display</i> especifica o comportamento do display</p>
-                    <h3>Propriedades e valores</h3>
-                    <table class="property-values">
-                        <tr>
-                            <th>Valor</th>
-                            <th>Descrição</th>
-                        </tr>
-                        <tr>
-                            <td>inline</td>
-                            <td>Seta o display para um elemento de uma linha como &lt<span class="pink">span</span>&gt,
-                                Qualquer propriedade height ou width não irão fazer efeito.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>block</td>
-                            <td>Seta o display para um elemento de bloco como o &lt<span class="pink">p</span>&gt,
-                                Começa sempre em uma nova linha e tem width de 100%.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>contents</td>
-                            <td>Faz o container desaparecer, transformando os elementos filho (child) dele,
-                                como filhos(children) do elemento no proximo nivel do DOM.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>flex</td>
-                            <td>Define o display do elemento como block-level flex container, ou seja flexivel</td>
-                        </tr>
-                        <tr>
-                            <td>grid</td>
-                            <td>Define o display do elemento como block-level grid container</td>
-                        </tr>
-                        <tr>
-                            <td>inline-block</td>
-                            <td>Define o display para um elemento inline-level block container. O elemento por si
-                                é formado do mesmo jeito de um elemento inline, mas você pode aplicar valores 
-                                a height e width.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>inline-flex</td>
-                            <td>Elemento como inline-level flex container</td>
-                        </tr>
-                        <tr>
-                            <td>inline-grid</td>
-                            <td>Elemento como inline-level grid container</td>
-                        </tr>
-                        <tr>
-                            <td>inline-table</td>
-                            <td>O elemento é configurado como inline-level table</td>
-                        </tr>
-                        <tr>
-                            <td>list-item</td>
-                            <td>Seleciona o comportamento do elemento para como o do elemento &lt<span class="pink">li</span>&gt</td>
-                        </tr>
-                        <tr>
-                            <td>run-in</td>
-                            <td>Seleciona o display para ou block ou inline, dependendo do contexto</td>
-                        </tr>
-                        <tr>
-                            <td>table</td>
-                            <td>Define o mesmo comportamento do elemento &lt<span class="pink">table</span>&gt</td>
-                        </tr>
-                        <tr>
-                            <td>table-caption</td>
-                            <td>Define o mesmo comportamento de um elemento &lt<span class="pink">caption</span>&gt</td>
-                        </tr>
-                        <tr>
-                            <td>table-column-group</td>
-                            <td>Define o mesmo comportamento de um elemento &lt<span class="pink">colgroup</span>&gt</td>
-                        </tr>
-                        <tr>
-                            <td>table-header-group</td>
-                            <td>Define o mesmo comportamento de um elemento &lt<span class="pink">thead</span>&gt</td>
-                        </tr>
-                        <tr>
-                            <td>table-footer-group</td>
-                            <td>Define o mesmo comportamento de um elemento &lt<span class="pink">tfoot</span>&gt</td>
-                        </tr>
-                        <tr>
-                            <td>table-row-group</td>
-                            <td>Mesmo comportamento de um elemento &lt<span class="pink">tbody</span>&gt/td>
-                        </tr>
-                        <tr>
-                            <td>table-cell</td>
-                            <td>Mesmo comportamento de um elemento &lt<span class="pink">td</span>&gt</td>
-                        </tr>
-                        <tr>
-                            <td>table-column</td>
-                            <td>Mesmo comportamento de um elemento &lt<span class="pink">col</span>&gt</td>
-                        </tr>
-                        <tr>
-                            <td>table-row</td>
-                            <td>Mesmo comportamento de um elemento &lt<span class="pink">tr</span>&gt</td>
-                        </tr>
-                        <tr>
-                            <td>none</td>
-                            <td>O Elemento é completamente removido da tela</td>
-                        </tr>
-                        <tr>
-                            <td>initial</td>
-                            <td>Seleciona a propriedade do display para o seu valor padrão</td>
-                        </tr>
-                        <tr>
-                            <td>inherit</td>
-                            <td>Herda essa propriedade do seu elemento pai</td>
-                        </tr>
-                    </table>
-
-                </div>
-            </main>
-
-            <footer>
-                <p>&copy Ebert Mota</p>
-            </footer>
-            
+          <p class="notHover">
+              A propriedade <label class="spotlight">initial-scale</label> controla o nível de amplificação quando a página é carregada pela primeira vez.
+              As propriedades <label class="spotlight">maximum-scale</label>, <label class="spotlight">minimum-scale</label>, 
+              e <label class="spotlight">user-scalable</label> controlam a permissão para o usuário efetuar aumento ou diminuição da página.
+          </p>
+          <p>Alem disso a meta viewport auxilia para o funcionamento de media query nos browsers.</p>
         </div>
-        <script src="../script/script.js"></script>
-        <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
-    </body>
+
+        <div class="contentDiv">
+          <h2>Centralizando conteúdo com FlexBox</h2>
+          
+          <p>display: flex;</p>
+          <p>justify-content: center;</p>
+          <p>align-items: center;</p>
+          <p>flex-direction: row;</p>
+        </div>
+
+        <div class="contentDiv">
+          <h2>Mudando cor da seleção em sua página</h2>
+          <p class="codeDiv" ><span class="pink">*::selection</span> {
+            <span class="green">background:</span> <sapn class="blue">#f7e018</span>;
+            <span class="green">color:</span> <span class="blue">#000</span>;  
+          }</p>
+        </div>
+
+        <div class="contentDiv">
+          <h2>Gradiente ou degradê</h2>
+          <p>Gradiente Simples</p>
+          <p class="codeDiv"><span class="pink">background:</span> 
+          <span class="green">linear-gradient(<span class="blue">to right,#f000,#ff0</span>);
+          </span></p>
+
+          <p>Sintax: </p>
+          <p>background: <strong>tipo_do</strong>-gradient(<strong>direção</strong>,
+          <strong>cor1</strong>,<strong>cor2</strong>);</p>
+        </div>
+                
+        <div class="contentDiv">
+          <h2>Display</h2>
+          <p><span class="blue">Css syntax</span>: display: value;</p>
+          <p><span class="blue">JavaScript syntax</span>:	object.style.display="none"</p>
+          <p>A propriedade <i>Display</i> especifica o comportamento do display</p>
+          <h3>Propriedades e valores</h3>
+          <table class="property-values">
+            <tr>
+              <th>Valor</th>
+              <th>Descrição</th>
+            </tr>
+            <tr>
+              <td>inline</td>
+              <td>Seta o display para um elemento de uma linha como &lt<span class="pink">span</span>&gt,
+                  Qualquer propriedade height ou width não irão fazer efeito.
+              </td>
+            </tr>
+            <tr>
+              <td>block</td>
+              <td>Seta o display para um elemento de bloco como o &lt<span class="pink">p</span>&gt,
+                  Começa sempre em uma nova linha e tem width de 100%.
+              </td>
+            </tr>
+            <tr>
+              <td>contents</td>
+              <td>Faz o container desaparecer, transformando os elementos filho (child) dele,
+                  como filhos(children) do elemento no proximo nivel do DOM.
+              </td>
+            </tr>
+            <tr>
+              <td>flex</td>
+              <td>Define o display do elemento como block-level flex container, ou seja flexivel</td>
+            </tr>
+            <tr>
+              <td>grid</td>
+              <td>Define o display do elemento como block-level grid container</td>
+            </tr>
+            <tr>
+              <td>inline-block</td>
+              <td>Define o display para um elemento inline-level block container. O elemento por si
+                  é formado do mesmo jeito de um elemento inline, mas você pode aplicar valores 
+                  a height e width.
+              </td>
+            </tr>
+            <tr>
+              <td>inline-flex</td>
+              <td>Elemento como inline-level flex container</td>
+            </tr>
+            <tr>
+              <td>inline-grid</td>
+              <td>Elemento como inline-level grid container</td>
+            </tr>
+            <tr>
+              <td>inline-table</td>
+              <td>O elemento é configurado como inline-level table</td>
+            </tr>
+            <tr>
+              <td>list-item</td>
+              <td>Seleciona o comportamento do elemento para como o do elemento &lt<span class="pink">li</span>&gt</td>
+            </tr>
+            <tr>
+              <td>run-in</td>
+              <td>Seleciona o display para ou block ou inline, dependendo do contexto</td>
+            </tr>
+            <tr>
+              <td>table</td>
+              <td>Define o mesmo comportamento do elemento &lt<span class="pink">table</span>&gt</td>
+            </tr>
+            <tr>
+              <td>table-caption</td>
+              <td>Define o mesmo comportamento de um elemento &lt<span class="pink">caption</span>&gt</td>
+            </tr>
+            <tr>
+              <td>table-column-group</td>
+              <td>Define o mesmo comportamento de um elemento &lt<span class="pink">colgroup</span>&gt</td>
+            </tr>
+            <tr>
+              <td>table-header-group</td>
+              <td>Define o mesmo comportamento de um elemento &lt<span class="pink">thead</span>&gt</td>
+            </tr>
+            <tr>
+              <td>table-footer-group</td>
+              <td>Define o mesmo comportamento de um elemento &lt<span class="pink">tfoot</span>&gt</td>
+            </tr>
+            <tr>
+              <td>table-row-group</td>
+              <td>Mesmo comportamento de um elemento &lt<span class="pink">tbody</span>&gt/td>
+            </tr>
+            <tr>
+              <td>table-cell</td>
+              <td>Mesmo comportamento de um elemento &lt<span class="pink">td</span>&gt</td>
+            </tr>
+            <tr>
+              <td>table-column</td>
+              <td>Mesmo comportamento de um elemento &lt<span class="pink">col</span>&gt</td>
+            </tr>
+            <tr>
+              <td>table-row</td>
+              <td>Mesmo comportamento de um elemento &lt<span class="pink">tr</span>&gt</td>
+            </tr>
+            <tr>
+              <td>none</td>
+              <td>O Elemento é completamente removido da tela</td>
+            </tr>
+            <tr>
+              <td>initial</td>
+              <td>Seleciona a propriedade do display para o seu valor padrão</td>
+            </tr>
+            <tr>
+              <td>inherit</td>
+              <td>Herda essa propriedade do seu elemento pai</td>
+            </tr>
+          </table>
+
+        </div>
+      </main>
+
+      <footer>
+        <p>&copy Ebert Mota</p>
+      </footer>
+            
+    </div>
+    <script src="../script/script.js"></script>
+    <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
+  </body>
 </html>

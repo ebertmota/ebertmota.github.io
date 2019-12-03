@@ -457,8 +457,107 @@
             <span class="jsnumbercolor">true</span> }) );
           </p>
         </div>
+        <h4>express.Router</h4>
+        <p>
+          A classe express.Router é usada para criar manipuladores de rota modulares,
+          com ele você pode separar as rotas da sua aplicação em um arquivo especifico.
+        </p>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// routes.js</p>
+          <p>
+            <span class="jskeywordcolor">const</span> routes
+            <span class="jskeywordcolor">=</span>
+            express.<span class="jsvarcolor">Router</span>( );
+          </p>
+          <p>
+            <span class="jskeywordcolor">const</span> homeController
+            <span class="jskeywordcolor">=</span>
+            <span class="jscyancolor">require</span>(
+              <span class="jsstringcolor">'./Controllers/homeController'</span> )
+          </p>
+          <p>
+            router.<span class="jsvarcolor">get</span>(
+            <span class="jsstringcolor">'/'</span>, homeController.homePage );
+          </p>
+          <p>
+            <span class="jscyancolor">module.exports</span>
+            <span class="jskeywordcolor">=</span> routes;
+          </p>
+        </div>
+        <p>
+          O routes.js vai ser responsável somente por importar os Controllers e 
+          direcionar eles para a rota desejada (por exemplo: homeController na rota '/').
+        </p>
+        <p>
+          Agora veremos o papel dos Controllers nas rotas, que serão responsaveis 
+          basicamente pelas funções de retorno ou de envio para cada rota, veremos uma 
+          explicação mais detalhada sobre controllers no tópico de MVC.
+        </p>
+        <div class="dark-codeDiv">
+          <p>
+            <span class="jscyancolor">module.exports</span>.homePage 
+            <span class="jskeywordcolor">=</span> (
+            <span class="jsparametercolor">req, res</span> )
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            res.<span class="jsvarcolor">send</span>(
+            <span class="jsstringcolor">'Você está na página principal'</span> )
+          </p>
+          <p>};</p>
+        </div>
+        <p>
+          E para que toda essa organização de rotas funcionar, precisamos informar
+          ao express com o seguinte código no arquivo server.js:
+        </p>
+        <div class="dark-codeDiv">
+          <p>
+            <span class="jskeywordcolor">const</span> routes
+            <span class="jskeywordcolor">=</span>
+            <span class="jscyancolor">require</span>(
+            <span class="jsstringcolor">'./routes.js'</span> );
+          </p>
+          <p>app.<span class="jsvarcolor">use</span>(routes);</p>
+        </div>
+        <h3>Views</h3>
+        <p>crie uma pasta "Views" dentro de src para armazenar os arquivos.</p>
+        <p>
+          Para a utilização de views funcionar você precisa informar ao express Onde
+          está a view e qual view engine você vai usar:
+        </p>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// informando caminho da View</p>
+          <p>
+            app.<span class="jsvarcolor">set</span>(
+            <span class="jsstringcolor">'views'</span>,
+            <span class="jsstringcolor">'./src/Views'</span>)
+          </p>
+
+          <p class="jscommentcolor">// informando View-engine</p>
+          <p>
+            app.<span class="jsvarcolor">set</span>(
+            <span class="jsstringcolor">'view engine'</span>,
+            <span class="jsstringcolor">'ejs'</span> );
+          </p>
+        </div>
+        <h3>Conteúdo estático</h3>
+        <p>
+          Na raiz de seu Projeto (ou seja, fora de src) crie uma pasta <span class="blue">public</span>,
+          a pasta será usada para qualquer conteudo estático de sua aplicação, como css, bundle.js etc.
+        </p>
+        <p>
+          Depois de criar a pasta informe ao express que você deseja usar ela para conteúdo estático:
+        </p>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// server.js</p>
+          <p>
+            app.<span class="jsvarcolor">use</span>(
+            express.<span class="jsvarcolor">static</span>(
+            <span class="jsstringcolor">'./public'</span> ));
+          </p>
+        </div>
       </div>
-      
+
 
 
     </div> <!-- end container div-->

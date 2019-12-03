@@ -16,7 +16,7 @@
     font-family: 'Fira Code', monospace;
     margin: 10px;
     padding: 25px;
-    background-color:rgba(40,42,54);
+    background-color:rgb(40,42,54);
     color: #fff;
     border-left: 5px #576eb6 solid;
 }
@@ -24,7 +24,7 @@
     font-weight:  bold;
 }
 .jskeywordcolor {
-    color: rgb(255,121,198);
+    color: #ff79c6;
 }
 
 .jsstringcolor {
@@ -48,6 +48,15 @@
 }
 .jsdefaultcolor {
     color: #fff;
+}
+
+/* JAVASCRIPT */
+.js-background {
+  background-color: rgb(40,42,54);
+}
+.js-background .title {
+  color: #ff79c6;
+  border-color: #ff79c6;
 }
 
 /* html */
@@ -125,7 +134,26 @@ td,th {
 }
 
 /* css */
-
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.css-background {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradientBG 15s ease infinite;
+}
+body.css-background .title {
+  color: #fff;
+  border-color: #fff;
+}
 
 .pink {
     color: #990055;
@@ -175,7 +203,6 @@ table.property-values tr:nth-child(even) {
 #modulos {
   background-image: url('../../assets/modulos.jpg');
   background-size: contain;
-
 }
 
 #webpack {
@@ -192,13 +219,11 @@ table.property-values tr:nth-child(even) {
 }
 
 /* NODEJS */
+
 .node-background {
-  background-image: url('../../assets/nodejs.jpeg');
+  background-image: url('../../assets/nodejs.jpg');
 }
 
-.node-body .contentDiv {
-  background: rgba(255,255,255);
-}
 
 .node-body h1 {
   color: #72f372;
@@ -224,3 +249,4 @@ table.property-values tr:nth-child(even) {
 .table-material tbody td:first-child {
   color: rgb(11, 8, 167);
 }
+
