@@ -60,6 +60,15 @@
 }
 
 /* html */
+.html-background {
+  background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+.white {
+  border-color: #fff;
+  color: #fff;
+}
 .atribute {
     padding: 2px;
     background-color: rgba(148, 148, 148, 0.2);
@@ -134,21 +143,8 @@ td,th {
 }
 
 /* css */
-@keyframes gradientBG {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
 .css-background {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradientBG 15s ease infinite;
+  background-color: #23a6d5;
 }
 body.css-background .title {
   color: #fff;
@@ -221,9 +217,8 @@ table.property-values tr:nth-child(even) {
 /* NODEJS */
 
 .node-background {
-  background-image: url('../../assets/nodejs.jpg');
+  background-color: rgb(44, 43, 43);
 }
-
 
 .node-body h1 {
   color: #72f372;

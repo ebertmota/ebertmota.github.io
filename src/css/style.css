@@ -50,6 +50,10 @@ li a {
     cursor: pointer;
  } 
 body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+ 
     padding-top: 60px;
     background: #fff;
     padding-bottom: 20px;
@@ -195,11 +199,6 @@ main {
     background-color: rgba(190,190,190, .2);
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
-}
-.html:hover {
-    display: block;
-    color: rgb(248, 103, 6);
-    
 }
 /* end HEADER */
 

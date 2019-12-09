@@ -556,12 +556,284 @@
             <span class="jsstringcolor">'./public'</span> ));
           </p>
         </div>
+        <h3>Middlewares</h3>
+        <p>Funções de Middleware podem:</p>
+        <ul class="list-style">
+          <li>Executar qualquer código</li>
+          <li>Armazenar informações antes durante ou depois da requisição terminar</li>
+          <li>Encerrar a requisição</li>
+          <li>Chamar a proxima função de middleware na pilha</li>
+        </ul>
+        <p>
+          Funções de <strong>Middleware</strong> são funções que tem acesso ao objeto req (request),
+          e ao objeto res (response) e a proxima função de middleware, que é definida por uma var chamada
+          <strong>next</strong>.
+        </p>
+        <p>
+          Uma aplicação do Express é essencialmente uma série de chamadas de funções de middleware.
+        </p>
+        <div class="alertDiv">
+          <p>
+            Se você não usar o next() no fim de sua função de middleware a requisição não irá encerrar.
+          </p>
+        </div>
+        <p>Exemplo simples de uma função de middleware:</p>
+        <div class="dark-codeDiv">
+          <p>
+            route.<span class="jsvarcolor">get</span>(
+            <span class="jsstringcolor">'/'</span>, MyFirstMiddleware, homeController.homePage)
+          </p>
+          <p>
+            <span class="jskeywordcolor">function</span> MyFirstMiddleware(
+            <span class="jsparametercolor">req, res, next</span>) {
+          </p>
+          <p class="margintab">
+            <span class="jscyancolor">console.log</span>(
+            <span class="jsstringcolor">'Hi i came from a middleware function'</span>);
+          </p>
+          <p class="margintab"><span class="jsvarcolor">next</span>()</p>
+          <p>}</p>
+        </div>
+        <p>
+          Existem tipos de middlewares, você pode conferir ele e mais informações sobre o assunto
+          na 
+          <a 
+          class="link"
+          href="https://expressjs.com/pt-br/guide/using-middleware.html#usando-middlewares"
+          target="_blank">
+          Documentação oficial</a>.
+        </p>
+        <h3>Models</h3>
+        <p>O exemplos a seguir serão feitos com o MongoDB Atlas.</p>
+        <p>Dependências necessárias:</p>
+        <ul class="list-style">
+          <li>dotenv</li>
+          <li>mongoose</li>
+        </ul>
+        <h4>Conexão com o Banco de dados</h4>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// Primeiramente importe o mongoose</p>
+          <p>
+            <span class="jskeywordcolor">const</span> mongoose
+            <span class="jskeywordcolor">=</span> <span class="jscyancolor">require</span>(
+            <span class="jsstringcolor">'mongoose'</span>);
+          </p>
+
+          <p class="jscommentcolor">// Depois pegue sua url de conexão mongo db e armazene-a em uma variavel</p>
+          <p>
+            <span class="jskeywordcolor">const</span> conectionString
+            <span class="jskeywordcolor">=</span>
+            <span class="jsstringcolor">'mongodb+srv://SUA-URL...'</span>;
+          </p>
+          <p class="jscommentcolor">// Agora conectando a base de dados</p>
+          <p>
+            mongoose.<span class="jsvarcolor">connect</span>
+            (connectionString, {
+            useNewUrlParser<span class="jskeywordcolor">:</span> <span class="jsnumbercolor">true</span>,
+            useUnifiedTopology<span class="jskeywordcolor">:</span> <span class="jsnumbercolor">true</span> })
+          </p>
+        </div>
+        <p>
+          Com a nossa base conectada, temos um problema no momento, da maneira com que configuramos não temos 
+          o controle de quando a conexão será feita, ou seja ela provavelmente vai ser executada após o servidor,
+          como solucionar esse problema:
+        </p>
+        <div class="dark-codeDiv">
+          <p>
+            mongoose.<span class="jsvarcolor">connect</span>
+            (connectionString, {
+            useNewUrlParser<span class="jskeywordcolor">:</span> <span class="jsnumbercolor">true</span>,
+            useUnifiedTopology<span class="jskeywordcolor">:</span> <span class="jsnumbercolor">true</span> })
+          </p>
+          <p>.<span class="jsvarcolor">then</span>(( ) <span class="jskeywordcolor">=></span> {</p>
+            <p class="margintab">
+              <span class="jscyancolor">console.log</span>(
+              <span class="jsstringcolor">'Conectei á base de dados.'</span>);
+            </p>
+            <p class="margintab">
+              app.<span class="jsvarcolor">emit</span>(<span class="jsstringcolor">'Pronto'</span>);
+            </p>
+          <p>})</p>
+          <p class="jscommentcolor">...</p>
+          <p>
+            app.<span class="jsvarcolor">on</span>(<span class="jsstringcolor">'Pronto'</span>, ( )
+            <span class="jskeywordcolor">=></span> {
+          </p>
+          <p class="margintab">
+            <span class="jscyancolor">console.log</span>(
+            <span class="jsstringcolor">Servidor executando na porta 3000</span>)
+          </p>
+          <p>}</p>
+          <p class="jscommentcolor">
+            // Dessa maneira o servidor só será executado quando a 
+            base de dados estiver conectada
+          </p>
+        </div>
+        <h4>Salvando chave de conexão em um arquivo separado.</h4>
+        <p>
+          Até o momento nosso servidor está se conectando a base de dados e executando, porem no server.js
+          estamos usando a string de conexão do mongo db, o que não é interessante de ser compartilhado e 
+          que pode comprometer sua database, então vamos tornar isso mais seguro utilizando
+          o <strong>dotenv</strong>.
+        </p>
+        <p>Você precisa criar um arquivo <strong>.env</strong> na raiz de seu projeto.</p>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// Importando dotenv com arquivo de configurações</p>
+          <p>
+            <span class="jskeywordcolor">const</span> dotenv
+            <span class="jskeywordcolor">=</span> <span class="jscyancolor">require</span>(
+            <span class="jsstringcolor">'dotenv'</span>).<span class="jsvarcolor">config</span>();
+          </p>
+        </div>
+        <p>Agora no arquivo .env salve sua string de conexão dessa maneira:</p>
+        <div class="dark-codeDiv">
+          <p>connectionString=mongodb+srv://SUA-URL</p>
+        </div>
+        <p>Para importar essa url do arquivo .env:</p>
+        <div class="dark-codeDiv">
+         <p>
+            mogoose.<span class="jsvarcolor">connect</span>(
+            <span class="jsnumbercolor">process</span>.env.<span class="jsnumbercolor">connectionString</span>,...)
+          </p>
+        </div>
+        <h4>Criando primeiro model</h4>
+        <p>
+          Primeiramente crie uma pasta Models no src de seu projeto.
+        </p>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// HomeModel.js</p>
+          <p>
+            <span class="jskeywordcolor">const</span> mongoose
+            <span class="jskeywordcolor">=</span> <span class="jscyancolor">require</span>(
+            <span class="jsstringcolor">'mongoose'</span> );
+          </p>
+          <p class="jscommentcolor">// Criando Schema</p>
+          <p>
+            <span class="jskeywordcolor">const</span> HomeSchema
+            <span class="jskeywordcolor">=</span> <strong class="jskeywordcolor">new</strong>
+            <span class="jscyancolor">mongoose.Schema</span>({
+          </p>
+          <p class="margintab">
+            title<span class="jskeywordcolor">:</span> { 
+          </p>
+          <p class="margintabX2">
+            type<span class="jskeywordcolor">:</span>
+            <span class="jscyancolor">String</span>
+          </p>
+          <p class="margintabX2">
+            required<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">true</span>
+          </p>
+          <p class="margintab">},</p>
+          <p class="margintab">
+            description<span class="jskeywordcolor">:</span>
+            <span class="jscyancolor">String</span>
+          </p>
+          <p>})</p>
+
+          <p class="jscommentcolor">// Criando Model</p>
+          <p>
+            <span class="jskeywordcolor">const</span> HomeModel
+            <span class="jskeywordcolor">=</span> mongoose.<span class="jsvarcolor">model</span>(
+            <span class="jsstringcolor">'Home'</span>, HomeSchema)
+            <span class="jscommentcolor">// Home é o nome do model</span>
+          </p>
+
+          <p class="jscommentcolor">// Exportando model</p>
+          <p>
+            <span class="jscyancolor">module.exports</span>
+            <span class="jskeywordcolor">=</span> HomeModel
+          </p>
+        </div>
+        <p>
+          Pronto nosso model está criado, agora vamos testar ele salvando uma informação
+          na base de dados.
+        </p>
+        <div class="dark-codeDiv">
+          <p class="jscommentcolor">// HomeController.js</p>
+          <p>
+            <span class="jskeywordcolor">const</span> HomeModel
+            <span class="jskeywordcolor">=</span>
+            <span class="jscyancolor">require</span>(
+            <span class="jsstringcolor">'../Models/HomeModel'</span>);
+          </p>
+          <p>HomeModel.<span class="jsvarcolor">create</span>({</p>
+          <p class="margintab">
+            title<span class="jskeywordcolor">:</span>
+            <span class="jsstringcolor">'Sou o primeiro dado'</span>,
+          </p>
+          <p class="margintab">
+            description<span class="jskeywordcolor">:</span>
+            <span class="jsstringcolor">'teste'</span>
+          </p>
+          <p>});</p>
+        </div>
+        <h4>Express session</h4>
+        <p>Dependências necessárias:</p>
+        <ul class="list-style">
+          <li>express-session</li>
+          <li>connect-mongo</li>
+        </ul>
+        <div class="dark-codeDiv">
+          <p>
+            <span class="jskeywordcolor">const</span> session
+            <span class="jskeywordcolor">=</span>
+            <span class="jscyancolor">require</span>(
+            <span class="jsstringcolor">'express-session'</span>);
+          </p>
+          <p>
+            <span class="jskeywordcolor">const</span> MongoStore
+            <span class="jskeywordcolor">=</span>
+            <span class="jscyancolor">require</span>(
+            <span class="jsstringcolor">'connect-mongo'</span>) (session);
+          </p>
+          <p>
+            <span class="jskeywordcolor">const</span> sessionOptions
+            <span class="jskeywordcolor">=</span> <span class="jsvarcolor">session</span>({
+          </p>
+          <p class="margintab">
+            scret<span class="jskeywordcolor">:</span>
+            <span class="jsstringcolor">'top secret, something that nobody knows'</span>,
+          </p>
+          <p class="margintab">
+            store<span class="jskeywordcolor">: <strong>new</strong></span> 
+            <span class="jscyancolor">MongoStore</span>( { mongooseConnection: mongoose.connectio } ),
+          </p>
+          <p class="margintab">
+            resave<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">false</span>,
+          </p>
+          <p class="margintab">
+            saveUnitialized<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">false</span>,
+          </p>
+          <p class="margintab">
+            cookie<span class="jskeywordcolor">:</span> {
+          </p>
+          <p class="margintabX2">
+            maxAge<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">1000</span> <span class="jskeywordcolor">*</span>
+            <span class="jsnumbercolor">60</span> <span class="jskeywordcolor">*</span>
+            <span class="jsnumbercolor">60</span> <span class="jskeywordcolor">*</span>
+            <span class="jsnumbercolor">24</span> <span class="jskeywordcolor">*</span>
+            <span class="jsnumbercolor">7</span>,
+          </p>
+          <p class="margintabX2">
+            httpOnly<span class="jskeywordcolor">:</span>
+            <span class="jsnumbercolor">true</span>
+          </p>
+          <p class="margintab">}</p>
+          <p>})</p>
+
+          <p>
+            app.<span class="jsvarcolor">use</span>(sessionOptions);
+          </p>
+        </div>
       </div>
 
 
 
     </div> <!-- end container div-->
     <script src="../script/script.js"></script>
-    <script src="../script/nodejspage.js"></script>
     <script src="https://kit.fontawesome.com/c5cfd6950a.js"></script>
   </body>
